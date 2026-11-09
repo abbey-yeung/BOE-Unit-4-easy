@@ -1,0 +1,3438 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="handbook">
+  <title>JM3 Unit 4 BOE Text 2 — Vocabulary Master &amp; Classroom Assessment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      /* Handbook tokens */
+      --background: #ffffff;
+      --surface-container-low: #f3f2f1;
+      --surface-container: #e8e7e5;
+      --surface-container-high: #dbdad9;
+      --on-surface: #0b0c0c;
+      --on-surface-variant: #505a5f;
+      --outline: #0b0c0c;
+      --outline-variant: #b1b4b6;
+      --primary: #162e51;
+      --on-primary: #ffffff;
+      --primary-container: #d2e2f1;
+      --on-primary-container: #0c2d4a;
+      --secondary: #4c2c92;
+      --tertiary: #1a569e;
+      --error: #d4351c;
+      --on-error: #ffffff;
+      --positive: #00703c;
+      --warning: #b15e00;
+
+      --data-1: #1a569e;
+      --data-2: #c75a0a;
+      --data-3: #28a197;
+      --data-4: #4c2c92;
+      --data-context: #b1b4b6;
+
+      --font-headline: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-label: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --rounded: 0px;
+      --rounded-lg: 0px;
+      --rounded-full: 0px;
+
+      --top-index-rule: 6px solid var(--primary);
+      --inset-rule: 5px solid var(--tertiary);
+      --button-ground: 0 2px 0 #091526;
+      --button-ground-secondary: 0 2px 0 #858686;
+      --button-ground-positive: 0 2px 0 #004d29;
+      --focus-yellow: #ffdd00;
+      --focus-ring: 3px solid var(--focus-yellow);
+      --focus-bar: inset 0 0 0 2px var(--on-surface);
+
+      /* Typography Scale */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing Scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+    }
+
+    /* Presentation Mode (Projector & Interactive Whiteboard) */
+    body.presentation-mode {
+      --display-size: clamp(2.2rem, 1.8rem + 1.5vw, 2.8rem);
+      --headline-size: clamp(1.6rem, 1.3rem + 0.8vw, 2rem);
+      --subhead-size: clamp(1.25rem, 1.15rem + 0.3vw, 1.4rem);
+      --body-size: clamp(1.15rem, 1.05rem + 0.25vw, 1.25rem);
+      --label-size: 0.9rem;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow-x: clip;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.5;
+    }
+
+    /* Focus styling */
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: 0;
+      box-shadow: var(--focus-bar);
+    }
+
+    /* Masthead & Index Rule */
+    .top-index-bar {
+      border-top: var(--top-index-rule);
+      background: var(--background);
+      border-bottom: 2px solid var(--on-surface);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .masthead {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .brand-tag {
+      background: var(--primary);
+      color: var(--on-primary);
+      font-weight: 800;
+      font-size: 0.8125rem;
+      padding: var(--space-xs) var(--space-sm);
+      letter-spacing: 0.05em;
+    }
+
+    .brand-title {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    /* Button styles */
+    .btn {
+      font-family: var(--font-label);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: 1px solid var(--outline);
+      box-shadow: var(--button-ground-secondary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      transition: transform var(--dur-micro) var(--ease-out);
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+      box-shadow: var(--button-ground);
+    }
+
+    .btn-lottery-trigger {
+      background: #002d62;
+      color: #ffffff;
+      border: 2px solid var(--on-surface);
+      font-weight: 800;
+      box-shadow: var(--button-ground);
+    }
+
+    .btn-positive {
+      background: var(--positive);
+      color: #ffffff;
+      border-color: var(--positive);
+      box-shadow: var(--button-ground-positive);
+    }
+
+    .btn-sm {
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.75rem;
+      min-height: 32px;
+    }
+
+    /* Container Layout */
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-md);
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 2px;
+      background: var(--outline);
+      padding: 2px 2px 0 2px;
+      margin-bottom: var(--space-lg);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 140px;
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: 0;
+      padding: var(--space-sm) var(--space-md);
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      position: relative;
+    }
+
+    .tab-btn:hover {
+      background: var(--surface-container);
+    }
+
+    .tab-btn.active {
+      background: var(--background);
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .tab-step {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--on-surface-variant);
+    }
+
+    .tab-btn.active .tab-step {
+      color: var(--tertiary);
+      font-weight: 800;
+    }
+
+    .tab-title {
+      font-size: 0.9375rem;
+      font-weight: 800;
+    }
+
+    /* Score Bar & KPI Summary */
+    .kpi-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .kpi-card {
+      background: var(--surface-container-low);
+      border-left: var(--inset-rule);
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kpi-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--on-surface-variant);
+    }
+
+    .kpi-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .streak-fire {
+      color: #c75a0a;
+    }
+
+    /* Question Panel & Content Flow */
+    .panel {
+      background: var(--background);
+      border: 2px solid var(--outline);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--outline-variant);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .stage-indicator {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: var(--on-primary);
+      font-weight: 800;
+      font-size: 0.875rem;
+    }
+
+    .stage-title {
+      font-size: var(--headline-size);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .stage-desc {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin-top: 2px;
+    }
+
+    .assigned-student-tag {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      padding: var(--space-xs) var(--space-sm);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--tertiary);
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      background: var(--surface-container-low);
+      border-left: 6px solid var(--tertiary);
+      padding: var(--space-md) var(--space-lg);
+      margin-bottom: var(--space-md);
+    }
+
+    .prompt-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--tertiary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .prompt-text {
+      font-size: clamp(1.05rem, 1rem + 0.3vw, 1.35rem);
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--on-surface);
+    }
+
+    .prompt-hint {
+      margin-top: var(--space-xs);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Input Form Group */
+    .answer-form {
+      display: grid;
+      grid-template-columns: 2fr 1fr auto;
+      gap: var(--space-md);
+      align-items: end;
+      margin-bottom: var(--space-md);
+    }
+
+    @media (max-width: 768px) {
+      .answer-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .form-label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-hint {
+      font-size: 0.6875rem;
+      color: var(--on-surface-variant);
+      font-weight: 400;
+    }
+
+    .text-input, .select-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 var(--space-md);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      background: var(--background);
+      border: 2px solid var(--outline);
+      color: var(--on-surface);
+    }
+
+    .text-input:focus, .select-input:focus {
+      outline: var(--focus-ring);
+      box-shadow: var(--focus-bar);
+    }
+
+    /* Part of speech chip shortcuts */
+    .pos-quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: var(--space-xs);
+    }
+
+    .chip-btn {
+      background: var(--surface-container);
+      color: var(--on-surface);
+      border: 1px solid var(--outline-variant);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      cursor: pointer;
+    }
+
+    .chip-btn:hover {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    /* Feedback Banner */
+    .feedback-banner {
+      padding: var(--space-md);
+      border-left: 6px solid transparent;
+      margin-top: var(--space-md);
+      display: none;
+    }
+
+    .feedback-banner.show {
+      display: block;
+    }
+
+    .feedback-banner.correct {
+      background: #edf7ee;
+      border-left-color: var(--positive);
+      color: #0c4a1e;
+    }
+
+    .feedback-banner.incorrect {
+      background: #fdf2f2;
+      border-left-color: var(--error);
+      color: #7d1010;
+    }
+
+    .feedback-banner.case-warning {
+      background: #fff8e6;
+      border-left-color: var(--warning);
+      color: #613b00;
+    }
+
+    .praise-heading {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .vocab-card-reveal {
+      margin-top: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: 1px dashed var(--outline-variant);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-sm);
+      font-size: 0.9375rem;
+    }
+
+    .vocab-card-term {
+      font-weight: 800;
+      font-size: 1.125rem;
+      color: var(--primary);
+    }
+
+    .vocab-card-pos {
+      font-style: italic;
+      color: var(--tertiary);
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    .vocab-card-zh {
+      color: #2b548f;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    .vocab-example-quote {
+      margin-top: 4px;
+      padding-left: var(--space-sm);
+      border-left: 2px solid var(--outline-variant);
+      font-style: normal;
+      color: var(--on-surface);
+    }
+
+    /* Action bar */
+    .question-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--outline-variant);
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .progress-track {
+      flex: 1;
+      max-width: 250px;
+      height: 8px;
+      background: var(--surface-container);
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      transition: width var(--dur-short) var(--ease-out);
+    }
+
+    /* Drawer: Student Lottery Picker */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 12, 12, 0.45);
+      z-index: 998;
+      display: none;
+      opacity: 0;
+      transition: opacity var(--dur-short) var(--ease-out);
+    }
+
+    .drawer-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
+    .student-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 420px;
+      max-width: 95vw;
+      background: var(--background);
+      border-left: 4px solid var(--primary);
+      box-shadow: -4px 0 16px rgba(0,0,0,0.18);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform var(--dur-long) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .student-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      background: var(--primary);
+      color: var(--on-primary);
+      padding: var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-title {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .drawer-close-btn {
+      background: transparent;
+      border: 1px solid var(--on-primary);
+      color: var(--on-primary);
+      font-size: 1.125rem;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .drawer-body {
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      flex: 1;
+    }
+
+    /* Winner Board */
+    .lottery-stage {
+      background: var(--surface-container-low);
+      border: 2px solid var(--outline);
+      padding: var(--space-lg);
+      text-align: center;
+      position: relative;
+    }
+
+    .lottery-rolling-display {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--background);
+      border: 2px dashed var(--outline);
+      margin-bottom: var(--space-md);
+      letter-spacing: 0.02em;
+    }
+
+    .lottery-rolling-display.winner-flash {
+      background: #ffdd00;
+      color: var(--on-surface);
+      border-style: solid;
+      border-color: var(--on-surface);
+    }
+
+    .lottery-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+
+    .drawer-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-xs);
+    }
+
+    /* Editable student roster */
+    .roster-editor-box {
+      border: 1px solid var(--outline-variant);
+      padding: var(--space-sm);
+      background: var(--surface-container-low);
+    }
+
+    .roster-textarea {
+      width: 100%;
+      height: 120px;
+      padding: var(--space-xs);
+      font-family: monospace;
+      font-size: 0.8125rem;
+      border: 1px solid var(--outline);
+      background: var(--background);
+      resize: vertical;
+    }
+
+    .drawer-history-list {
+      max-height: 140px;
+      overflow-y: auto;
+      border: 1px solid var(--outline-variant);
+      background: var(--background);
+      padding: var(--space-xs);
+      font-size: 0.8125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .history-item {
+      padding: 3px 6px;
+      background: var(--surface-container-low);
+      display: flex;
+      justify-content: space-between;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Vocab Guide Tab Table */
+    .vocab-table-container {
+      overflow-x: auto;
+      border: 1px solid var(--outline);
+    }
+
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+
+    .vocab-table th {
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      font-weight: 800;
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 2px solid var(--outline);
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .vocab-table td {
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--outline-variant);
+      vertical-align: top;
+    }
+
+    .vocab-table tr:hover {
+      background: var(--surface-container-low);
+    }
+
+    .vocab-row-term {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .badge-pos {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      background: var(--surface-container);
+      color: var(--tertiary);
+      border: 1px solid var(--outline-variant);
+    }
+
+    .badge-zh {
+      font-weight: 700;
+      color: #0c2d4a;
+    }
+
+    /* Pronounce button */
+    .btn-audio {
+      background: transparent;
+      border: 1px solid var(--outline-variant);
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .btn-audio:hover {
+      background: var(--primary-container);
+    }
+
+    /* Stage 4 specifics */
+    .stage4-batch-banner {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      padding: var(--space-sm) var(--space-md);
+      margin-bottom: var(--space-md);
+      border-left: 5px solid var(--tertiary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .case-sensitive-badge {
+      background: var(--error);
+      color: var(--on-error);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    /* Print / Utility */
+    @media print {
+      .top-index-bar, .drawer-overlay, .student-drawer, .header-actions {
+        display: none !important;
+      }
+      .panel {
+        border: 1px solid #000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Index Bar -->
+  <header class="top-index-bar">
+    <div class="masthead">
+      <div class="brand-block">
+        <span class="brand-tag">JM3 UNIT 4</span>
+        <div>
+          <div class="brand-title">BOE Text 2: Vocabulary Master &amp; Assessment</div>
+          <div class="brand-subtitle">互動詞彙評量與課堂抽籤系統 • 20 Core Vocabulary Items</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Presentation Mode toggle -->
+        <button type="button" class="btn btn-sm" id="btn-toggle-presentation" onclick="togglePresentationMode()" title="切換大字體投影模式 (Big Screen Mode)">
+          📽️ <span id="label-presentation-mode">Projector Mode</span>
+        </button>
+
+        <!-- Sound FX toggle -->
+        <button type="button" class="btn btn-sm" id="btn-toggle-sound" onclick="toggleSoundFX()" title="音效開關">
+          🔊 <span id="label-sound-mode">Sound: ON</span>
+        </button>
+
+        <!-- Student Drawer Trigger -->
+        <button type="button" class="btn btn-lottery-trigger" id="btn-open-drawer" onclick="openStudentDrawer()">
+          🎲 Student Picker <span id="badge-student-count">(35)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button type="button" class="tab-btn active" id="tab-btn-guide" onclick="switchStage('guide')" role="tab">
+        <span class="tab-step">Reference</span>
+        <span class="tab-title">📖 Vocab Guide (1–20)</span>
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-s1" onclick="switchStage('s1')" role="tab">
+        <span class="tab-step">Stage 1</span>
+        <span class="tab-title">🎯 Vocab 1–10</span>
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-s2" onclick="switchStage('s2')" role="tab">
+        <span class="tab-step">Stage 2</span>
+        <span class="tab-title">🚀 Vocab 11–20</span>
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-s3" onclick="switchStage('s3')" role="tab">
+        <span class="tab-step">Stage 3</span>
+        <span class="tab-title">⚡ Vocab 1–20 Mixed</span>
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-s4" onclick="switchStage('s4')" role="tab">
+        <span class="tab-step">Stage 4</span>
+        <span class="tab-title">📝 Sentence Blank (120+)</span>
+      </button>
+    </nav>
+
+    <!-- Score & Streak KPI Bar -->
+    <section class="kpi-bar" aria-label="Score Overview">
+      <div class="kpi-card">
+        <span class="kpi-label">Completed / 題數</span>
+        <span class="kpi-value" id="kpi-completed">0 / 10</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Score / 答對</span>
+        <span class="kpi-value" id="kpi-correct">0</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Accuracy / 正確率</span>
+        <span class="kpi-value" id="kpi-accuracy">100%</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Current Streak / 連勝</span>
+        <span class="kpi-value streak-fire" id="kpi-streak">🔥 0</span>
+      </div>
+    </section>
+
+    <!-- TAB VIEW: VOCAB STUDY GUIDE -->
+    <section id="view-guide" class="panel">
+      <div class="panel-header">
+        <div>
+          <h1 class="stage-title">📖 Unit 4 Text 2 Vocabulary Reference &amp; Study Guide</h1>
+          <p class="stage-desc">All 20 vocabulary items with definitions, parts of speech, Traditional Chinese translations, audio pronunciation, and source examples.</p>
+        </div>
+        <div style="display:flex; gap: var(--space-xs); align-items:center;">
+          <input type="text" id="guide-filter-input" class="text-input" style="height:36px; font-size:0.875rem;" placeholder="Search word or Chinese..." oninput="filterVocabTable()">
+          <button type="button" class="btn btn-sm btn-primary" onclick="speakRandomWord()">🔊 Pronounce Sample</button>
+        </div>
+      </div>
+
+      <div class="vocab-table-container">
+        <table class="vocab-table" id="vocab-guide-table">
+          <thead>
+            <tr>
+              <th style="width: 45px;">#</th>
+              <th>Vocabulary Item</th>
+              <th>Part of Speech</th>
+              <th>English Meaning</th>
+              <th>Chinese Meaning</th>
+              <th>Example Sentence</th>
+              <th style="width: 70px;">Audio</th>
+            </tr>
+          </thead>
+          <tbody id="vocab-guide-tbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB VIEW: QUIZ & ASSESSMENT (Stages 1, 2, 3, 4) -->
+    <section id="view-quiz" class="panel" style="display: none;">
+      <div class="panel-header">
+        <div class="stage-indicator">
+          <span class="step-badge" id="quiz-stage-badge">1</span>
+          <div>
+            <h2 class="stage-title" id="quiz-stage-title">Stage 1: Vocabulary Definitions (Items 1–10)</h2>
+            <p class="stage-desc" id="quiz-stage-desc">Read the English definition and determine the matching vocabulary item and its part of speech.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-sm); align-items:center;">
+          <span id="assigned-student-chip" class="assigned-student-tag" style="display:none;">
+            👤 Turn: <strong id="assigned-student-name">Student No. 1</strong>
+            <button type="button" onclick="clearAssignedStudent()" style="background:transparent; border:0; cursor:pointer; font-weight:800; margin-left:4px;">✕</button>
+          </span>
+          <button type="button" class="btn btn-sm btn-lottery-trigger" onclick="pickStudentForThisQuestion()">🎲 Pick Student for This Q</button>
+        </div>
+      </div>
+
+      <!-- Stage 4 Banner (Batch & Case Sensitivity notice) -->
+      <div id="stage4-info-banner" class="stage4-batch-banner" style="display: none;">
+        <div>
+          <strong>Stage 4 Round Batch:</strong> <span id="stage4-batch-counter">Batch 1 of 6 (Questions 1–20 of 120)</span>
+          <span class="case-sensitive-badge" style="margin-left: 8px;">CASE-SENSITIVE VERIFICATION</span>
+        </div>
+        <button type="button" class="btn btn-sm" onclick="loadNextStage4Batch()">🔄 Load Next Batch (20 Qs)</button>
+      </div>
+
+      <!-- Question Prompt Box -->
+      <div class="prompt-box">
+        <div class="prompt-label" id="prompt-type-label">ENGLISH DEFINITION:</div>
+        <div class="prompt-text" id="question-prompt-text">Loading question prompt...</div>
+        <div class="prompt-hint" id="question-prompt-subhint"></div>
+      </div>
+
+      <!-- Answer Input Form -->
+      <form id="answer-form" class="answer-form" onsubmit="handleFormSubmit(event)">
+        <!-- Input 1: Vocabulary Word -->
+        <div class="form-group">
+          <label class="form-label" for="input-vocab-word">
+            <span id="label-vocab-word">Target Vocabulary Item</span>
+            <span class="form-hint" id="hint-vocab-word">Case-insensitive</span>
+          </label>
+          <input type="text" id="input-vocab-word" class="text-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type English vocabulary here..." required>
+        </div>
+
+        <!-- Input 2: Part of Speech (for Stages 1-3) -->
+        <div class="form-group" id="group-part-of-speech">
+          <label class="form-label" for="input-pos">
+            <span>Part of Speech</span>
+            <span class="form-hint">noun / verb / adj / adv / idiom...</span>
+          </label>
+          <input type="text" id="input-pos" class="text-input" list="pos-suggestions" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="e.g. noun, verb, adjective...">
+          <datalist id="pos-suggestions">
+            <option value="noun">noun</option>
+            <option value="verb">verb</option>
+            <option value="adjective">adjective</option>
+            <option value="adverb">adverb</option>
+            <option value="idiom">idiom</option>
+            <option value="phrasal verb">phrasal verb</option>
+            <option value="noun phrase">noun phrase</option>
+          </datalist>
+
+          <div class="pos-quick-chips">
+            <button type="button" class="chip-btn" onclick="setPosInput('noun')">n.</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('verb')">v.</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('adjective')">adj.</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('adverb')">adv.</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('idiom')">idiom</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('phrasal verb')">phr. v.</button>
+            <button type="button" class="chip-btn" onclick="setPosInput('noun phrase')">n. phr.</button>
+          </div>
+        </div>
+
+        <!-- Submit & Check Button -->
+        <div class="form-group">
+          <label class="form-label" style="visibility:hidden;">Action</label>
+          <button type="submit" class="btn btn-primary" id="btn-submit-answer" style="height:48px; min-width: 140px;">
+            <span>Check Answer</span> ↵
+          </button>
+        </div>
+      </form>
+
+      <!-- Feedback Banner (Immediate Evaluation + Praise) -->
+      <div id="feedback-banner" class="feedback-banner">
+        <div class="praise-heading" id="feedback-heading">🌟 Excellent grasp of vocabulary!</div>
+        <div id="feedback-body-msg">Your answer is completely accurate.</div>
+
+        <!-- Revealed vocab card details -->
+        <div class="vocab-card-reveal" id="vocab-card-reveal" style="display:none;">
+          <div>
+            <span class="vocab-card-term" id="reveal-word">word</span>
+            <span class="vocab-card-pos" id="reveal-pos">(verb)</span>
+            <span class="vocab-card-zh" id="reveal-zh">（使）合併</span>
+            <button type="button" class="btn-audio" id="btn-speak-current" onclick="speakCurrentWord()" style="margin-left: 8px;">🔊 Listen</button>
+          </div>
+          <div class="vocab-example-quote" id="reveal-example">
+            "In the future, Hong Kong, Shenzhen and Guangzhou may merge into one huge city."
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation & Progress Bar -->
+      <div class="question-nav-bar">
+        <div style="display: flex; align-items:center; gap: var(--space-md); flex:1;">
+          <span id="question-index-indicator" style="font-weight:800; font-variant-numeric:tabular-nums;">Question 1 of 10</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="question-progress-bar"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-sm);">
+          <button type="button" class="btn btn-sm" id="btn-prev-q" onclick="navigateQuestion(-1)">← Previous</button>
+          <button type="button" class="btn btn-sm" id="btn-reveal-answer" onclick="revealCurrentAnswer()">👁️ Reveal Answer</button>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-next-q" onclick="navigateQuestion(1)">Next Question →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- DRAWER: STUDENT LOTTERY PICKER (Top-Right Drawer) -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeStudentDrawer()"></div>
+  <aside class="student-drawer" id="student-drawer" aria-label="Student Lottery Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>🎲 Classroom Student Picker</span>
+      </div>
+      <button type="button" class="drawer-close-btn" onclick="closeStudentDrawer()" title="關閉 (Close)">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Winner Board -->
+      <div class="lottery-stage">
+        <div class="lottery-rolling-display" id="lottery-winner-name">Ready to Pick!</div>
+        <div class="lottery-btn-grid">
+          <button type="button" class="btn btn-primary" id="btn-spin-lottery" onclick="spinLotteryPicker()" style="height: 48px; font-size:1.05rem;">
+            🎲 Pick Random Student
+          </button>
+          <button type="button" class="btn btn-positive btn-sm" id="btn-assign-winner" onclick="assignWinnerToCurrentQuestion()">
+            👉 Assign to Current Question
+          </button>
+        </div>
+        <div class="drawer-meta-row">
+          <span>Pool: <strong id="lottery-pool-count">35 students</strong></span>
+          <label style="display:flex; align-items:center; gap:4px; cursor:pointer;">
+            <input type="checkbox" id="chk-no-repeat" checked onchange="saveLotteryConfig()">
+            <span>No repeat picks</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div style="display:flex; justify-content:space-between; gap: var(--space-xs);">
+        <button type="button" class="btn btn-sm" onclick="resetDrawnHistory()">🔄 Reset Drawn Pool</button>
+        <button type="button" class="btn btn-sm" onclick="toggleRosterEditor()">✏️ Edit Roster (<span id="roster-count-label">35</span>)</button>
+      </div>
+
+      <!-- Editable Student Roster -->
+      <div class="roster-editor-box" id="roster-editor-box" style="display:none;">
+        <label class="form-label" for="roster-textarea">
+          <span>Custom Student List (One per line):</span>
+        </label>
+        <textarea id="roster-textarea" class="roster-textarea" spellcheck="false"></textarea>
+        <div style="display:flex; gap: var(--space-xs); margin-top:var(--space-xs);">
+          <button type="button" class="btn btn-sm btn-primary" onclick="saveCustomRoster()">💾 Save List</button>
+          <button type="button" class="btn btn-sm" onclick="restoreDefaultRoster()">↺ Default (1–35)</button>
+        </div>
+      </div>
+
+      <!-- Drawn History -->
+      <div>
+        <div class="form-label" style="margin-bottom: 4px;">
+          <span>Called Students History / 抽中記錄 (<span id="history-count">0</span>):</span>
+        </div>
+        <div class="drawer-history-list" id="drawer-history-list">
+          <div style="color:var(--on-surface-variant); padding:4px;">No students picked yet.</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- GEMINI NOTEBOOK SHIM API (Required for state persistence) -->
+  <api-shim></api-shim>
+
+  <!-- MAIN SCRIPT -->
+  <script>
+    /* =====================================================================
+       1. DATA DEFINITIONS: 20 VOCABULARY ITEMS (JM3 Unit 4 Text 2)
+       ===================================================================== */
+    const VOCAB_DATA = [
+      {
+        id: 1,
+        word: 'merge',
+        pos: 'verb',
+        posFull: 'verb',
+        enDef: 'to combine or join things together to form one thing',
+        zhDef: '(使)合併',
+        example: 'In the future, Hong Kong, Shenzhen and Guangzhou may merge into one huge city.'
+      },
+      {
+        id: 2,
+        word: 'urban',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'of or in a city or town',
+        zhDef: '城市的，城鎮的',
+        example: 'Pollution has reached disturbingly high levels in some urban areas.'
+      },
+      {
+        id: 3,
+        word: 'thanks to',
+        pos: 'idiom',
+        posFull: 'idiom',
+        enDef: 'because of someone/something',
+        zhDef: '幸虧，由於',
+        example: "We've reached our goal of $50,000, thanks to the generosity of the public."
+      },
+      {
+        id: 4,
+        word: 'overpopulation',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'the fact of a country or city, etc. having too many people for the amount of food, materials, and space available there',
+        zhDef: '人口過多，人口過剩',
+        example: "Overpopulation is one of the country's most pressing social problems."
+      },
+      {
+        id: 5,
+        word: 'far-out',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'strange and unusual',
+        zhDef: '異乎尋常的，奇特的',
+        example: "Yesterday, our professor showed us one of his far-out inventions, which amazed all of us."
+      },
+      {
+        id: 6,
+        word: 'prediction',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'a statement about what you think will happen in the future',
+        zhDef: '預計，預料',
+        example: "Scientists' prediction about climate change has come true in different parts of the world."
+      },
+      {
+        id: 7,
+        word: 'a walk in the park',
+        pos: 'idiom',
+        posFull: 'idiom',
+        enDef: 'something that is very easy to do, and usually pleasant',
+        zhDef: '簡單易做的事',
+        example: "He is one of the top students in our class; therefore, solving that math problem was a walk in the park to him."
+      },
+      {
+        id: 8,
+        word: 'resident',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'a person who lives or has their home in a place',
+        zhDef: '居民，住戶',
+        example: 'The local residents are always angry at the lack of parking spaces in Macau.'
+      },
+      {
+        id: 9,
+        word: 'nightmare',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'an extremely unpleasant event or experience',
+        zhDef: '極不愉快的事情，可怕的經歷；可能發生的壞事',
+        example: 'Being trapped underwater is my worst nightmare.'
+      },
+      {
+        id: 10,
+        word: 'self-sufficient',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'able to provide everything you need for yourself without the help of other people',
+        zhDef: '自給自足的',
+        example: 'By growing their own vegetables and raising livestock, the local farmers have become completely self-sufficient without relying on imported food.'
+      },
+      {
+        id: 11,
+        word: 'gravity',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'the force that makes things fall to the ground',
+        zhDef: '（尤指地球的）重力，引力，地心引力',
+        example: 'A ball rolling down a hill or stairs moves downwards because of gravity.'
+      },
+      {
+        id: 12,
+        word: 'spectacular',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'very exciting to look at',
+        zhDef: '壯觀的，令人驚歎的',
+        example: 'Thousands of tourists gathered on top of the mountain to admire the spectacular view of the golden sunrise.'
+      },
+      {
+        id: 13,
+        word: 'solar panel',
+        pos: 'noun phrase',
+        posFull: 'noun phrase',
+        enDef: 'a device that changes energy from the sun into electricity',
+        zhDef: '太陽能電板',
+        example: 'It is a good idea to use solar panels to convert sunlight into electricity in order to conserve more energy.'
+      },
+      {
+        id: 14,
+        word: 'generate',
+        pos: 'verb',
+        posFull: 'verb',
+        enDef: 'to produce energy in a particular form',
+        zhDef: '（以某種形式）産生，發生（能量等）',
+        example: 'These huge wind turbines near the coast can generate enough clean power for thousands of homes every day.'
+      },
+      {
+        id: 15,
+        word: 'dull',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'not interesting or exciting in any way',
+        zhDef: '枯燥乏味的，無趣的',
+        example: "For years, my father has been doing the same dull routine job every day and he thinks it's really uninteresting."
+      },
+      {
+        id: 16,
+        word: 'virtual',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'something can be done or seen using a computer and therefore without going anywhere or talking to anyone',
+        zhDef: '（透過電腦）虛擬的',
+        example: 'Wearing a VR headset allows students to take a virtual tour of ancient historical sites without leaving their classroom.'
+      },
+      {
+        id: 17,
+        word: 'refreshed',
+        pos: 'adjective',
+        posFull: 'adjective',
+        enDef: 'made to feel less tired or less hot',
+        zhDef: '恢復了精力的；精神振作的',
+        example: 'After a long shower and eight hours of restful sleep, I woke up feeling completely refreshed and energetic.'
+      },
+      {
+        id: 18,
+        word: 'checkup',
+        pos: 'noun',
+        posFull: 'noun',
+        enDef: 'a medical examination to test your general state of health',
+        zhDef: '體檢，健康檢查',
+        example: 'It is important to visit your doctor at least once a year for a routine health checkup to monitor your blood pressure and heart rate.'
+      },
+      {
+        id: 19,
+        word: 'sign up',
+        pos: 'phrasal verb',
+        posFull: 'phrasal verb',
+        enDef: 'to agree to become involved in an organized activity',
+        zhDef: '報名參加（某項有組織的活動）',
+        example: 'I have already signed up for online courses of this college and I hope that I can gain some knowledge in using AI.'
+      },
+      {
+        id: 20,
+        word: 'eventually',
+        pos: 'adverb',
+        posFull: 'adverb',
+        enDef: 'in the end, especially after a long time or a lot of effort, problems, etc.',
+        zhDef: '最終，終於',
+        example: "It might take him ages to finish the big project but I believe he'll do it eventually."
+      }
+    ];
+
+    /* =====================================================================
+       2. STAGE 4 QUESTION BANK: 120 CONTEXT-RICH SENTENCES (6 PER VOCAB)
+       CASE-SENSITIVE VERIFICATION
+       ===================================================================== */
+    const STAGE4_QUESTIONS = [
+      // 1. merge
+      {
+        id: 's4-1-1',
+        wordKey: 'merge',
+        sentence: 'In the future, Hong Kong, Shenzhen and Guangzhou may ______ into one huge city.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+      {
+        id: 's4-1-2',
+        wordKey: 'merge',
+        sentence: 'The CEO of the company has just decided to ______ the two companies into one in the meeting.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+      {
+        id: 's4-1-3',
+        wordKey: 'merge',
+        sentence: 'Traffic slowed to a crawl as three highway lanes had to ______ into a single lane due to construction.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+      {
+        id: 's4-1-4',
+        wordKey: 'merge',
+        sentence: 'The two tech startups agreed to ______ their operations to create a single dominant software provider.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+      {
+        id: 's4-1-5',
+        wordKey: 'merge',
+        sentence: 'If both regional banks decide to ______, they will become the largest financial institution in the area.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+      {
+        id: 's4-1-6',
+        wordKey: 'merge',
+        sentence: 'The two creative studios decided to ______ so they could bid effectively on larger global contracts.',
+        expected: 'merge',
+        accepted: ['merge'],
+        caseHint: 'lowercase (mid-sentence verb)',
+        zhDef: '(使)合併'
+      },
+
+      // 2. urban
+      {
+        id: 's4-2-1',
+        wordKey: 'urban',
+        sentence: 'Pollution has reached disturbingly high levels in some ______ areas.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+      {
+        id: 's4-2-2',
+        wordKey: 'urban',
+        sentence: 'Many young people leave quiet rural villages to move to ______ areas because big cities offer more career opportunities and convenient facilities.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+      {
+        id: 's4-2-3',
+        wordKey: 'urban',
+        sentence: 'City planners are planting more trees to reduce high summer temperatures in dense ______ neighborhoods.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+      {
+        id: 's4-2-4',
+        wordKey: 'urban',
+        sentence: 'The rapid expansion of ______ centers has led to a greater need for efficient public transportation.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+      {
+        id: 's4-2-5',
+        wordKey: 'urban',
+        sentence: 'Compared to tranquil countryside living, the fast pace of ______ life can sometimes feel exhausting.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+      {
+        id: 's4-2-6',
+        wordKey: 'urban',
+        sentence: 'Modern architects are designing green rooftops to bring a touch of nature into the ______ environment.',
+        expected: 'urban',
+        accepted: ['urban'],
+        caseHint: 'lowercase (adjective before noun)',
+        zhDef: '城市的，城鎮的'
+      },
+
+      // 3. thanks to
+      {
+        id: 's4-3-1',
+        wordKey: 'thanks to',
+        sentence: "We've reached our goal of $50,000, ______ the generosity of the public.",
+        expected: 'thanks to',
+        accepted: ['thanks to'],
+        caseHint: 'lowercase (mid-sentence idiom)',
+        zhDef: '幸虧，由於'
+      },
+      {
+        id: 's4-3-2',
+        wordKey: 'thanks to',
+        sentence: '______ all our hard work, we got the project finished in time.',
+        expected: 'Thanks to',
+        accepted: ['Thanks to'],
+        caseHint: 'Capitalized (sentence starter)',
+        zhDef: '幸虧，由於'
+      },
+      {
+        id: 's4-3-3',
+        wordKey: 'thanks to',
+        sentence: '______ modern medical advancements, people are living significantly longer and healthier lives.',
+        expected: 'Thanks to',
+        accepted: ['Thanks to'],
+        caseHint: 'Capitalized (sentence starter)',
+        zhDef: '幸虧，由於'
+      },
+      {
+        id: 's4-3-4',
+        wordKey: 'thanks to',
+        sentence: 'Our flight landed safely ahead of schedule, ______ the skilled pilot and favorable tailwinds.',
+        expected: 'thanks to',
+        accepted: ['thanks to'],
+        caseHint: 'lowercase (mid-sentence idiom)',
+        zhDef: '幸虧，由於'
+      },
+      {
+        id: 's4-3-5',
+        wordKey: 'thanks to',
+        sentence: '______ the newly built subway line, commuting between the two districts takes only fifteen minutes.',
+        expected: 'Thanks to',
+        accepted: ['Thanks to'],
+        caseHint: 'Capitalized (sentence starter)',
+        zhDef: '幸虧，由於'
+      },
+      {
+        id: 's4-3-6',
+        wordKey: 'thanks to',
+        sentence: 'The museum managed to preserve the priceless historical artifacts, ______ generous community donations.',
+        expected: 'thanks to',
+        accepted: ['thanks to'],
+        caseHint: 'lowercase (mid-sentence idiom)',
+        zhDef: '幸虧，由於'
+      },
+
+      // 4. overpopulation
+      {
+        id: 's4-4-1',
+        wordKey: 'overpopulation',
+        sentence: '______ is one of the country\'s most pressing social problems.',
+        expected: 'Overpopulation',
+        accepted: ['Overpopulation'],
+        caseHint: 'Capitalized (sentence starter noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+      {
+        id: 's4-4-2',
+        wordKey: 'overpopulation',
+        sentence: 'What are the government doing to tackle the ______ problem so that the local people can enjoy a better quality of life?',
+        expected: 'overpopulation',
+        accepted: ['overpopulation'],
+        caseHint: 'lowercase (mid-sentence noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+      {
+        id: 's4-4-3',
+        wordKey: 'overpopulation',
+        sentence: 'The country is facing severe ______, resulting in overcrowded housing, heavy traffic jams, and a shortage of public space.',
+        expected: 'overpopulation',
+        accepted: ['overpopulation'],
+        caseHint: 'lowercase (mid-sentence noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+      {
+        id: 's4-4-4',
+        wordKey: 'overpopulation',
+        sentence: 'Rapid urbanization without proper planning has worsened ______ in several metropolitan regions.',
+        expected: 'overpopulation',
+        accepted: ['overpopulation'],
+        caseHint: 'lowercase (mid-sentence noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+      {
+        id: 's4-4-5',
+        wordKey: 'overpopulation',
+        sentence: 'Resource scarcity and inadequate housing are frequent consequences of severe ______.',
+        expected: 'overpopulation',
+        accepted: ['overpopulation'],
+        caseHint: 'lowercase (mid-sentence noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+      {
+        id: 's4-4-6',
+        wordKey: 'overpopulation',
+        sentence: 'Environmentalists warn that persistent ______ places an unsustainable burden on natural freshwater supplies.',
+        expected: 'overpopulation',
+        accepted: ['overpopulation'],
+        caseHint: 'lowercase (mid-sentence noun)',
+        zhDef: '人口過多，人口過剩'
+      },
+
+      // 5. far-out
+      {
+        id: 's4-5-1',
+        wordKey: 'far-out',
+        sentence: "I've seen the video - it's pretty ______.",
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+      {
+        id: 's4-5-2',
+        wordKey: 'far-out',
+        sentence: 'Yesterday, our professor showed us one of his ______ inventions, which amazed all of us.',
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+      {
+        id: 's4-5-3',
+        wordKey: 'far-out',
+        sentence: 'The futuristic sci-fi movie featured some truly ______ concept vehicles running on antigravity.',
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+      {
+        id: 's4-5-4',
+        wordKey: 'far-out',
+        sentence: 'Although his architectural proposal seemed rather ______ at first, it turned out to be remarkably practical.',
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+      {
+        id: 's4-5-5',
+        wordKey: 'far-out',
+        sentence: "Visitors were fascinated by the artist's ______ sculptures made entirely from recycled electronic components.",
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+      {
+        id: 's4-5-6',
+        wordKey: 'far-out',
+        sentence: 'Designing an entire underwater city sounded like a ______ idea, but marine engineers took the blueprint seriously.',
+        expected: 'far-out',
+        accepted: ['far-out', 'far out'],
+        caseHint: 'lowercase (adjective)',
+        zhDef: '異乎尋常的，奇特的'
+      },
+
+      // 6. prediction
+      {
+        id: 's4-6-1',
+        wordKey: 'prediction',
+        sentence: "Please don't ask me to make any ______ about tomorrow's meeting.",
+        expected: 'predictions',
+        accepted: ['predictions', 'prediction'],
+        caseHint: 'lowercase (plural noun)',
+        zhDef: '預計，預料'
+      },
+      {
+        id: 's4-6-2',
+        wordKey: 'prediction',
+        sentence: "What are your ______ for Macau's economy? Do you think it will be improved in the following few years?",
+        expected: 'predictions',
+        accepted: ['predictions', 'prediction'],
+        caseHint: 'lowercase (plural noun)',
+        zhDef: '預計，預料'
+      },
+      {
+        id: 's4-6-3',
+        wordKey: 'prediction',
+        sentence: "Scientists' ______ about climate change has come true in different parts of the world.",
+        expected: 'prediction',
+        accepted: ['prediction', 'predictions'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '預計，預料'
+      },
+      {
+        id: 's4-6-4',
+        wordKey: 'prediction',
+        sentence: 'The meteorologist made an accurate ______ that heavy rainfall would arrive before evening.',
+        expected: 'prediction',
+        accepted: ['prediction'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '預計，預料'
+      },
+      {
+        id: 's4-6-5',
+        wordKey: 'prediction',
+        sentence: "Economic analysts shared their gloomy ______ regarding next quarter's market growth.",
+        expected: 'prediction',
+        accepted: ['prediction'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '預計，預料'
+      },
+      {
+        id: 's4-6-6',
+        wordKey: 'prediction',
+        sentence: 'Her bold ______ that electric vehicles would dominate sales came true within a decade.',
+        expected: 'prediction',
+        accepted: ['prediction'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '預計，預料'
+      },
+
+      // 7. a walk in the park
+      {
+        id: 's4-7-1',
+        wordKey: 'a walk in the park',
+        sentence: "He's used to hard physical work - this is ______ to him.",
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+      {
+        id: 's4-7-2',
+        wordKey: 'a walk in the park',
+        sentence: 'He is one of the top students in our class; therefore, solving that math problem was ______ to him.',
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+      {
+        id: 's4-7-3',
+        wordKey: 'a walk in the park',
+        sentence: 'After training rigorously for six months, running a five-kilometer race was ______ for Sarah.',
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+      {
+        id: 's4-7-4',
+        wordKey: 'a walk in the park',
+        sentence: 'Do not underestimate this final exam; passing it will certainly not be ______.',
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+      {
+        id: 's4-7-5',
+        wordKey: 'a walk in the park',
+        sentence: 'For an experienced programmer, fixing that simple syntax error was ______.',
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+      {
+        id: 's4-7-6',
+        wordKey: 'a walk in the park',
+        sentence: 'Cooking dinner for two people is ______ compared to preparing a banquet for fifty guests.',
+        expected: 'a walk in the park',
+        accepted: ['a walk in the park'],
+        caseHint: 'lowercase idiom',
+        zhDef: '簡單易做的事'
+      },
+
+      // 8. resident
+      {
+        id: 's4-8-1',
+        wordKey: 'resident',
+        sentence: 'The local ______ were angry at the lack of parking spaces.',
+        expected: 'residents',
+        accepted: ['residents', 'resident'],
+        caseHint: 'lowercase (plural noun)',
+        zhDef: '居民，住戶'
+      },
+      {
+        id: 's4-8-2',
+        wordKey: 'resident',
+        sentence: 'The local ______ are always angry at the lack of parking spaces in Macau.',
+        expected: 'residents',
+        accepted: ['residents', 'resident'],
+        caseHint: 'lowercase (plural noun)',
+        zhDef: '居民，住戶'
+      },
+      {
+        id: 's4-8-3',
+        wordKey: 'resident',
+        sentence: 'Every permanent ______ of the district is invited to attend the annual town hall meeting.',
+        expected: 'resident',
+        accepted: ['resident'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '居民，住戶'
+      },
+      {
+        id: 's4-8-4',
+        wordKey: 'resident',
+        sentence: 'As a lifelong ______ of this coastal island, Mr. Lee knows every quiet cove along the bay.',
+        expected: 'resident',
+        accepted: ['resident'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '居民，住戶'
+      },
+      {
+        id: 's4-8-5',
+        wordKey: 'resident',
+        sentence: 'The new community center organizes weekend activities for each neighborhood ______.',
+        expected: 'resident',
+        accepted: ['resident'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '居民，住戶'
+      },
+      {
+        id: 's4-8-6',
+        wordKey: 'resident',
+        sentence: 'To receive a library card, you must provide proof that you are a registered ______ of the city.',
+        expected: 'resident',
+        accepted: ['resident'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '居民，住戶'
+      },
+
+      // 9. nightmare
+      {
+        id: 's4-9-1',
+        wordKey: 'nightmare',
+        sentence: 'Being trapped underwater is my worst ______.',
+        expected: 'nightmare',
+        accepted: ['nightmare'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+      {
+        id: 's4-9-2',
+        wordKey: 'nightmare',
+        sentence: "I shouldn't have watched that movie. Yesterday it gave me ______.",
+        expected: 'nightmares',
+        accepted: ['nightmares', 'nightmare'],
+        caseHint: 'lowercase (plural noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+      {
+        id: 's4-9-3',
+        wordKey: 'nightmare',
+        sentence: 'Getting stuck in a six-hour traffic jam during a torrential storm was an absolute ______.',
+        expected: 'nightmare',
+        accepted: ['nightmare'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+      {
+        id: 's4-9-4',
+        wordKey: 'nightmare',
+        sentence: "Losing her passport the day before an international flight was every traveler's worst ______.",
+        expected: 'nightmare',
+        accepted: ['nightmare'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+      {
+        id: 's4-9-5',
+        wordKey: 'nightmare',
+        sentence: 'The sudden computer crash right before the project deadline turned into a stressful ______ for the whole team.',
+        expected: 'nightmare',
+        accepted: ['nightmare'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+      {
+        id: 's4-9-6',
+        wordKey: 'nightmare',
+        sentence: 'Waking up to find their basement completely flooded was an unexpected ______ for the homeowners.',
+        expected: 'nightmare',
+        accepted: ['nightmare'],
+        caseHint: 'lowercase (singular noun)',
+        zhDef: '極不愉快的事情，可怕的經歷'
+      },
+
+      // 10. self-sufficient
+      {
+        id: 's4-10-1',
+        wordKey: 'self-sufficient',
+        sentence: 'The programme aims to make the country ______ in food production and to cut energy imports.',
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+      {
+        id: 's4-10-2',
+        wordKey: 'self-sufficient',
+        sentence: "Joe's father passed away when he was seven, and consequently he learned to be ______ from an early age.",
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+      {
+        id: 's4-10-3',
+        wordKey: 'self-sufficient',
+        sentence: 'By growing their own vegetables and raising livestock, the local farmers have become completely ______ without relying on imported food.',
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+      {
+        id: 's4-10-4',
+        wordKey: 'self-sufficient',
+        sentence: 'The remote mountain research base has solar generators and water filters, making it entirely ______.',
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+      {
+        id: 's4-10-5',
+        wordKey: 'self-sufficient',
+        sentence: 'Living off the grid requires families to become completely ______ in power and water resources.',
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+      {
+        id: 's4-10-6',
+        wordKey: 'self-sufficient',
+        sentence: 'The island eco-village generates its own electricity and harvests rainwater to stay ______ year-round.',
+        expected: 'self-sufficient',
+        accepted: ['self-sufficient', 'self sufficient'],
+        caseHint: 'lowercase adjective',
+        zhDef: '自給自足的'
+      },
+
+      // 11. gravity
+      {
+        id: 's4-11-1',
+        wordKey: 'gravity',
+        sentence: 'The most difficult part of space travel for the team was adjusting to the change in ______.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+      {
+        id: 's4-11-2',
+        wordKey: 'gravity',
+        sentence: 'A ball rolling down a hill or stairs moves downwards because of ______.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+      {
+        id: 's4-11-3',
+        wordKey: 'gravity',
+        sentence: 'Floating in the space station is a unique experience for astronauts because there is almost zero ______ pulling them downward.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+      {
+        id: 's4-11-4',
+        wordKey: 'gravity',
+        sentence: 'Isaac Newton formulated the universal law of ______ after observing an apple falling from a tree.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+      {
+        id: 's4-11-5',
+        wordKey: 'gravity',
+        sentence: 'Because the Moon has much weaker ______ than Earth, astronauts could leap high into the air with minimal effort.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+      {
+        id: 's4-11-6',
+        wordKey: 'gravity',
+        sentence: 'Heavy objects dropped from the top of the tower accelerate toward the ground due to the force of ______.',
+        expected: 'gravity',
+        accepted: ['gravity'],
+        caseHint: 'lowercase noun',
+        zhDef: '（尤指地球的）重力，引力'
+      },
+
+      // 12. spectacular
+      {
+        id: 's4-12-1',
+        wordKey: 'spectacular',
+        sentence: 'There was a ______ sunset last night.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+      {
+        id: 's4-12-2',
+        wordKey: 'spectacular',
+        sentence: 'I really recommend this place because it is famous for its ______ countryside.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+      {
+        id: 's4-12-3',
+        wordKey: 'spectacular',
+        sentence: 'Thousands of tourists gathered on top of the mountain to admire the ______ view of the golden sunrise.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+      {
+        id: 's4-12-4',
+        wordKey: 'spectacular',
+        sentence: 'The fireworks display over Victoria Harbour at midnight was truly ______.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+      {
+        id: 's4-12-5',
+        wordKey: 'spectacular',
+        sentence: 'Hikers who reached the summit were rewarded with a ______ panorama of snow-capped peaks.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+      {
+        id: 's4-12-6',
+        wordKey: 'spectacular',
+        sentence: 'The acrobats performed a series of ______ flips and aerial stunts that left the audience cheering.',
+        expected: 'spectacular',
+        accepted: ['spectacular'],
+        caseHint: 'lowercase adjective',
+        zhDef: '壯觀的，令人驚歎的'
+      },
+
+      // 13. solar panel
+      {
+        id: 's4-13-1',
+        wordKey: 'solar panel',
+        sentence: '______ are used to power satellites.',
+        expected: 'Solar panels',
+        accepted: ['Solar panels', 'Solar panel'],
+        caseHint: 'Capitalized (sentence starter plural noun phrase)',
+        zhDef: '太陽能電板'
+      },
+      {
+        id: 's4-13-2',
+        wordKey: 'solar panel',
+        sentence: 'It is a good idea to use ______ to convert sunlight into electricity in order to conserve more energy.',
+        expected: 'solar panels',
+        accepted: ['solar panels', 'solar panel'],
+        caseHint: 'lowercase plural noun phrase',
+        zhDef: '太陽能電板'
+      },
+      {
+        id: 's4-13-3',
+        wordKey: 'solar panel',
+        sentence: 'The eco-friendly hotel installed dozens of ______ on its roof to absorb sunlight and convert it into electricity.',
+        expected: 'solar panels',
+        accepted: ['solar panels', 'solar panel'],
+        caseHint: 'lowercase plural noun phrase',
+        zhDef: '太陽能電板'
+      },
+      {
+        id: 's4-13-4',
+        wordKey: 'solar panel',
+        sentence: 'A modern ______ can convert sunlight into usable electricity even on overcast days.',
+        expected: 'solar panel',
+        accepted: ['solar panel'],
+        caseHint: 'lowercase singular noun phrase',
+        zhDef: '太陽能電板'
+      },
+      {
+        id: 's4-13-5',
+        wordKey: 'solar panel',
+        sentence: 'Installing an efficient ______ array on the school roof drastically cut down monthly power bills.',
+        expected: 'solar panel',
+        accepted: ['solar panel'],
+        caseHint: 'lowercase noun phrase as modifier',
+        zhDef: '太陽能電板'
+      },
+      {
+        id: 's4-13-6',
+        wordKey: 'solar panel',
+        sentence: 'Engineers installed a compact ______ to supply continuous clean power to the weather sensor.',
+        expected: 'solar panel',
+        accepted: ['solar panel'],
+        caseHint: 'lowercase singular noun phrase',
+        zhDef: '太陽能電板'
+      },
+
+      // 14. generate
+      {
+        id: 's4-14-1',
+        wordKey: 'generate',
+        sentence: 'The wind farm may be able to ______ enough electricity for 2,000 homes.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+      {
+        id: 's4-14-2',
+        wordKey: 'generate',
+        sentence: 'The wind farm in this village may be able to ______ enough electricity or power for 2,000 homes.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+      {
+        id: 's4-14-3',
+        wordKey: 'generate',
+        sentence: 'These huge wind turbines near the coast can ______ enough clean power for thousands of homes every day.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+      {
+        id: 's4-14-4',
+        wordKey: 'generate',
+        sentence: 'Hydroelectric dams harness the flow of rushing river water to ______ clean electrical energy.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+      {
+        id: 's4-14-5',
+        wordKey: 'generate',
+        sentence: 'Geothermal power plants utilize deep underground heat to ______ reliable steam power.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+      {
+        id: 's4-14-6',
+        wordKey: 'generate',
+        sentence: 'Bicycle dynamos ______ small currents of electricity to illuminate headlights as the rider pedals.',
+        expected: 'generate',
+        accepted: ['generate'],
+        caseHint: 'lowercase verb',
+        zhDef: '（以某種形式）産生，發生'
+      },
+
+      // 15. dull
+      {
+        id: 's4-15-1',
+        wordKey: 'dull',
+        sentence: "He's pleasant enough, but rather ______.",
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+      {
+        id: 's4-15-2',
+        wordKey: 'dull',
+        sentence: "For years, my father has been doing the same ______ routine job every day and he thinks it's really uninteresting.",
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+      {
+        id: 's4-15-3',
+        wordKey: 'dull',
+        sentence: 'The lecture on tax regulations was so ______ that half the students struggled to keep their eyes open.',
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+      {
+        id: 's4-15-4',
+        wordKey: 'dull',
+        sentence: 'Without any interactive activities or games, the three-hour workshop felt exceptionally ______.',
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+      {
+        id: 's4-15-5',
+        wordKey: 'dull',
+        sentence: 'Staring at spreadsheet numbers all afternoon can become monotonous and ______.',
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+      {
+        id: 's4-15-6',
+        wordKey: 'dull',
+        sentence: 'The movie had great visual effects, but the predictable storyline made it feel rather ______.',
+        expected: 'dull',
+        accepted: ['dull'],
+        caseHint: 'lowercase adjective',
+        zhDef: '枯燥乏味的，無趣的'
+      },
+
+      // 16. virtual
+      {
+        id: 's4-16-1',
+        wordKey: 'virtual',
+        sentence: 'This platform has continued to be developed into a more fully featured ______ learning environment.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+      {
+        id: 's4-16-2',
+        wordKey: 'virtual',
+        sentence: 'This website has been upgraded recently and it allows you to take a ______ tour of the art gallery.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+      {
+        id: 's4-16-3',
+        wordKey: 'virtual',
+        sentence: 'Wearing a VR headset allows students to take a ______ tour of ancient historical sites without leaving their classroom.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+      {
+        id: 's4-16-4',
+        wordKey: 'virtual',
+        sentence: 'During the school closure, classes transitioned to a ______ format so students could keep studying safely from home.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+      {
+        id: 's4-16-5',
+        wordKey: 'virtual',
+        sentence: 'Many multinational tech firms hold weekly ______ meetings to collaborate smoothly across different time zones.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+      {
+        id: 's4-16-6',
+        wordKey: 'virtual',
+        sentence: 'The science museum designed an immersive ______ exhibition accessible to visitors anywhere in the world.',
+        expected: 'virtual',
+        accepted: ['virtual'],
+        caseHint: 'lowercase adjective',
+        zhDef: '（透過電腦）虛擬的'
+      },
+
+      // 17. refreshed
+      {
+        id: 's4-17-1',
+        wordKey: 'refreshed',
+        sentence: 'He felt ______ after his holiday.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+      {
+        id: 's4-17-2',
+        wordKey: 'refreshed',
+        sentence: 'I feel so ______ and full of energy after drinking that cup of iced tea.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+      {
+        id: 's4-17-3',
+        wordKey: 'refreshed',
+        sentence: 'After a long shower and eight hours of restful sleep, I woke up feeling completely ______ and energetic.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+      {
+        id: 's4-17-4',
+        wordKey: 'refreshed',
+        sentence: 'Splashing cool spring water on my face made me feel instantly ______ after the strenuous mountain hike.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+      {
+        id: 's4-17-5',
+        wordKey: 'refreshed',
+        sentence: 'A brisk twenty-minute walk in the cool morning air left her feeling thoroughly ______.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+      {
+        id: 's4-17-6',
+        wordKey: 'refreshed',
+        sentence: 'Taking a short power nap helped the exhausted student wake up ______ and ready to study again.',
+        expected: 'refreshed',
+        accepted: ['refreshed'],
+        caseHint: 'lowercase adjective',
+        zhDef: '恢復了精力的；精神振作的'
+      },
+
+      // 18. checkup
+      {
+        id: 's4-18-1',
+        wordKey: 'checkup',
+        sentence: 'She goes to her doctor for regular ______.',
+        expected: 'checkups',
+        accepted: ['checkups', 'checkup'],
+        caseHint: 'lowercase plural noun',
+        zhDef: '體檢，健康檢查'
+      },
+      {
+        id: 's4-18-2',
+        wordKey: 'checkup',
+        sentence: "I need to go to my dentist for regular ______ tomorrow morning; therefore, I won't be able to go to the shopping mall with you.",
+        expected: 'checkups',
+        accepted: ['checkups', 'checkup'],
+        caseHint: 'lowercase plural noun',
+        zhDef: '體檢，健康檢查'
+      },
+      {
+        id: 's4-18-3',
+        wordKey: 'checkup',
+        sentence: 'It is important to visit your doctor at least once a year for a routine health ______ to monitor your blood pressure and heart rate.',
+        expected: 'checkup',
+        accepted: ['checkup'],
+        caseHint: 'lowercase singular noun',
+        zhDef: '體檢，健康檢查'
+      },
+      {
+        id: 's4-18-4',
+        wordKey: 'checkup',
+        sentence: 'The veterinarian conducted a thorough medical ______ to ensure the puppy was growing normally.',
+        expected: 'checkup',
+        accepted: ['checkup'],
+        caseHint: 'lowercase singular noun',
+        zhDef: '體檢，健康檢查'
+      },
+      {
+        id: 's4-18-5',
+        wordKey: 'checkup',
+        sentence: 'Before joining the varsity athletic squad, all athletes must undergo a mandatory physical ______.',
+        expected: 'checkup',
+        accepted: ['checkup'],
+        caseHint: 'lowercase singular noun',
+        zhDef: '體檢，健康檢查'
+      },
+      {
+        id: 's4-18-6',
+        wordKey: 'checkup',
+        sentence: 'Scheduling a routine dental ______ can detect and prevent minor cavities before they turn painful.',
+        expected: 'checkup',
+        accepted: ['checkup'],
+        caseHint: 'lowercase singular noun',
+        zhDef: '體檢，健康檢查'
+      },
+
+      // 19. sign up
+      {
+        id: 's4-19-1',
+        wordKey: 'sign up',
+        sentence: "She's ______ for evening classes at the community college.",
+        expected: 'signed up',
+        accepted: ['signed up', 'sign up'],
+        caseHint: 'lowercase past participle verb form',
+        zhDef: '報名參加'
+      },
+      {
+        id: 's4-19-2',
+        wordKey: 'sign up',
+        sentence: 'I have already ______ for online courses of this college and I hope that I can gain some knowledge in using AI.',
+        expected: 'signed up',
+        accepted: ['signed up', 'sign up'],
+        caseHint: 'lowercase past participle verb form',
+        zhDef: '報名參加'
+      },
+      {
+        id: 's4-19-3',
+        wordKey: 'sign up',
+        sentence: 'Over fifty enthusiastic students rushed to ______ for the annual school robotics competition.',
+        expected: 'sign up',
+        accepted: ['sign up'],
+        caseHint: 'lowercase base form verb phrase',
+        zhDef: '報名參加'
+      },
+      {
+        id: 's4-19-4',
+        wordKey: 'sign up',
+        sentence: 'If you wish to participate in the charity fun run, remember to ______ on the website before Friday.',
+        expected: 'sign up',
+        accepted: ['sign up'],
+        caseHint: 'lowercase base form verb phrase',
+        zhDef: '報名參加'
+      },
+      {
+        id: 's4-19-5',
+        wordKey: 'sign up',
+        sentence: 'Many local volunteers decided to ______ for the weekend beach cleanup campaign to protect sea turtles.',
+        expected: 'sign up',
+        accepted: ['sign up'],
+        caseHint: 'lowercase base form verb phrase',
+        zhDef: '報名參加'
+      },
+      {
+        id: 's4-19-6',
+        wordKey: 'sign up',
+        sentence: "Don't forget to ______ for the digital illustration workshop before all thirty seats are taken.",
+        expected: 'sign up',
+        accepted: ['sign up'],
+        caseHint: 'lowercase base form verb phrase',
+        zhDef: '報名參加'
+      },
+
+      // 20. eventually
+      {
+        id: 's4-20-1',
+        wordKey: 'eventually',
+        sentence: "It might take him ages but he'll do it ______.",
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      },
+      {
+        id: 's4-20-2',
+        wordKey: 'eventually',
+        sentence: "It might take him ages to finish the big project but I believe he'll do it ______.",
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      },
+      {
+        id: 's4-20-3',
+        wordKey: 'eventually',
+        sentence: 'After months of intense negotiations and unexpected setbacks, the two teams ______ reached a compromise.',
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      },
+      {
+        id: 's4-20-4',
+        wordKey: 'eventually',
+        sentence: 'Although the laboratory experiment failed multiple times, the research scientists ______ discovered the key compound.',
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      },
+      {
+        id: 's4-20-5',
+        wordKey: 'eventually',
+        sentence: 'If you practice consistently every single day, you will ______ become fluent in English.',
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      },
+      {
+        id: 's4-20-6',
+        wordKey: 'eventually',
+        sentence: 'The mountaineers weathered the blizzard and ______ stood proudly together atop the mountain summit.',
+        expected: 'eventually',
+        accepted: ['eventually'],
+        caseHint: 'lowercase adverb',
+        zhDef: '最終，終於'
+      }
+    ];
+
+    /* =====================================================================
+       3. PRAISE & ENCOURAGEMENT PHRASES (Randomized on Correct Answer)
+       ===================================================================== */
+    const PRAISE_LIST = [
+      { en: "🌟 Outstanding work! Spot on!", zh: "太棒了！精準無誤！" },
+      { en: "🎯 Brilliant deduction! Perfect accuracy!", zh: "神準！完全正確！" },
+      { en: "👏 Excellent grasp of the vocabulary!", zh: "詞彙掌握得非常扎實！" },
+      { en: "🚀 Magnificent! You're mastering this unit!", zh: "實力非凡！已經完全掌握！" },
+      { en: "✨ Spot on! Exactly right!", zh: "一針見血！答得漂亮！" },
+      { en: "🔥 Impressive! Keep the streak burning!", zh: "氣勢如虹！繼續連勝！" },
+      { en: "💡 Superb answer! Clear as crystal!", zh: "思路清晰！極致精確！" },
+      { en: "🎉 Bingo! You nailed it!", zh: "完全正確！答題節奏太棒了！" },
+      { en: "🏆 Top-notch performance!", zh: "頂尖水準！令人讚賞！" },
+      { en: "⚡ Lightning fast and razor sharp!", zh: "反應迅捷，判斷準確！" },
+      { en: "🥇 Flawless mastery! Outstanding!", zh: "無懈可擊的答案！" },
+      { en: "🌟 Keep up this stellar momentum!", zh: "勢不可擋！表現優異！" }
+    ];
+
+    /* =====================================================================
+       4. APPLICATION STATE & PERSISTENCE
+       ===================================================================== */
+    let currentStage = 'guide'; // 'guide', 's1', 's2', 's3', 's4'
+    let currentQuestionIdx = 0;
+    let questionsList = []; // active questions for current stage
+    let questionAnswersState = {}; // maps question ID to { answered: bool, isCorrect: bool, userWord: string, userPos: string }
+    let stage4BatchIndex = 0; // 0 to 5 for 6 batches of 20
+    let streakCount = 0;
+    let totalCorrect = 0;
+    let totalAnswered = 0;
+    let soundEnabled = true;
+    let presentationMode = false;
+
+    // Student Lottery State
+    let studentRoster = [];
+    let drawnStudents = [];
+    let currentWinner = '';
+    let isRolling = false;
+    let rollInterval = null;
+
+    // Initialize Default Roster (Student No. 1 to 35)
+    function getDefaultRoster() {
+      const list = [];
+      for (let i = 1; i <= 35; i++) {
+        list.push(`Student No. ${i}`);
+      }
+      return list;
+    }
+
+    /* Web Audio Procedural Sound Effects */
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(freq, type, duration, gainLevel) {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type || 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(gainLevel || 0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (err) {
+        // audio playback failure ignored safely
+      }
+    }
+
+    function playCorrectSound() {
+      if (!soundEnabled) return;
+      playTone(523.25, 'sine', 0.1, 0.2); // C5
+      setTimeout(() => playTone(659.25, 'sine', 0.12, 0.2), 90); // E5
+      setTimeout(() => playTone(783.99, 'sine', 0.25, 0.25), 180); // G5
+    }
+
+    function playIncorrectSound() {
+      if (!soundEnabled) return;
+      playTone(330, 'sawtooth', 0.18, 0.15);
+      setTimeout(() => playTone(260, 'sawtooth', 0.25, 0.15), 120);
+    }
+
+    function playTickSound() {
+      if (!soundEnabled) return;
+      playTone(800 + Math.random() * 200, 'square', 0.03, 0.08);
+    }
+
+    function playFanfareSound() {
+      if (!soundEnabled) return;
+      playTone(440, 'triangle', 0.12, 0.2);
+      setTimeout(() => playTone(554.37, 'triangle', 0.12, 0.2), 110);
+      setTimeout(() => playTone(659.25, 'triangle', 0.15, 0.2), 220);
+      setTimeout(() => playTone(880, 'triangle', 0.4, 0.25), 330);
+    }
+
+    /* Speech Synthesis Pronunciation */
+    function speakText(text) {
+      if (!window.speechSynthesis) return;
+      try {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'en-US';
+        utter.rate = 0.9;
+        window.speechSynthesis.speak(utter);
+      } catch (e) {
+        // speech synthesis fallback
+      }
+    }
+
+    function speakCurrentWord() {
+      const q = questionsList[currentQuestionIdx];
+      if (!q) return;
+      const word = q.word || q.expected || q.wordKey;
+      if (word) speakText(word);
+    }
+
+    function speakRandomWord() {
+      const randomItem = VOCAB_DATA[Math.floor(Math.random() * VOCAB_DATA.length)];
+      if (randomItem) speakText(randomItem.word);
+    }
+
+    /* =====================================================================
+       5. INITIALIZATION & LIFECYCLE
+       ===================================================================== */
+    window.addEventListener('DOMContentLoaded', async () => {
+      // 1. Initialize default roster
+      studentRoster = getDefaultRoster();
+      updateStudentCountBadges();
+      populateRosterTextarea();
+
+      // 2. Render Study Guide
+      renderVocabGuide();
+
+      // 3. Load State from Notebook Shim API if available
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
+          const savedState = await window.notebookAppApi.getAppState();
+          if (savedState) {
+            if (Array.isArray(savedState.studentRoster) && savedState.studentRoster.length > 0) {
+              studentRoster = savedState.studentRoster;
+              updateStudentCountBadges();
+              populateRosterTextarea();
+            }
+            if (Array.isArray(savedState.drawnStudents)) {
+              drawnStudents = savedState.drawnStudents;
+              renderDrawnHistory();
+            }
+            if (typeof savedState.streakCount === 'number') streakCount = savedState.streakCount;
+            if (typeof savedState.totalCorrect === 'number') totalCorrect = savedState.totalCorrect;
+            if (typeof savedState.totalAnswered === 'number') totalAnswered = savedState.totalAnswered;
+            if (typeof savedState.soundEnabled === 'boolean') soundEnabled = savedState.soundEnabled;
+            if (typeof savedState.presentationMode === 'boolean') {
+              presentationMode = savedState.presentationMode;
+              applyPresentationMode();
+            }
+            updateKpiDisplay();
+          }
+        }
+      } catch (err) {
+        // Fallback silently if API not available
+      }
+
+      // Notify App Ready
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === 'function') {
+        window.notebookAppApi.notifyAppReady();
+      }
+    });
+
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === 'function') {
+          await window.notebookAppApi.setAppState({
+            studentRoster,
+            drawnStudents,
+            streakCount,
+            totalCorrect,
+            totalAnswered,
+            soundEnabled,
+            presentationMode
+          });
+        }
+      } catch (err) {
+        // Persist failure handled gracefully
+      }
+    }
+
+    /* =====================================================================
+       6. UI MODES & TOGGLES (Presentation, Sound, Drawer)
+       ===================================================================== */
+    function togglePresentationMode() {
+      presentationMode = !presentationMode;
+      applyPresentationMode();
+      persistState();
+    }
+
+    function applyPresentationMode() {
+      const btn = document.getElementById('label-presentation-mode');
+      if (presentationMode) {
+        document.body.classList.add('presentation-mode');
+        if (btn) btn.textContent = 'Big Screen (ON)';
+      } else {
+        document.body.classList.remove('presentation-mode');
+        if (btn) btn.textContent = 'Projector Mode';
+      }
+    }
+
+    function toggleSoundFX() {
+      soundEnabled = !soundEnabled;
+      const label = document.getElementById('label-sound-mode');
+      if (label) {
+        label.textContent = soundEnabled ? 'Sound: ON' : 'Sound: OFF';
+      }
+      if (soundEnabled) playTone(500, 'sine', 0.1, 0.15);
+      persistState();
+    }
+
+    function openStudentDrawer() {
+      const drawer = document.getElementById('student-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      if (drawer) drawer.classList.add('open');
+      if (overlay) overlay.classList.add('open');
+    }
+
+    function closeStudentDrawer() {
+      const drawer = document.getElementById('student-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      if (drawer) drawer.classList.remove('open');
+      if (overlay) overlay.classList.remove('open');
+    }
+
+    /* =====================================================================
+       7. STUDENT LOTTERY DRAWER LOGIC
+       ===================================================================== */
+    function updateStudentCountBadges() {
+      const badgeCount = document.getElementById('badge-student-count');
+      const poolCount = document.getElementById('lottery-pool-count');
+      const rosterCount = document.getElementById('roster-count-label');
+      const uncalledCount = getRemainingStudentPool().length;
+
+      if (badgeCount) badgeCount.textContent = `(${studentRoster.length})`;
+      if (poolCount) poolCount.textContent = `${uncalledCount} / ${studentRoster.length} remaining`;
+      if (rosterCount) rosterCount.textContent = `${studentRoster.length}`;
+    }
+
+    function populateRosterTextarea() {
+      const textarea = document.getElementById('roster-textarea');
+      if (textarea) textarea.value = studentRoster.join('\n');
+    }
+
+    function toggleRosterEditor() {
+      const box = document.getElementById('roster-editor-box');
+      if (!box) return;
+      box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+    }
+
+    function saveCustomRoster() {
+      const textarea = document.getElementById('roster-textarea');
+      if (!textarea) return;
+      const lines = textarea.value.split('\n')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+
+      if (lines.length === 0) {
+        alert('Please enter at least one student name/number.');
+        return;
+      }
+
+      studentRoster = lines;
+      drawnStudents = [];
+      updateStudentCountBadges();
+      renderDrawnHistory();
+      toggleRosterEditor();
+      const display = document.getElementById('lottery-winner-name');
+      if (display) display.textContent = 'Roster Updated!';
+      persistState();
+    }
+
+    function restoreDefaultRoster() {
+      studentRoster = getDefaultRoster();
+      drawnStudents = [];
+      populateRosterTextarea();
+      updateStudentCountBadges();
+      renderDrawnHistory();
+      persistState();
+    }
+
+    function getRemainingStudentPool() {
+      const chkNoRepeat = document.getElementById('chk-no-repeat');
+      const noRepeat = chkNoRepeat ? chkNoRepeat.checked : true;
+      if (!noRepeat) {
+        return studentRoster.slice();
+      }
+      return studentRoster.filter(s => !drawnStudents.includes(s));
+    }
+
+    function spinLotteryPicker() {
+      if (isRolling) return;
+      let pool = getRemainingStudentPool();
+      if (pool.length === 0) {
+        if (confirm('All students have been picked! Reset the drawn pool and continue?')) {
+          resetDrawnHistory();
+          pool = getRemainingStudentPool();
+        } else {
+          return;
+        }
+      }
+
+      isRolling = true;
+      const display = document.getElementById('lottery-winner-name');
+      const btnSpin = document.getElementById('btn-spin-lottery');
+      if (btnSpin) btnSpin.disabled = true;
+      if (display) display.classList.remove('winner-flash');
+
+      let rollCount = 0;
+      const totalSteps = 20;
+
+      rollInterval = setInterval(() => {
+        rollCount++;
+        const randomIndex = Math.floor(Math.random() * studentRoster.length);
+        const candidate = studentRoster[randomIndex];
+        if (display) display.textContent = candidate;
+        playTickSound();
+
+        if (rollCount >= totalSteps) {
+          clearInterval(rollInterval);
+          isRolling = false;
+
+          // Pick actual final winner from remaining pool
+          const finalIndex = Math.floor(Math.random() * pool.length);
+          currentWinner = pool[finalIndex];
+
+          drawnStudents.push(currentWinner);
+          if (display) {
+            display.textContent = `🎉 ${currentWinner}`;
+            display.classList.add('winner-flash');
+          }
+          if (btnSpin) btnSpin.disabled = false;
+
+          playFanfareSound();
+          updateStudentCountBadges();
+          renderDrawnHistory();
+          persistState();
+        }
+      }, 75);
+    }
+
+    function assignWinnerToCurrentQuestion() {
+      if (!currentWinner) {
+        alert('Please spin and pick a student first!');
+        return;
+      }
+      const chip = document.getElementById('assigned-student-chip');
+      const nameEl = document.getElementById('assigned-student-name');
+      if (chip && nameEl) {
+        nameEl.textContent = currentWinner;
+        chip.style.display = 'inline-flex';
+      }
+      closeStudentDrawer();
+    }
+
+    function clearAssignedStudent() {
+      const chip = document.getElementById('assigned-student-chip');
+      if (chip) chip.style.display = 'none';
+    }
+
+    function pickStudentForThisQuestion() {
+      openStudentDrawer();
+      setTimeout(() => {
+        spinLotteryPicker();
+      }, 300);
+    }
+
+    function resetDrawnHistory() {
+      drawnStudents = [];
+      updateStudentCountBadges();
+      renderDrawnHistory();
+      const display = document.getElementById('lottery-winner-name');
+      if (display) {
+        display.textContent = 'Pool Reset!';
+        display.classList.remove('winner-flash');
+      }
+      persistState();
+    }
+
+    function renderDrawnHistory() {
+      const listContainer = document.getElementById('drawer-history-list');
+      const countEl = document.getElementById('history-count');
+      if (countEl) countEl.textContent = drawnStudents.length;
+      if (!listContainer) return;
+
+      if (drawnStudents.length === 0) {
+        listContainer.innerHTML = '<div style="color:var(--on-surface-variant); padding:4px;">No students picked yet.</div>';
+        return;
+      }
+
+      listContainer.innerHTML = drawnStudents.slice().reverse().map((name, idx) => {
+        const orderNum = drawnStudents.length - idx;
+        return `<div class="history-item"><span>#${orderNum} ${escapeHtml(name)}</span><span style="color:var(--on-surface-variant); font-size:0.75rem;">Picked</span></div>`;
+      }).join('');
+    }
+
+    function saveLotteryConfig() {
+      updateStudentCountBadges();
+    }
+
+    /* =====================================================================
+       8. STAGE SWITCHING & QUESTION GENERATION
+       ===================================================================== */
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function switchStage(stageKey) {
+      currentStage = stageKey;
+
+      // Update Tab Navigation Active State
+      const tabs = ['guide', 's1', 's2', 's3', 's4'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (btn) {
+          if (t === stageKey) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+
+      const guideView = document.getElementById('view-guide');
+      const quizView = document.getElementById('view-quiz');
+      const posGroup = document.getElementById('group-part-of-speech');
+      const stage4Banner = document.getElementById('stage4-info-banner');
+      const badgeEl = document.getElementById('quiz-stage-badge');
+      const titleEl = document.getElementById('quiz-stage-title');
+      const descEl = document.getElementById('quiz-stage-desc');
+      const promptLabel = document.getElementById('prompt-type-label');
+      const wordLabel = document.getElementById('label-vocab-word');
+      const wordHint = document.getElementById('hint-vocab-word');
+
+      if (stageKey === 'guide') {
+        if (guideView) guideView.style.display = 'block';
+        if (quizView) quizView.style.display = 'none';
+        return;
+      }
+
+      if (guideView) guideView.style.display = 'none';
+      if (quizView) quizView.style.display = 'block';
+
+      // Reset question state
+      currentQuestionIdx = 0;
+      questionAnswersState = {};
+
+      if (stageKey === 's1') {
+        // Stage 1: Vocab 1-10
+        if (badgeEl) badgeEl.textContent = '1';
+        if (titleEl) titleEl.textContent = 'Stage 1: Vocabulary Definitions (Items 1–10)';
+        if (descEl) descEl.textContent = 'Type the matching English vocabulary item and part of speech for definitions 1 to 10 (randomized order). Case-insensitive.';
+        if (posGroup) posGroup.style.display = 'flex';
+        if (stage4Banner) stage4Banner.style.display = 'none';
+        if (promptLabel) promptLabel.textContent = 'ENGLISH DEFINITION:';
+        if (wordLabel) wordLabel.textContent = 'Target Vocabulary Item';
+        if (wordHint) wordHint.textContent = 'Case-insensitive';
+
+        const s1Items = VOCAB_DATA.slice(0, 10).map(item => ({
+          type: 'vocab',
+          id: `s1-${item.id}`,
+          vocabId: item.id,
+          word: item.word,
+          pos: item.pos,
+          posFull: item.posFull,
+          prompt: item.enDef,
+          zhDef: item.zhDef,
+          example: item.example
+        }));
+        questionsList = shuffleArray(s1Items);
+
+      } else if (stageKey === 's2') {
+        // Stage 2: Vocab 11-20
+        if (badgeEl) badgeEl.textContent = '2';
+        if (titleEl) titleEl.textContent = 'Stage 2: Vocabulary Definitions (Items 11–20)';
+        if (descEl) descEl.textContent = 'Type the matching English vocabulary item and part of speech for definitions 11 to 20 (randomized order). Case-insensitive.';
+        if (posGroup) posGroup.style.display = 'flex';
+        if (stage4Banner) stage4Banner.style.display = 'none';
+        if (promptLabel) promptLabel.textContent = 'ENGLISH DEFINITION:';
+        if (wordLabel) wordLabel.textContent = 'Target Vocabulary Item';
+        if (wordHint) wordHint.textContent = 'Case-insensitive';
+
+        const s2Items = VOCAB_DATA.slice(10, 20).map(item => ({
+          type: 'vocab',
+          id: `s2-${item.id}`,
+          vocabId: item.id,
+          word: item.word,
+          pos: item.pos,
+          posFull: item.posFull,
+          prompt: item.enDef,
+          zhDef: item.zhDef,
+          example: item.example
+        }));
+        questionsList = shuffleArray(s2Items);
+
+      } else if (stageKey === 's3') {
+        // Stage 3: Vocab 1-20 Mixed
+        if (badgeEl) badgeEl.textContent = '3';
+        if (titleEl) titleEl.textContent = 'Stage 3: All 20 Vocabulary Items Mixed Challenge';
+        if (descEl) descEl.textContent = 'Comprehensive mixed test covering all 20 vocabulary items. Type the word and part of speech in randomized order.';
+        if (posGroup) posGroup.style.display = 'flex';
+        if (stage4Banner) stage4Banner.style.display = 'none';
+        if (promptLabel) promptLabel.textContent = 'ENGLISH DEFINITION:';
+        if (wordLabel) wordLabel.textContent = 'Target Vocabulary Item';
+        if (wordHint) wordHint.textContent = 'Case-insensitive';
+
+        const s3Items = VOCAB_DATA.map(item => ({
+          type: 'vocab',
+          id: `s3-${item.id}`,
+          vocabId: item.id,
+          word: item.word,
+          pos: item.pos,
+          posFull: item.posFull,
+          prompt: item.enDef,
+          zhDef: item.zhDef,
+          example: item.example
+        }));
+        questionsList = shuffleArray(s3Items);
+
+      } else if (stageKey === 's4') {
+        // Stage 4: Sentence Fill-in-the-Blank (120+ sentence bank, 20-question batches, Case-Sensitive)
+        if (badgeEl) badgeEl.textContent = '4';
+        if (titleEl) titleEl.textContent = 'Stage 4: Sentence Fill-in-the-Blank (Context Practice)';
+        if (descEl) descEl.textContent = 'Fill in the blanks with the target vocabulary. Grounded strictly in source definitions. CASE-SENSITIVE VERIFICATION.';
+        if (posGroup) posGroup.style.display = 'none';
+        if (stage4Banner) stage4Banner.style.display = 'flex';
+        if (promptLabel) promptLabel.textContent = 'SENTENCE FILL-IN-THE-BLANK (READ CONTEXT):';
+        if (wordLabel) wordLabel.textContent = 'Missing Word / Phrase (Exact Case)';
+        if (wordHint) wordHint.textContent = '⚠️ EXACT CASE-SENSITIVE';
+
+        loadStage4BatchQuestions();
+      }
+
+      loadQuestion(0);
+    }
+
+    function loadStage4BatchQuestions() {
+      // Create a batch of 20 randomized questions from the 120-item bank
+      const totalSentences = STAGE4_QUESTIONS.length;
+      const batchSize = 20;
+      const totalBatches = Math.ceil(totalSentences / batchSize);
+
+      const startIndex = (stage4BatchIndex * batchSize) % totalSentences;
+      let batchSlice = STAGE4_QUESTIONS.slice(startIndex, startIndex + batchSize);
+
+      if (batchSlice.length < batchSize) {
+        batchSlice = batchSlice.concat(STAGE4_QUESTIONS.slice(0, batchSize - batchSlice.length));
+      }
+
+      // Randomize questions within the batch
+      questionsList = shuffleArray(batchSlice.map(q => {
+        const vocabRef = VOCAB_DATA.find(v => v.word.toLowerCase() === q.wordKey.toLowerCase()) || {};
+        return {
+          type: 'sentence',
+          id: q.id,
+          wordKey: q.wordKey,
+          expected: q.expected,
+          accepted: q.accepted,
+          caseHint: q.caseHint,
+          prompt: q.sentence,
+          pos: vocabRef.pos || 'vocabulary',
+          posFull: vocabRef.posFull || 'vocabulary',
+          zhDef: q.zhDef || vocabRef.zhDef,
+          example: q.sentence.replace('______', `<strong>${q.expected}</strong>`)
+        };
+      }));
+
+      const counterEl = document.getElementById('stage4-batch-counter');
+      if (counterEl) {
+        counterEl.textContent = `Batch ${stage4BatchIndex + 1} of ${totalBatches} (Questions 1–${questionsList.length} of ${totalSentences})`;
+      }
+    }
+
+    function loadNextStage4Batch() {
+      stage4BatchIndex = (stage4BatchIndex + 1) % 6;
+      questionAnswersState = {};
+      loadStage4BatchQuestions();
+      loadQuestion(0);
+      playTone(600, 'triangle', 0.15, 0.2);
+    }
+
+    /* =====================================================================
+       9. QUESTION RENDERING & NAVIGATION
+       ===================================================================== */
+    function loadQuestion(index) {
+      if (index < 0 || index >= questionsList.length) return;
+      currentQuestionIdx = index;
+      const q = questionsList[index];
+
+      // Update counter and progress bar
+      const indicator = document.getElementById('question-index-indicator');
+      const progressBar = document.getElementById('question-progress-bar');
+      if (indicator) indicator.textContent = `Question ${index + 1} of ${questionsList.length}`;
+      if (progressBar) {
+        const pct = ((index + 1) / questionsList.length) * 100;
+        progressBar.style.width = `${pct}%`;
+      }
+
+      // Update Prompt
+      const promptEl = document.getElementById('question-prompt-text');
+      const hintEl = document.getElementById('question-prompt-subhint');
+      if (promptEl) {
+        if (q.type === 'sentence') {
+          // Highlight blank
+          promptEl.innerHTML = q.prompt.replace('______', `<span style="text-decoration: underline; text-decoration-thickness: 3px; color: var(--tertiary); font-weight:800; padding: 0 4px;">&nbsp;_______&nbsp;</span>`);
+        } else {
+          promptEl.textContent = `"${q.prompt}"`;
+        }
+      }
+
+      if (hintEl) {
+        if (q.type === 'sentence') {
+          hintEl.innerHTML = `<em>Clue:</em> ${q.zhDef} &bull; <span style="font-weight:700; color:var(--on-surface);">${q.caseHint}</span>`;
+        } else {
+          hintEl.innerHTML = `<em>Chinese Meaning:</em> <strong>${q.zhDef}</strong>`;
+        }
+      }
+
+      // Reset Inputs
+      const wordInput = document.getElementById('input-vocab-word');
+      const posInput = document.getElementById('input-pos');
+      const banner = document.getElementById('feedback-banner');
+      const cardReveal = document.getElementById('vocab-card-reveal');
+
+      if (banner) banner.classList.remove('show', 'correct', 'incorrect', 'case-warning');
+      if (cardReveal) cardReveal.style.display = 'none';
+
+      // Restore answered state if user has already answered this question
+      const existing = questionAnswersState[q.id];
+      if (existing) {
+        if (wordInput) {
+          wordInput.value = existing.userWord;
+          wordInput.disabled = true;
+        }
+        if (posInput) {
+          posInput.value = existing.userPos || '';
+          posInput.disabled = true;
+        }
+        const submitBtn = document.getElementById('btn-submit-answer');
+        if (submitBtn) submitBtn.disabled = true;
+        displayQuestionFeedback(existing.isCorrect, existing.caseMismatch, q);
+      } else {
+        if (wordInput) {
+          wordInput.value = '';
+          wordInput.disabled = false;
+          wordInput.focus();
+        }
+        if (posInput) {
+          posInput.value = '';
+          posInput.disabled = false;
+        }
+        const submitBtn = document.getElementById('btn-submit-answer');
+        if (submitBtn) submitBtn.disabled = false;
+      }
+
+      // Disable/enable Prev/Next buttons
+      const btnPrev = document.getElementById('btn-prev-q');
+      const btnNext = document.getElementById('btn-next-q');
+      if (btnPrev) btnPrev.disabled = (index === 0);
+      if (btnNext) btnNext.disabled = (index === questionsList.length - 1);
+    }
+
+    function navigateQuestion(direction) {
+      const nextIndex = currentQuestionIdx + direction;
+      if (nextIndex >= 0 && nextIndex < questionsList.length) {
+        loadQuestion(nextIndex);
+      }
+    }
+
+    function setPosInput(val) {
+      const input = document.getElementById('input-pos');
+      if (input && !input.disabled) {
+        input.value = val;
+        input.focus();
+      }
+    }
+
+    /* =====================================================================
+       10. ANSWER VERIFICATION & FEEDBACK (Case-Insensitive & Case-Sensitive)
+       ===================================================================== */
+    function normalizeWord(str) {
+      if (!str) return '';
+      return str.trim()
+        .toLowerCase()
+        .replace(/[-\s]+/g, ' ')
+        .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '');
+    }
+
+    function normalizePos(str) {
+      if (!str) return '';
+      const s = str.trim().toLowerCase();
+      if (s === 'n' || s === 'n.' || s === 'noun') return 'noun';
+      if (s === 'v' || s === 'v.' || s === 'verb') return 'verb';
+      if (s === 'adj' || s === 'adj.' || s === 'adjective') return 'adjective';
+      if (s === 'adv' || s === 'adv.' || s === 'adverb') return 'adverb';
+      if (s === 'id' || s === 'id.' || s === 'idiom' || s === 'phrase') return 'idiom';
+      if (s === 'pv' || s === 'pv.' || s === 'phrasal verb' || s === 'phr. v.' || s === 'phr v' || s === 'verb' || s === 'v') return 'phrasal verb';
+      if (s === 'np' || s === 'np.' || s === 'noun phrase' || s === 'n. phr.' || s === 'n phr' || s === 'noun' || s === 'n') return 'noun phrase';
+      return s;
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const q = questionsList[currentQuestionIdx];
+      if (!q) return;
+
+      const wordInput = document.getElementById('input-vocab-word');
+      const posInput = document.getElementById('input-pos');
+      const userWord = wordInput ? wordInput.value.trim() : '';
+      const userPos = posInput ? posInput.value.trim() : '';
+
+      if (!userWord) return;
+
+      let isCorrect = false;
+      let caseMismatch = false;
+
+      if (q.type === 'sentence') {
+        // Stage 4: CASE-SENSITIVE VERIFICATION
+        const exactExpected = q.expected;
+        const validList = q.accepted || [exactExpected];
+
+        // Check exact match (Case-Sensitive)
+        if (validList.includes(userWord)) {
+          isCorrect = true;
+        } else {
+          // Check if it would match case-insensitively
+          const userLower = userWord.toLowerCase();
+          const matchLower = validList.some(v => v.toLowerCase() === userLower);
+          if (matchLower) {
+            caseMismatch = true;
+          }
+          isCorrect = false;
+        }
+      } else {
+        // Stages 1, 2, 3: CASE-INSENSITIVE / NORMALIZED EVALUATION
+        const expectedWordNorm = normalizeWord(q.word);
+        const userWordNorm = normalizeWord(userWord);
+
+        const wordMatches = (userWordNorm === expectedWordNorm) ||
+          (expectedWordNorm === 'a walk in the park' && (userWordNorm === 'walk in the park' || userWordNorm === 'a walk in the park')) ||
+          (expectedWordNorm === 'far out' && userWordNorm === 'far out') ||
+          (expectedWordNorm === 'self sufficient' && userWordNorm === 'self sufficient') ||
+          (expectedWordNorm === 'solar panel' && (userWordNorm === 'solar panels' || userWordNorm === 'solar panel')) ||
+          (expectedWordNorm === 'prediction' && (userWordNorm === 'predictions' || userWordNorm === 'prediction')) ||
+          (expectedWordNorm === 'resident' && (userWordNorm === 'residents' || userWordNorm === 'resident')) ||
+          (expectedWordNorm === 'checkup' && (userWordNorm === 'checkups' || userWordNorm === 'checkup'));
+
+        const expectedPosNorm = normalizePos(q.pos);
+        const userPosNorm = normalizePos(userPos);
+
+        // POS evaluation (tolerant of standard synonyms)
+        let posMatches = false;
+        if (!userPos) {
+          // If student didn't type POS, we consider word alone or require pos
+          posMatches = false;
+        } else if (userPosNorm === expectedPosNorm) {
+          posMatches = true;
+        } else if (expectedPosNorm === 'phrasal verb' && (userPosNorm === 'verb' || userPosNorm === 'v')) {
+          posMatches = true;
+        } else if (expectedPosNorm === 'noun phrase' && (userPosNorm === 'noun' || userPosNorm === 'n')) {
+          posMatches = true;
+        } else if (expectedPosNorm === 'idiom' && (userPosNorm === 'phrase' || userPosNorm === 'noun phrase')) {
+          posMatches = true;
+        }
+
+        isCorrect = wordMatches && posMatches;
+      }
+
+      // Record answer state
+      questionAnswersState[q.id] = {
+        answered: true,
+        isCorrect,
+        caseMismatch,
+        userWord,
+        userPos
+      };
+
+      totalAnswered++;
+      if (isCorrect) {
+        totalCorrect++;
+        streakCount++;
+        playCorrectSound();
+      } else {
+        streakCount = 0;
+        playIncorrectSound();
+      }
+
+      // Lock inputs
+      if (wordInput) wordInput.disabled = true;
+      if (posInput) posInput.disabled = true;
+      const submitBtn = document.getElementById('btn-submit-answer');
+      if (submitBtn) submitBtn.disabled = true;
+
+      updateKpiDisplay();
+      displayQuestionFeedback(isCorrect, caseMismatch, q);
+      persistState();
+    }
+
+    function displayQuestionFeedback(isCorrect, caseMismatch, q) {
+      const banner = document.getElementById('feedback-banner');
+      const heading = document.getElementById('feedback-heading');
+      const bodyMsg = document.getElementById('feedback-body-msg');
+      const cardReveal = document.getElementById('vocab-card-reveal');
+
+      if (!banner || !heading || !bodyMsg) return;
+
+      banner.classList.remove('show', 'correct', 'incorrect', 'case-warning');
+
+      if (isCorrect) {
+        const praise = PRAISE_LIST[Math.floor(Math.random() * PRAISE_LIST.length)];
+        banner.classList.add('show', 'correct');
+        heading.innerHTML = `${praise.en} <span style="font-size:0.9rem; font-weight:600; color:#0c4a1e;">(${praise.zh})</span>`;
+        bodyMsg.textContent = 'Perfect answer! Your vocabulary and part-of-speech accuracy are right on target.';
+      } else if (caseMismatch) {
+        banner.classList.add('show', 'case-warning');
+        heading.innerHTML = `⚠️ Capitalization / Case Mismatch! (大小寫不符)`;
+        bodyMsg.innerHTML = `Stage 4 requires <strong>exact case-sensitive matching</strong>. Expected: <code>${escapeHtml(q.expected)}</code>. Notice the rule: <span style="color:var(--warning); font-weight:700;">${q.caseHint}</span>.`;
+      } else {
+        banner.classList.add('show', 'incorrect');
+        heading.innerHTML = `❌ Incorrect Answer (需再接再厲)`;
+        if (q.type === 'sentence') {
+          bodyMsg.innerHTML = `The correct answer is: <strong>${escapeHtml(q.expected)}</strong> (${q.caseHint}).`;
+        } else {
+          bodyMsg.innerHTML = `The correct item is <strong>${escapeHtml(q.word)}</strong> (${escapeHtml(q.pos)}). Review the clues and example sentence below!`;
+        }
+      }
+
+      // Populate revealed vocab details
+      if (cardReveal) {
+        cardReveal.style.display = 'grid';
+        const revealWord = document.getElementById('reveal-word');
+        const revealPos = document.getElementById('reveal-pos');
+        const revealZh = document.getElementById('reveal-zh');
+        const revealEx = document.getElementById('reveal-example');
+
+        const targetWord = q.word || q.expected;
+        if (revealWord) revealWord.textContent = targetWord;
+        if (revealPos) revealPos.textContent = `(${q.pos})`;
+        if (revealZh) revealZh.textContent = q.zhDef;
+        if (revealEx) revealEx.innerHTML = `"${q.example}"`;
+      }
+    }
+
+    function revealCurrentAnswer() {
+      const q = questionsList[currentQuestionIdx];
+      if (!q) return;
+
+      const wordInput = document.getElementById('input-vocab-word');
+      const posInput = document.getElementById('input-pos');
+
+      const expectedWord = q.expected || q.word;
+      const expectedPos = q.pos;
+
+      if (wordInput) wordInput.value = expectedWord;
+      if (posInput) posInput.value = expectedPos;
+
+      // Treat as answered incorrect/revealed
+      questionAnswersState[q.id] = {
+        answered: true,
+        isCorrect: false,
+        caseMismatch: false,
+        userWord: expectedWord,
+        userPos: expectedPos
+      };
+
+      streakCount = 0;
+      updateKpiDisplay();
+      displayQuestionFeedback(false, false, q);
+
+      if (wordInput) wordInput.disabled = true;
+      if (posInput) posInput.disabled = true;
+      const submitBtn = document.getElementById('btn-submit-answer');
+      if (submitBtn) submitBtn.disabled = true;
+    }
+
+    function updateKpiDisplay() {
+      const kpiCompleted = document.getElementById('kpi-completed');
+      const kpiCorrect = document.getElementById('kpi-correct');
+      const kpiAccuracy = document.getElementById('kpi-accuracy');
+      const kpiStreak = document.getElementById('kpi-streak');
+
+      const totalQs = questionsList.length || 10;
+      const answeredInStage = Object.keys(questionAnswersState).length;
+
+      if (kpiCompleted) kpiCompleted.textContent = `${answeredInStage} / ${totalQs}`;
+      if (kpiCorrect) kpiCorrect.textContent = `${totalCorrect}`;
+
+      if (kpiAccuracy) {
+        if (totalAnswered === 0) {
+          kpiAccuracy.textContent = '100%';
+        } else {
+          const pct = Math.round((totalCorrect / totalAnswered) * 100);
+          kpiAccuracy.textContent = `${pct}%`;
+        }
+      }
+
+      if (kpiStreak) {
+        kpiStreak.textContent = `🔥 ${streakCount}`;
+      }
+    }
+
+    /* =====================================================================
+       11. VOCABULARY STUDY GUIDE & REFERENCE TABLE
+       ===================================================================== */
+    function renderVocabGuide() {
+      const tbody = document.getElementById('vocab-guide-tbody');
+      if (!tbody) return;
+
+      tbody.innerHTML = VOCAB_DATA.map(item => `
+        <tr id="vocab-row-${item.id}">
+          <td style="font-weight:800; color:var(--on-surface-variant);">${item.id}</td>
+          <td>
+            <span class="vocab-row-term">${escapeHtml(item.word)}</span>
+          </td>
+          <td>
+            <span class="badge-pos">${escapeHtml(item.pos)}</span>
+          </td>
+          <td>${escapeHtml(item.enDef)}</td>
+          <td><span class="badge-zh">${escapeHtml(item.zhDef)}</span></td>
+          <td style="color:var(--on-surface-variant); font-size:0.8125rem;">"${escapeHtml(item.example)}"</td>
+          <td>
+            <button type="button" class="btn-audio" onclick="speakText('${escapeSingleQuotes(item.word)}')">🔊 Play</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterVocabTable() {
+      const input = document.getElementById('guide-filter-input');
+      const filter = input ? input.value.toLowerCase().trim() : '';
+      const rows = document.querySelectorAll('#vocab-guide-tbody tr');
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+
+    /* Helper Utilities */
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function escapeSingleQuotes(str) {
+      if (!str) return '';
+      return String(str).replace(/'/g, "\\'");
+    }
+  </script>
+</body>
+</html>

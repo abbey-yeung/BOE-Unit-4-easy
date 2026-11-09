@@ -1,0 +1,3557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="handbook">
+  <title>BOE Unit 4 Text 2 — Vocabulary Practice & Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces - Handbook Style */
+      --background: #ffffff;
+      --surface-container-low: #f3f2f1;
+      --surface-container: #e8e7e5;
+      --surface-container-high: #dbdad9;
+
+      /* Ink */
+      --on-surface: #0b0c0c;
+      --on-surface-variant: #505a5f;
+
+      /* Rules */
+      --outline: #0b0c0c;
+      --outline-variant: #b1b4b6;
+
+      /* Accents */
+      --primary: #162e51;
+      --on-primary: #ffffff;
+      --primary-container: #d2e2f1;
+      --on-primary-container: #0c2d4a;
+      --secondary: #4c2c92;
+      --tertiary: #1a569e;
+      --error: #d4351c;
+      --on-error: #ffffff;
+      --positive: #00703c;
+      --on-positive: #ffffff;
+      --positive-container: #d8f1e5;
+      --on-positive-container: #004d28;
+      --warning: #b56200;
+
+      /* Fonts */
+      --font-headline: 'Public Sans', sans-serif;
+      --font-body: 'Public Sans', sans-serif;
+      --font-label: 'Public Sans', sans-serif;
+
+      /* Shape - strictly square corners per Handbook */
+      --rounded: 0px;
+      --rounded-lg: 0px;
+      --rounded-full: 0px;
+
+      /* Style effects */
+      --top-index-rule: 6px solid var(--primary);
+      --inset-rule: 5px solid var(--tertiary);
+      --inset-rule-positive: 5px solid var(--positive);
+      --inset-rule-error: 5px solid var(--error);
+      --button-ground: 0 2px 0 #091526;
+      --button-ground-secondary: 0 2px 0 #858686;
+      --button-ground-positive: 0 2px 0 #004d28;
+      --focus-yellow: #ffdd00;
+      --focus-ring: 3px solid var(--focus-yellow);
+      --focus-bar: inset 0 0 0 2px var(--on-surface);
+      --focus-underline: 0 -2px var(--focus-yellow), 0 4px var(--on-surface);
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Typography Scale */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      overflow-x: clip;
+      background: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    body {
+      overflow-x: clip;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--background);
+      color: var(--on-surface);
+    }
+
+    /* Accessibility focus styling */
+    :focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: 0;
+      box-shadow: var(--focus-bar);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Top index bar */
+    .top-service-bar {
+      border-top: var(--top-index-rule);
+      border-bottom: 1px solid var(--on-surface);
+      background: var(--surface-container-low);
+      padding: var(--space-sm) var(--space-md);
+      position: relative;
+      z-index: 50;
+    }
+
+    .service-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .brand-title {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .badge-tag {
+      background: var(--primary);
+      color: var(--on-primary);
+      padding: 2px 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      display: inline-block;
+    }
+
+    .utility-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .utility-btn {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      background: var(--background);
+      border: 1px solid var(--on-surface);
+      color: var(--on-surface);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--dur-micro) var(--ease-out);
+    }
+
+    .utility-btn:hover {
+      background: var(--surface-container);
+    }
+
+    .utility-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Main container layout */
+    .app-layout {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: var(--space-md) var(--space-md) var(--space-2xl);
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .app-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: var(--space-lg);
+      border-bottom: 2px solid var(--on-surface);
+      padding-bottom: var(--space-md);
+    }
+
+    .page-title {
+      font-family: var(--font-headline);
+      font-size: var(--display-size);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--on-surface);
+      margin-bottom: var(--space-xs);
+    }
+
+    .page-lede {
+      font-size: var(--subhead-size);
+      color: var(--on-surface-variant);
+      max-width: 75ch;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* Stage Navigation Tabs */
+    .stage-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--outline-variant);
+      border: 2px solid var(--on-surface);
+      margin-bottom: var(--space-lg);
+    }
+
+    @media (max-width: 640px) {
+      .stage-nav {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .stage-tab {
+      background: var(--surface-container-low);
+      border: none;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: var(--on-surface);
+      position: relative;
+      transition: background var(--dur-micro) var(--ease-out);
+    }
+
+    .stage-tab:hover {
+      background: var(--surface-container);
+    }
+
+    .stage-tab.active {
+      background: var(--background);
+      color: var(--primary);
+      box-shadow: inset 0 -4px 0 0 var(--primary);
+    }
+
+    .stage-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      color: var(--on-primary);
+      font-weight: 800;
+      font-size: 0.75rem;
+    }
+
+    .stage-tab.active .step-badge {
+      background: var(--tertiary);
+    }
+
+    .stage-tab-title {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stage-tab-desc {
+      font-size: 0.75rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Main practice canvas */
+    .main-canvas {
+      min-width: 0;
+    }
+
+    /* Inset callout banner */
+    .inset-banner {
+      border-left: var(--inset-rule);
+      background: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .banner-title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 1.0625rem;
+      color: var(--primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .banner-desc {
+      font-size: var(--body-size);
+      color: var(--on-surface);
+    }
+
+    /* Stage Panel Cards */
+    .stage-panel {
+      display: none;
+    }
+
+    .stage-panel.active {
+      display: block;
+    }
+
+    /* Question Card */
+    .question-card {
+      border: 2px solid var(--outline);
+      background: var(--background);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      margin-bottom: var(--space-md);
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .question-tracker {
+      font-family: var(--font-label);
+      font-weight: 800;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--on-surface-variant);
+    }
+
+    .score-badge {
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      padding: 3px 8px;
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Definition prompt */
+    .prompt-box {
+      margin-bottom: var(--space-lg);
+    }
+
+    .prompt-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--space-xs);
+    }
+
+    .prompt-definition {
+      font-family: var(--font-headline);
+      font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--on-surface);
+      background: var(--surface-container-low);
+      padding: var(--space-md);
+      border-left: var(--inset-rule);
+    }
+
+    /* Input controls */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+      align-items: end;
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-label {
+      font-family: var(--font-label);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .field-hint {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--on-surface-variant);
+    }
+
+    .text-input {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: var(--space-sm) var(--space-md);
+      border: 2px solid var(--outline);
+      background: var(--background);
+      color: var(--on-surface);
+      width: 100%;
+      border-radius: var(--rounded);
+      height: 44px;
+    }
+
+    .text-input:disabled {
+      background: var(--surface-container-low);
+      cursor: not-allowed;
+      color: var(--on-surface-variant);
+    }
+
+    /* Actions */
+    .card-actions {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--font-label);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      padding: var(--space-sm) var(--space-lg);
+      border: 0;
+      border-radius: var(--rounded);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      transition: transform var(--dur-micro) var(--ease-out);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--button-ground);
+    }
+
+    .btn-secondary {
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: 1px solid var(--on-surface);
+      box-shadow: var(--button-ground-secondary);
+    }
+
+    .btn-positive {
+      background: var(--positive);
+      color: var(--on-positive);
+      box-shadow: var(--button-ground-positive);
+    }
+
+    .btn:active:not(:disabled) {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    /* Feedback container */
+    .feedback-box {
+      margin-top: var(--space-md);
+      padding: var(--space-md);
+      display: none;
+    }
+
+    .feedback-box.active {
+      display: block;
+    }
+
+    .feedback-correct {
+      border-left: var(--inset-rule-positive);
+      background: var(--positive-container);
+      color: var(--on-positive-container);
+    }
+
+    .feedback-incorrect {
+      border-left: var(--inset-rule-error);
+      background: #fdf2f2;
+      color: #791c10;
+    }
+
+    .feedback-header {
+      font-family: var(--font-headline);
+      font-size: 1.0625rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feedback-details {
+      font-size: 0.9375rem;
+      line-height: 1.45;
+    }
+
+    .feedback-praise {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    /* Progress bar */
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: var(--surface-container);
+      border: 1px solid var(--on-surface);
+      margin-bottom: var(--space-md);
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      transition: width var(--dur-short) var(--ease-out);
+    }
+
+    /* Stage Complete Screen */
+    .stage-complete-card {
+      border: 2px solid var(--outline);
+      padding: var(--space-xl);
+      text-align: left;
+      background: var(--background);
+      display: none;
+    }
+
+    .stage-complete-card.active {
+      display: block;
+    }
+
+    .complete-heading {
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .complete-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .metric-panel {
+      border-left: var(--inset-rule);
+      background: var(--surface-container-low);
+      padding: var(--space-md);
+    }
+
+    .metric-panel.positive {
+      border-left-color: var(--positive);
+    }
+
+    .metric-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .metric-val {
+      font-family: var(--font-headline);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--on-surface);
+    }
+
+    .complete-review-list {
+      border-top: 1px solid var(--outline-variant);
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+    }
+
+    .review-item {
+      padding: var(--space-xs) 0;
+      border-bottom: 1px solid var(--outline-variant);
+      font-size: 0.9375rem;
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    /* Stage 4 Sentence Fill-in styles */
+    .sentence-display {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+      padding: var(--space-md);
+      background: var(--surface-container-low);
+      border-left: var(--inset-rule);
+    }
+
+    .sentence-blank-indicator {
+      display: inline-block;
+      font-weight: 800;
+      color: var(--tertiary);
+      border-bottom: 2px dashed var(--tertiary);
+      padding: 0 6px;
+    }
+
+    .sentence-hint-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      margin-top: 4px;
+    }
+
+    .case-sensitive-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--warning);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* RIGHT COLUMN: Top-Right Student Lottery Box (Desktop & Sticky) */
+    .lottery-dock {
+      position: sticky;
+      top: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .lottery-box {
+      border: 3px solid var(--outline);
+      background: var(--background);
+      box-shadow: 4px 4px 0 0 var(--on-surface);
+      padding: var(--space-md);
+    }
+
+    .lottery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--outline);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .lottery-title {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lottery-display {
+      background: var(--surface-container-low);
+      border: 2px solid var(--outline);
+      padding: var(--space-md);
+      text-align: center;
+      margin-bottom: var(--space-md);
+      position: relative;
+      min-height: 85px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lottery-number {
+      font-family: var(--font-headline);
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .lottery-number.rolling {
+      color: var(--tertiary);
+      animation: pulseText 100ms infinite alternate;
+    }
+
+    @keyframes pulseText {
+      0% { transform: scale(0.96); opacity: 0.8; }
+      100% { transform: scale(1.04); opacity: 1; }
+    }
+
+    .lottery-subtext {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    .lottery-controls {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkbox-label input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      border-radius: 0;
+    }
+
+    .lottery-history-box {
+      margin-top: var(--space-sm);
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-sm);
+    }
+
+    .history-label {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .history-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      max-height: 90px;
+      overflow-y: auto;
+      padding: 2px;
+    }
+
+    .history-chip {
+      background: var(--surface-container);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border: 1px solid var(--outline-variant);
+    }
+
+    .history-chip.latest {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    /* Editable student roster panel */
+    .roster-editor {
+      margin-top: var(--space-sm);
+      background: var(--surface-container-low);
+      padding: var(--space-sm);
+      border: 1px dashed var(--on-surface);
+      display: none;
+    }
+
+    .roster-editor.active {
+      display: block;
+    }
+
+    .roster-textarea {
+      width: 100%;
+      height: 90px;
+      font-family: monospace;
+      font-size: 0.8125rem;
+      padding: 6px;
+      border: 1px solid var(--outline);
+      margin-bottom: 6px;
+      resize: vertical;
+    }
+
+    /* Modal dialogs */
+    .dialog-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: var(--space-md);
+    }
+
+    .dialog-backdrop.active {
+      display: flex;
+    }
+
+    .dialog-card {
+      background: var(--background);
+      border: 3px solid var(--outline);
+      box-shadow: 6px 6px 0 0 var(--on-surface);
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: var(--space-lg);
+    }
+
+    .dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--outline);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .dialog-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .close-btn {
+      background: none;
+      border: 2px solid var(--outline);
+      width: 32px;
+      height: 32px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-btn:hover {
+      background: var(--error);
+      color: var(--on-error);
+    }
+
+    .dialog-body {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .dialog-body h4 {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      margin: var(--space-md) 0 var(--space-xs);
+      color: var(--primary);
+    }
+
+    .dialog-body p, .dialog-body ul {
+      margin-bottom: var(--space-sm);
+    }
+
+    .dialog-body ul {
+      padding-left: var(--space-lg);
+    }
+
+    /* Footer */
+    .app-footer {
+      border-top: 1px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      padding: var(--space-md);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      text-align: left;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    /* Screen reader only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Service Bar -->
+  <header class="top-service-bar">
+    <div class="service-inner">
+      <div class="brand-title">
+        <span class="badge-tag">UNIT 4 TEXT 2</span>
+        <span>EDGE Vocabulary Mastery Platform</span>
+      </div>
+      <div class="utility-actions">
+        <!-- Audio Mute Toggle -->
+        <button type="button" class="utility-btn" id="audioToggleBtn" onclick="toggleAudio()" title="Toggle Sound Feedback">
+          <span id="audioIcon">🔊</span>
+          <span id="audioLabel">Sound ON</span>
+        </button>
+        <!-- Language Switcher (Default: Pure English; switchable to Traditional Chinese UI) -->
+        <button type="button" class="utility-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Switch Interface Language (English / 繁體中文)">
+          <span>🌐</span>
+          <span id="langLabel">繁體中文 UI</span>
+        </button>
+        <!-- Teacher Classroom Instructions Modal Button -->
+        <button type="button" class="utility-btn" id="guideModalBtn" onclick="openGuideModal()" title="View Classroom & Teacher Guide">
+          <span>📖</span>
+          <span id="guideBtnLabel">Teacher &amp; Student Guide</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Layout Grid -->
+  <main class="app-layout">
+    
+    <!-- LEFT COLUMN: Main Practice Content -->
+    <section class="main-canvas" aria-label="Vocabulary Assessment Content">
+      
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1 class="page-title">BOE Unit 4 Text 2: Vocabulary Practice & Assessment</h1>
+        <p class="page-lede">
+          Master 20 core target vocabulary items through four progressive evaluation stages. Build rapid recall of definitions, precise grammatical parts of speech, and accurate contextual sentence usage.
+        </p>
+      </header>
+
+      <!-- Stage Navigation Tabs -->
+      <nav class="stage-nav" aria-label="Stage Navigation">
+        <button type="button" class="stage-tab active" id="tab-stage1" onclick="switchStage(1)">
+          <div class="stage-badge-wrap">
+            <span class="step-badge">1</span>
+            <span class="stage-tab-title">Stage 1</span>
+          </div>
+          <span class="stage-tab-desc">Vocab 1–10 (Definitions)</span>
+        </button>
+
+        <button type="button" class="stage-tab" id="tab-stage2" onclick="switchStage(2)">
+          <div class="stage-badge-wrap">
+            <span class="step-badge">2</span>
+            <span class="stage-tab-title">Stage 2</span>
+          </div>
+          <span class="stage-tab-desc">Vocab 11–20 (Definitions)</span>
+        </button>
+
+        <button type="button" class="stage-tab" id="tab-stage3" onclick="switchStage(3)">
+          <div class="stage-badge-wrap">
+            <span class="step-badge">3</span>
+            <span class="stage-tab-title">Stage 3</span>
+          </div>
+          <span class="stage-tab-desc">Mixed Review (1–20)</span>
+        </button>
+
+        <button type="button" class="stage-tab" id="tab-stage4" onclick="switchStage(4)">
+          <div class="stage-badge-wrap">
+            <span class="step-badge">4</span>
+            <span class="stage-tab-title">Stage 4</span>
+          </div>
+          <span class="stage-tab-desc">Sentence Application</span>
+        </button>
+      </nav>
+
+      <!-- STAGE 1 PANEL: Vocab 1-10 -->
+      <div class="stage-panel active" id="panel-stage1">
+        <div class="inset-banner">
+          <h2 class="banner-title">Stage 1: Vocabulary Items 1 to 10</h2>
+          <p class="banner-desc">
+            Read the exact English definition below. Type the corresponding English word and its grammatical part of speech. Both inputs are case-insensitive.
+          </p>
+        </div>
+
+        <div class="progress-bar-wrap" aria-label="Stage 1 Progress">
+          <div class="progress-bar-fill" id="stage1-progress-fill"></div>
+        </div>
+
+        <!-- Question View -->
+        <div class="question-card" id="stage1-card">
+          <div class="question-header">
+            <span class="question-tracker" id="stage1-counter">Question 1 of 10</span>
+            <span class="score-badge">Stage Score: <strong id="stage1-score-display">0 / 10</strong></span>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-label">Exact English Definition</div>
+            <div class="prompt-definition" id="stage1-definition-text">Loading definition...</div>
+          </div>
+
+          <form id="stage1-form" onsubmit="handleStage1Submit(event)">
+            <div class="form-row">
+              <div class="field-group">
+                <label for="stage1-word-input" class="field-label">
+                  <span>Target English Word</span>
+                  <span class="field-hint">e.g. merge</span>
+                </label>
+                <input type="text" id="stage1-word-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type English word..." required>
+              </div>
+
+              <div class="field-group">
+                <label for="stage1-pos-input" class="field-label">
+                  <span>Part of Speech</span>
+                  <span class="field-hint">e.g. verb / noun / idiom</span>
+                </label>
+                <input type="text" id="stage1-pos-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type part of speech..." required>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <button type="submit" class="btn btn-primary" id="stage1-submit-btn">Check Answer</button>
+              <button type="button" class="btn btn-secondary" id="stage1-next-btn" onclick="nextStage1Question()" style="display: none;">Next Question →</button>
+            </div>
+          </form>
+
+          <!-- Feedback Box -->
+          <div class="feedback-box" id="stage1-feedback">
+            <div class="feedback-header" id="stage1-feedback-title">Result</div>
+            <div class="feedback-praise" id="stage1-feedback-praise"></div>
+            <div class="feedback-details" id="stage1-feedback-details"></div>
+          </div>
+        </div>
+
+        <!-- Complete Summary View -->
+        <div class="stage-complete-card" id="stage1-complete">
+          <h3 class="complete-heading">Stage 1 Complete!</h3>
+          <p>You have finished reviewing Vocabulary items 1 through 10.</p>
+          <div class="complete-stats-row">
+            <div class="metric-panel positive">
+              <div class="metric-label">Final Score</div>
+              <div class="metric-val" id="stage1-final-score">0 / 10</div>
+            </div>
+            <div class="metric-panel">
+              <div class="metric-label">Accuracy Rate</div>
+              <div class="metric-val" id="stage1-final-rate">0%</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary" onclick="switchStage(2)">Proceed to Stage 2 (Vocab 11–20) →</button>
+            <button type="button" class="btn btn-secondary" onclick="restartStage1()">Retry Stage 1 (Shuffle)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 2 PANEL: Vocab 11-20 -->
+      <div class="stage-panel" id="panel-stage2">
+        <div class="inset-banner">
+          <h2 class="banner-title">Stage 2: Vocabulary Items 11 to 20</h2>
+          <p class="banner-desc">
+            Read the exact English definition below. Type the corresponding English word and its grammatical part of speech. Both inputs are case-insensitive.
+          </p>
+        </div>
+
+        <div class="progress-bar-wrap" aria-label="Stage 2 Progress">
+          <div class="progress-bar-fill" id="stage2-progress-fill"></div>
+        </div>
+
+        <!-- Question View -->
+        <div class="question-card" id="stage2-card">
+          <div class="question-header">
+            <span class="question-tracker" id="stage2-counter">Question 1 of 10</span>
+            <span class="score-badge">Stage Score: <strong id="stage2-score-display">0 / 10</strong></span>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-label">Exact English Definition</div>
+            <div class="prompt-definition" id="stage2-definition-text">Loading definition...</div>
+          </div>
+
+          <form id="stage2-form" onsubmit="handleStage2Submit(event)">
+            <div class="form-row">
+              <div class="field-group">
+                <label for="stage2-word-input" class="field-label">
+                  <span>Target English Word</span>
+                  <span class="field-hint">e.g. gravity</span>
+                </label>
+                <input type="text" id="stage2-word-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type English word..." required>
+              </div>
+
+              <div class="field-group">
+                <label for="stage2-pos-input" class="field-label">
+                  <span>Part of Speech</span>
+                  <span class="field-hint">e.g. noun / verb / adjective</span>
+                </label>
+                <input type="text" id="stage2-pos-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type part of speech..." required>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <button type="submit" class="btn btn-primary" id="stage2-submit-btn">Check Answer</button>
+              <button type="button" class="btn btn-secondary" id="stage2-next-btn" onclick="nextStage2Question()" style="display: none;">Next Question →</button>
+            </div>
+          </form>
+
+          <!-- Feedback Box -->
+          <div class="feedback-box" id="stage2-feedback">
+            <div class="feedback-header" id="stage2-feedback-title">Result</div>
+            <div class="feedback-praise" id="stage2-feedback-praise"></div>
+            <div class="feedback-details" id="stage2-feedback-details"></div>
+          </div>
+        </div>
+
+        <!-- Complete Summary View -->
+        <div class="stage-complete-card" id="stage2-complete">
+          <h3 class="complete-heading">Stage 2 Complete!</h3>
+          <p>You have finished reviewing Vocabulary items 11 through 20.</p>
+          <div class="complete-stats-row">
+            <div class="metric-panel positive">
+              <div class="metric-label">Final Score</div>
+              <div class="metric-val" id="stage2-final-score">0 / 10</div>
+            </div>
+            <div class="metric-panel">
+              <div class="metric-label">Accuracy Rate</div>
+              <div class="metric-val" id="stage2-final-rate">0%</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary" onclick="switchStage(3)">Proceed to Stage 3 (Comprehensive Review) →</button>
+            <button type="button" class="btn btn-secondary" onclick="restartStage2()">Retry Stage 2 (Shuffle)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 3 PANEL: Mixed Review 1-20 -->
+      <div class="stage-panel" id="panel-stage3">
+        <div class="inset-banner">
+          <h2 class="banner-title">Stage 3: Comprehensive Mixed Review (Vocab 1–20)</h2>
+          <p class="banner-desc">
+            All 20 vocabulary items appear in a randomized test sequence. Demonstrate total mastery of each English word and grammatical part of speech.
+          </p>
+        </div>
+
+        <div class="progress-bar-wrap" aria-label="Stage 3 Progress">
+          <div class="progress-bar-fill" id="stage3-progress-fill"></div>
+        </div>
+
+        <!-- Question View -->
+        <div class="question-card" id="stage3-card">
+          <div class="question-header">
+            <span class="question-tracker" id="stage3-counter">Question 1 of 20</span>
+            <span class="score-badge">Review Score: <strong id="stage3-score-display">0 / 20</strong></span>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-label">Exact English Definition</div>
+            <div class="prompt-definition" id="stage3-definition-text">Loading definition...</div>
+          </div>
+
+          <form id="stage3-form" onsubmit="handleStage3Submit(event)">
+            <div class="form-row">
+              <div class="field-group">
+                <label for="stage3-word-input" class="field-label">
+                  <span>Target English Word</span>
+                  <span class="field-hint">e.g. self-sufficient</span>
+                </label>
+                <input type="text" id="stage3-word-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type English word..." required>
+              </div>
+
+              <div class="field-group">
+                <label for="stage3-pos-input" class="field-label">
+                  <span>Part of Speech</span>
+                  <span class="field-hint">e.g. adjective / verb</span>
+                </label>
+                <input type="text" id="stage3-pos-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type part of speech..." required>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <button type="submit" class="btn btn-primary" id="stage3-submit-btn">Check Answer</button>
+              <button type="button" class="btn btn-secondary" id="stage3-next-btn" onclick="nextStage3Question()" style="display: none;">Next Question →</button>
+            </div>
+          </form>
+
+          <!-- Feedback Box -->
+          <div class="feedback-box" id="stage3-feedback">
+            <div class="feedback-header" id="stage3-feedback-title">Result</div>
+            <div class="feedback-praise" id="stage3-feedback-praise"></div>
+            <div class="feedback-details" id="stage3-feedback-details"></div>
+          </div>
+        </div>
+
+        <!-- Complete Summary View -->
+        <div class="stage-complete-card" id="stage3-complete">
+          <h3 class="complete-heading">Stage 3 Review Finished!</h3>
+          <p>You have tested all 20 vocabulary items in the comprehensive mixed exam.</p>
+          <div class="complete-stats-row">
+            <div class="metric-panel positive">
+              <div class="metric-label">Overall Score</div>
+              <div class="metric-val" id="stage3-final-score">0 / 20</div>
+            </div>
+            <div class="metric-panel">
+              <div class="metric-label">Accuracy Rate</div>
+              <div class="metric-val" id="stage3-final-rate">0%</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary" onclick="switchStage(4)">Proceed to Stage 4 (Sentence Application) →</button>
+            <button type="button" class="btn btn-secondary" onclick="restartStage3()">Retake Full Review (Shuffle)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 4 PANEL: Sentence Application (120 Bank, 20 per Round) -->
+      <div class="stage-panel" id="panel-stage4">
+        <div class="inset-banner">
+          <h2 class="banner-title">Stage 4: Sentence Application (Case-Sensitive Fill-in-the-Blank)</h2>
+          <p class="banner-desc">
+            Complete the authentic sentences below by filling in the blank with the appropriate vocabulary item in its correct inflected form.
+          </p>
+          <div class="case-sensitive-notice">
+            <span>⚠️ Strict Case-Sensitive Mode Active: Capitalize the first letter if the word begins a sentence (e.g. "Thanks to", "Gravity").</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap" aria-label="Stage 4 Progress">
+          <div class="progress-bar-fill" id="stage4-progress-fill"></div>
+        </div>
+
+        <!-- Question View -->
+        <div class="question-card" id="stage4-card">
+          <div class="question-header">
+            <span class="question-tracker" id="stage4-counter">Question 1 of 20 (Batch 1)</span>
+            <span class="score-badge">Round Score: <strong id="stage4-score-display">0 / 20</strong></span>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-label">Sentence Context</div>
+            <div class="sentence-display" id="stage4-sentence-text">Loading sentence...</div>
+          </div>
+
+          <form id="stage4-form" onsubmit="handleStage4Submit(event)">
+            <div class="field-group" style="margin-bottom: var(--space-md);">
+              <label for="stage4-word-input" class="field-label">
+                <span>Exact Missing Word or Phrase</span>
+                <span class="field-hint">Pay close attention to capitalization and singular/plural forms</span>
+              </label>
+              <input type="text" id="stage4-word-input" class="text-input" autocomplete="off" spellcheck="false" placeholder="Type exact case-sensitive answer..." required>
+            </div>
+
+            <div class="card-actions">
+              <button type="submit" class="btn btn-primary" id="stage4-submit-btn">Submit Answer</button>
+              <button type="button" class="btn btn-secondary" id="stage4-next-btn" onclick="nextStage4Question()" style="display: none;">Next Sentence →</button>
+              <button type="button" class="btn btn-secondary" onclick="loadNextStage4Batch()" title="Shuffle and generate another 20 questions from the 120-item bank">Load Next Batch ↻</button>
+            </div>
+          </form>
+
+          <!-- Feedback Box -->
+          <div class="feedback-box" id="stage4-feedback">
+            <div class="feedback-header" id="stage4-feedback-title">Result</div>
+            <div class="feedback-praise" id="stage4-feedback-praise"></div>
+            <div class="feedback-details" id="stage4-feedback-details"></div>
+          </div>
+        </div>
+
+        <!-- Complete Summary View -->
+        <div class="stage-complete-card" id="stage4-complete">
+          <h3 class="complete-heading">Batch Complete!</h3>
+          <p>You have finished this 20-sentence round from our extensive 120-question bank.</p>
+          <div class="complete-stats-row">
+            <div class="metric-panel positive">
+              <div class="metric-label">Batch Score</div>
+              <div class="metric-val" id="stage4-final-score">0 / 20</div>
+            </div>
+            <div class="metric-panel">
+              <div class="metric-label">Accuracy Rate</div>
+              <div class="metric-val" id="stage4-final-rate">0%</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary" onclick="loadNextStage4Batch()">Load Next Batch of 20 Sentences ↻</button>
+            <button type="button" class="btn btn-secondary" onclick="restartStage4Round()">Retry This Batch</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Top-Right Student Lottery Box -->
+    <aside class="lottery-dock" aria-label="Student Lottery Picker">
+      <div class="lottery-box" id="lotteryBox">
+        <div class="lottery-header">
+          <span class="lottery-title">
+            <span>🎲</span>
+            <span>Student Lottery Box</span>
+          </span>
+          <span class="badge-tag" id="lotteryRemainingBadge">35 Active</span>
+        </div>
+
+        <!-- Draw Result Display -->
+        <div class="lottery-display" id="lotteryDisplayCard">
+          <div class="lottery-number" id="lotteryResultDisplay">READY</div>
+          <div class="lottery-subtext" id="lotterySubtextDisplay">Press Draw to Pick Student</div>
+        </div>
+
+        <div class="lottery-controls">
+          <button type="button" class="btn btn-primary" id="drawStudentBtn" onclick="drawStudent()" style="width: 100%;">
+            <span>🎯</span>
+            <span>Draw Random Student</span>
+          </button>
+
+          <label class="checkbox-label" title="When checked, drawn students will not be chosen again until roster is reset">
+            <input type="checkbox" id="noRepeatCheckbox" checked onchange="handleNoRepeatChange()">
+            <span>No repeats in current session</span>
+          </label>
+
+          <div style="display: flex; gap: var(--space-xs); margin-top: 4px;">
+            <button type="button" class="utility-btn" style="flex: 1;" onclick="toggleRosterEditor()">
+              <span>✏️ Edit Roster</span>
+            </button>
+            <button type="button" class="utility-btn" style="flex: 1;" onclick="resetLotterySession()">
+              <span>↺ Reset Pool</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Roster Editor (Expandable) -->
+        <div class="roster-editor" id="rosterEditorBox">
+          <label for="rosterTextarea" class="field-label" style="font-size: 0.75rem; margin-bottom: 4px;">
+            <span>Student List (One per line):</span>
+          </label>
+          <textarea id="rosterTextarea" class="roster-textarea" spellcheck="false"></textarea>
+          <div style="display: flex; gap: 4px;">
+            <button type="button" class="utility-btn" style="flex: 1; font-size: 0.75rem;" onclick="saveCustomRoster()">Save Roster</button>
+            <button type="button" class="utility-btn" style="flex: 1; font-size: 0.75rem;" onclick="loadDefaultSeatRoster()">Reset to No. 1–35</button>
+          </div>
+        </div>
+
+        <!-- Drawn History -->
+        <div class="lottery-history-box">
+          <div class="history-label">
+            <span>Drawn This Session</span>
+            <span id="historyCountDisplay">0 drawn</span>
+          </div>
+          <div class="history-chips" id="lotteryHistoryChips">
+            <span style="font-size: 0.75rem; color: var(--on-surface-variant); font-style: italic;">No students drawn yet</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Teacher & Student Guide Modal (Bilingual Classroom Pedagogical Guidance) -->
+  <div class="dialog-backdrop" id="guideModal" onclick="closeGuideModal(event)">
+    <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="guideTitle" onclick="event.stopPropagation()">
+      <div class="dialog-header">
+        <h3 class="dialog-title" id="guideTitle">Classroom Guide & Teacher Instructions</h3>
+        <button type="button" class="close-btn" onclick="closeGuideModal()" aria-label="Close Guide">✕</button>
+      </div>
+      <div class="dialog-body">
+        <h4 id="guideSection1Title">Overview &amp; Curriculum Scope</h4>
+        <p id="guideSection1P">
+          This interactive assessment web app is custom-tailored for <strong>EDGE Unit 4 Text 2 (BOE)</strong>.
+          It provides a comprehensive 4-stage vocabulary progression designed to foster deep understanding, grammatical awareness, and contextual application of the 20 target items.
+        </p>
+
+        <h4 id="guideSection2Title">Four-Stage Progressive Mastery Breakdown</h4>
+        <ul id="guideSection2Ul">
+          <li><strong>Stage 1 (Vocab 1–10):</strong> Displays exact English definitions in randomized order. Students type the English word and its part of speech (case-insensitive).</li>
+          <li><strong>Stage 2 (Vocab 11–20):</strong> Displays exact English definitions in randomized order. Students type the English word and its part of speech (case-insensitive).</li>
+          <li><strong>Stage 3 (Vocab 1–20):</strong> Mixed comprehensive exam covering all 20 vocabulary items in random order.</li>
+          <li><strong>Stage 4 (Sentence Application):</strong> 120-item contextual sentence bank (6 unique sentences per word). Presented in batches of 20. Requires <em>strict case-sensitive</em> typing and proper inflected word forms (singular/plural, past tense, initial capitals).</li>
+        </ul>
+
+        <h4 id="guideSection3Title">Top-Right Classroom Student Lottery Tool</h4>
+        <p>
+          Anchored at the top-right of your screen, the lottery tool allows teachers to randomly select students to answer in class.
+        </p>
+        <ul>
+          <li><strong>Default Roster:</strong> Preloaded with seat numbers <code>No. 1</code> through <code>No. 35</code>.</li>
+          <li><strong>Custom Names:</strong> Click <em>Edit Roster</em> to paste custom student names (one per line).</li>
+          <li><strong>No-Repeat Mode:</strong> Prevents picking the same student twice during a classroom session.</li>
+        </ul>
+
+        <h4>Audio & Encouragement Engine</h4>
+        <p>
+          Positive English praise is dynamically randomized for correct answers to motivate students. Pleasant sound chimes accompany answers and lottery draws. The sound can be muted anytime using the top bar button.
+        </p>
+      </div>
+      <div style="margin-top: var(--space-md); text-align: right;">
+        <button type="button" class="btn btn-primary" onclick="closeGuideModal()">Got It, Back to Practice</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>BOE Unit 4 Text 2</strong> — Educational Vocabulary Practice &amp; Assessment Tool
+      </div>
+      <div>
+        100% English-Only Curriculum Assessment Engine • 120 Contextual Sentences
+      </div>
+    </div>
+  </footer>
+
+  <!-- API Shim for state persistence -->
+  <api-shim></api-shim>
+
+  <script>
+    /* ==========================================================================
+       1. DATA STRUCTURES: VOCABULARY & SENTENCE BANK
+       ========================================================================== */
+
+    // 20 Exact Vocabulary Items from (2) BOE.pptx
+    const VOCABULARY_DATA = [
+      {
+        id: 1,
+        word: `merge`,
+        pos: `verb`,
+        posAliases: [`verb`, `v`, `v.`],
+        definition: `to combine or join things together to form one thing`
+      },
+      {
+        id: 2,
+        word: `urban`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `of or in a city or town`
+      },
+      {
+        id: 3,
+        word: `thanks to`,
+        pos: `idiom`,
+        posAliases: [`idiom`, `idm`, `idiom.`, `phrase`],
+        definition: `because of someone/something`
+      },
+      {
+        id: 4,
+        word: `overpopulation`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `the fact of a country or city, etc. having too many people for the amount of food, materials, and space available there`
+      },
+      {
+        id: 5,
+        word: `far-out`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `strange and unusual`
+      },
+      {
+        id: 6,
+        word: `prediction`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `a statement about what you think will happen in the future`
+      },
+      {
+        id: 7,
+        word: `a walk in the park`,
+        pos: `idiom`,
+        posAliases: [`idiom`, `idm`, `idiom.`, `phrase`],
+        definition: `something that is very easy to do, and usually pleasant`
+      },
+      {
+        id: 8,
+        word: `resident`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `a person who lives or has their home in a place`
+      },
+      {
+        id: 9,
+        word: `nightmare`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `an extremely unpleasant event or experience`
+      },
+      {
+        id: 10,
+        word: `self-sufficient`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `able to provide everything you need for yourself without the help of other people`
+      },
+      {
+        id: 11,
+        word: `gravity`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `the force that makes things fall to the ground`
+      },
+      {
+        id: 12,
+        word: `spectacular`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `very exciting to look at`
+      },
+      {
+        id: 13,
+        word: `solar panel`,
+        pos: `noun phrase`,
+        posAliases: [`noun phrase`, `noun`, `n phrase`, `n phr`, `n. phr.`, `n.`],
+        definition: `a device that changes energy from the sun into electricity`
+      },
+      {
+        id: 14,
+        word: `generate`,
+        pos: `verb`,
+        posAliases: [`verb`, `v`, `v.`],
+        definition: `to produce energy in a particular form`
+      },
+      {
+        id: 15,
+        word: `dull`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `not interesting or exciting in any way`
+      },
+      {
+        id: 16,
+        word: `virtual`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `something can be done or seen using a computer and therefore without going anywhere or talking to anyone`
+      },
+      {
+        id: 17,
+        word: `refreshed`,
+        pos: `adjective`,
+        posAliases: [`adjective`, `adj`, `adj.`],
+        definition: `made to feel less tired or less hot`
+      },
+      {
+        id: 18,
+        word: `checkup`,
+        pos: `noun`,
+        posAliases: [`noun`, `n`, `n.`],
+        definition: `a medical examination to test your general state of health`
+      },
+      {
+        id: 19,
+        word: `sign up`,
+        pos: `phrasal verb`,
+        posAliases: [`phrasal verb`, `verb`, `phr v`, `phr. v.`, `phrasal v`, `v.`],
+        definition: `to agree to become involved in an organized activity`
+      },
+      {
+        id: 20,
+        word: `eventually`,
+        pos: `adverb`,
+        posAliases: [`adverb`, `adv`, `adv.`],
+        definition: `in the end, especially after a long time or a lot of effort, problems, etc.`
+      }
+    ];
+
+    // Stage 4: 120 Contextual Sentences Bank (6 Distinct Sentences per Vocabulary Item)
+    // Strictly case-sensitive answers!
+    const SENTENCE_BANK = [
+      // Word 1: merge
+      {
+        vocabId: 1,
+        sentence: `The CEO of the company has just decided to [blank] the two companies into one in the meeting.`,
+        answer: `merge`,
+        hint: `base verb form: combine into one`
+      },
+      {
+        vocabId: 1,
+        sentence: `In the future, Hong Kong, Shenzhen and Guangzhou may [blank] into one huge city.`,
+        answer: `merge`,
+        hint: `modal verb followed by base form`
+      },
+      {
+        vocabId: 1,
+        sentence: `The two narrow country lanes will [blank] into a single modern highway just outside the district.`,
+        answer: `merge`,
+        hint: `base verb form: join together`
+      },
+      {
+        vocabId: 1,
+        sentence: `To reduce administrative overhead, the board voted to [blank] the two research divisions into one department.`,
+        answer: `merge`,
+        hint: `infinitive verb form after 'to'`
+      },
+      {
+        vocabId: 1,
+        sentence: `When the two rushing mountain streams [blank], they create a powerful single river.`,
+        answer: `merge`,
+        hint: `present plural verb`
+      },
+      {
+        vocabId: 1,
+        sentence: `The two local banks agreed to [blank] their operations to provide better customer service across the territory.`,
+        answer: `merge`,
+        hint: `infinitive verb form after 'to'`
+      },
+
+      // Word 2: urban
+      {
+        vocabId: 2,
+        sentence: `In recent decades, pollution has reached disturbingly high levels in some [blank] areas.`,
+        answer: `urban`,
+        hint: `adjective: relating to a city or town`
+      },
+      {
+        vocabId: 2,
+        sentence: `Many young people leave quiet rural villages to move to [blank] areas because big cities offer more career opportunities and convenient facilities.`,
+        answer: `urban`,
+        hint: `adjective modifying 'areas'`
+      },
+      {
+        vocabId: 2,
+        sentence: `Pollution has reached disturbingly high levels in some [blank] areas across the developed world.`,
+        answer: `urban`,
+        hint: `adjective: city-based`
+      },
+      {
+        vocabId: 2,
+        sentence: `Rapid [blank] growth has led to heavy traffic congestion and escalating housing costs throughout the capital.`,
+        answer: `urban`,
+        hint: `adjective modifying 'growth'`
+      },
+      {
+        vocabId: 2,
+        sentence: `Environmental scientists study how [blank] heat islands cause central downtown temperatures to stay noticeably warmer.`,
+        answer: `urban`,
+        hint: `adjective: city / municipal`
+      },
+      {
+        vocabId: 2,
+        sentence: `City architects are designing lush vertical gardens to bring nature back into dense [blank] environments.`,
+        answer: `urban`,
+        hint: `adjective: of or in a city`
+      },
+
+      // Word 3: thanks to / Thanks to (Capitalization sensitive!)
+      {
+        vocabId: 3,
+        sentence: `[blank] all our hard work, we got the project finished in time.`,
+        answer: `Thanks to`,
+        hint: `Note: Blank begins sentence! Capitalize first letter.`
+      },
+      {
+        vocabId: 3,
+        sentence: `We've reached our goal of $50,000, [blank] the generosity of the public.`,
+        answer: `thanks to`,
+        hint: `lowercase: idiomatic phrase meaning 'because of'`
+      },
+      {
+        vocabId: 3,
+        sentence: `The patient made a full and rapid recovery [blank] the prompt medical response of the emergency crew.`,
+        answer: `thanks to`,
+        hint: `idiom meaning 'due to' or 'owing to'`
+      },
+      {
+        vocabId: 3,
+        sentence: `[blank] modern satellite navigation, drivers rarely lose their way on complicated expressway networks.`,
+        answer: `Thanks to`,
+        hint: `Capital 'T': Begins the sentence`
+      },
+      {
+        vocabId: 3,
+        sentence: `The community concert was a remarkable success, [blank] the enthusiastic participation of student volunteers.`,
+        answer: `thanks to`,
+        hint: `lowercase idiom meaning 'because of'`
+      },
+      {
+        vocabId: 3,
+        sentence: `[blank] advanced battery storage, the solar house stays powered even through prolonged cloudy days.`,
+        answer: `Thanks to`,
+        hint: `Capital 'T': First word of sentence`
+      },
+
+      // Word 4: overpopulation / Overpopulation
+      {
+        vocabId: 4,
+        sentence: `What are the government doing to tackle the [blank] problem so that the local people can enjoy a better quality of life?`,
+        answer: `overpopulation`,
+        hint: `noun used as noun modifier (too many people)`
+      },
+      {
+        vocabId: 4,
+        sentence: `The country is facing severe [blank], resulting in overcrowded housing, heavy traffic jams, and a shortage of public space.`,
+        answer: `overpopulation`,
+        hint: `noun: state of having too many people`
+      },
+      {
+        vocabId: 4,
+        sentence: `[blank] is one of the country's most pressing social problems.`,
+        answer: `Overpopulation`,
+        hint: `Capital 'O': Begins sentence as subject noun`
+      },
+      {
+        vocabId: 4,
+        sentence: `Environmental researchers warn that severe [blank] places an unsustainable burden on freshwater reserves and arable farmland.`,
+        answer: `overpopulation`,
+        hint: `noun: excess population`
+      },
+      {
+        vocabId: 4,
+        sentence: `[blank] in coastal megacities requires civil engineers to plan taller residential buildings and deeper subway tunnels.`,
+        answer: `Overpopulation`,
+        hint: `Capital 'O': Subject at beginning of sentence`
+      },
+      {
+        vocabId: 4,
+        sentence: `If global resource consumption continues to outpace supply, unchecked [blank] will accelerate environmental degradation.`,
+        answer: `overpopulation`,
+        hint: `noun: condition of having too many inhabitants`
+      },
+
+      // Word 5: far-out
+      {
+        vocabId: 5,
+        sentence: `Yesterday, our professor showed us one of his [blank] inventions, which amazed all of us.`,
+        answer: `far-out`,
+        hint: `hyphenated adjective: strange and unusual`
+      },
+      {
+        vocabId: 5,
+        sentence: `I've seen the video - it's pretty [blank].`,
+        answer: `far-out`,
+        hint: `adjective: unusual and unconventional`
+      },
+      {
+        vocabId: 5,
+        sentence: `Some conservative critics dismissed his futuristic space habitat design as completely [blank], but young scientists found it inspiring.`,
+        answer: `far-out`,
+        hint: `hyphenated adjective: bizarre or visionary`
+      },
+      {
+        vocabId: 5,
+        sentence: `That science-fiction novelist is famous for proposing [blank] ideas about warp-drive travel and pocket universes.`,
+        answer: `far-out`,
+        hint: `hyphenated adjective: eccentric and strange`
+      },
+      {
+        vocabId: 5,
+        sentence: `Although mining deep space asteroids sounds [blank], the economics of rare minerals may make it viable.`,
+        answer: `far-out`,
+        hint: `adjective: unusual or outlandish`
+      },
+      {
+        vocabId: 5,
+        sentence: `Wearing luminescent metallic costumes during the science presentation seemed quite [blank] to the traditional judges.`,
+        answer: `far-out`,
+        hint: `hyphenated adjective: strange and unusual`
+      },
+
+      // Word 6: prediction / predictions
+      {
+        vocabId: 6,
+        sentence: `What are your [blank] for Macau's economy? Do you think it will be improved in the following few years?`,
+        answer: `predictions`,
+        hint: `plural noun: statements about the future`
+      },
+      {
+        vocabId: 6,
+        sentence: `Please don't ask me to make any [blank] about tomorrow's meeting.`,
+        answer: `predictions`,
+        hint: `plural noun following 'any'`
+      },
+      {
+        vocabId: 6,
+        sentence: `The meteorologist issued a cautious [blank] that heavy rainfall would sweep across the coastline by midnight.`,
+        answer: `prediction`,
+        hint: `singular noun following 'a cautious'`
+      },
+      {
+        vocabId: 6,
+        sentence: `Scientists' [blank] about climate change has come true in different parts of the world.`,
+        answer: `prediction`,
+        hint: `singular noun (agrees with singular verb 'has come true')`
+      },
+      {
+        vocabId: 6,
+        sentence: `Reliable economic [blank] are difficult to generate when international trade policies change abruptly.`,
+        answer: `predictions`,
+        hint: `plural noun agreeing with 'are'`
+      },
+      {
+        vocabId: 6,
+        sentence: `Her accurate [blank] that electric vehicles would gain widespread adoption surprised many veteran industry analysts.`,
+        answer: `prediction`,
+        hint: `singular noun following 'Her accurate'`
+      },
+
+      // Word 7: a walk in the park
+      {
+        vocabId: 7,
+        sentence: `He is one of the top students in our class; therefore, solving that math problem was [blank] to him.`,
+        answer: `a walk in the park`,
+        hint: `idiom: something very easy and pleasant to do`
+      },
+      {
+        vocabId: 7,
+        sentence: `He's used to hard physical work - this is [blank] to him.`,
+        answer: `a walk in the park`,
+        hint: `idiomatic phrase meaning effortless`
+      },
+      {
+        vocabId: 7,
+        sentence: `After training through intense winter blizzards, running a five-kilometer race felt like [blank] to the runner.`,
+        answer: `a walk in the park`,
+        hint: `idiom: an easy task`
+      },
+      {
+        vocabId: 7,
+        sentence: `Learning to code in Python was [blank] for Kevin because he was already an experienced C++ programmer.`,
+        answer: `a walk in the park`,
+        hint: `idiom meaning very simple and straightforward`
+      },
+      {
+        vocabId: 7,
+        sentence: `Do not underestimate the final exam; with forty detailed questions to solve, it will certainly not be [blank].`,
+        answer: `a walk in the park`,
+        hint: `idiom: simple and effortless task`
+      },
+      {
+        vocabId: 7,
+        sentence: `Fixing the small bicycle puncture proved to be [blank] once we had the right patch kit ready.`,
+        answer: `a walk in the park`,
+        hint: `idiom: very easy to accomplish`
+      },
+
+      // Word 8: resident / residents
+      {
+        vocabId: 8,
+        sentence: `The local [blank] are always angry at the lack of parking spaces in Macau.`,
+        answer: `residents`,
+        hint: `plural noun agreeing with 'are'`
+      },
+      {
+        vocabId: 8,
+        sentence: `The local [blank] were angry at the lack of parking spaces.`,
+        answer: `residents`,
+        hint: `plural noun agreeing with 'were'`
+      },
+      {
+        vocabId: 8,
+        sentence: `Every permanent [blank] of the housing estate received an electronic smart card for the main gate.`,
+        answer: `resident`,
+        hint: `singular noun following 'Every permanent'`
+      },
+      {
+        vocabId: 8,
+        sentence: `The municipal council invited every registered [blank] to voice their thoughts on the new community sports complex.`,
+        answer: `resident`,
+        hint: `singular noun following 'every registered'`
+      },
+      {
+        vocabId: 8,
+        sentence: `When the typhoon alert sounded, emergency wardens promptly assisted elderly [blank] to move to safe shelters.`,
+        answer: `residents`,
+        hint: `plural noun: people living in the area`
+      },
+      {
+        vocabId: 8,
+        sentence: `As a long-time [blank] of this historic neighborhood, Mrs. Gomez remembered every shop along the cobblestone avenue.`,
+        answer: `resident`,
+        hint: `singular noun following 'a long-time'`
+      },
+
+      // Word 9: nightmare / nightmares
+      {
+        vocabId: 9,
+        sentence: `I shouldn't have watched that movie. Yesterday it gave me [blank].`,
+        answer: `nightmares`,
+        hint: `plural noun: terrifying dreams or experiences`
+      },
+      {
+        vocabId: 9,
+        sentence: `Being trapped underwater is my worst [blank].`,
+        answer: `nightmare`,
+        hint: `singular noun: worst possible experience`
+      },
+      {
+        vocabId: 9,
+        sentence: `Getting stuck in standstill traffic with a stalling engine during a thunderstorm is any driver's ultimate [blank].`,
+        answer: `nightmare`,
+        hint: `singular noun following 'ultimate'`
+      },
+      {
+        vocabId: 9,
+        sentence: `The loud thunder and flickering shadows outside caused the frightened toddler to have recurring [blank].`,
+        answer: `nightmares`,
+        hint: `plural noun following 'recurring'`
+      },
+      {
+        vocabId: 9,
+        sentence: `Losing your passport and bank cards on the first day of an overseas holiday is a true traveler's [blank].`,
+        answer: `nightmare`,
+        hint: `singular noun: extremely unpleasant event`
+      },
+      {
+        vocabId: 9,
+        sentence: `Awakening with a racing heart, Marcus was relieved to realize that being chased by monsters was only a bad [blank].`,
+        answer: `nightmare`,
+        hint: `singular noun following 'a bad'`
+      },
+
+      // Word 10: self-sufficient
+      {
+        vocabId: 10,
+        sentence: `Joe's father passed away when he was seven, and consequently he learned to be [blank] from an early age.`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: able to provide for oneself`
+      },
+      {
+        vocabId: 10,
+        sentence: `The programme aims to make the country [blank] in food production and to cut energy imports.`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: independent in resources`
+      },
+      {
+        vocabId: 10,
+        sentence: `By growing their own vegetables and raising livestock, the local farmers have become completely [blank] without relying on imported food.`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: able to provide everything needed`
+      },
+      {
+        vocabId: 10,
+        sentence: `With its rooftop solar arrays and natural rainwater filtration tanks, the eco-cabin is completely [blank] off the electric grid.`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: independent and self-sustaining`
+      },
+      {
+        vocabId: 10,
+        sentence: `Space scientists are testing greenhouse technologies that will enable lunar settlements to become largely [blank].`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: not needing outside help`
+      },
+      {
+        vocabId: 10,
+        sentence: `Guiding young adults in cooking, basic repairs, and budget planning empowers them to become fully [blank].`,
+        answer: `self-sufficient`,
+        hint: `hyphenated adjective: independent`
+      },
+
+      // Word 11: gravity / Gravity
+      {
+        vocabId: 11,
+        sentence: `A ball rolling down a hill or stairs moves downwards because of [blank].`,
+        answer: `gravity`,
+        hint: `noun: natural force pulling objects downward`
+      },
+      {
+        vocabId: 11,
+        sentence: `The most difficult part of space travel for the team was adjusting to the change in [blank].`,
+        answer: `gravity`,
+        hint: `noun: downward gravitational force`
+      },
+      {
+        vocabId: 11,
+        sentence: `Floating in the space station is a unique experience for astronauts because there is almost zero [blank] pulling them downward.`,
+        answer: `gravity`,
+        hint: `noun: downward pulling force`
+      },
+      {
+        vocabId: 11,
+        sentence: `[blank] keeps our atmosphere wrapped securely around Earth, preventing air molecules from drifting into space.`,
+        answer: `Gravity`,
+        hint: `Capital 'G': First word of sentence`
+      },
+      {
+        vocabId: 11,
+        sentence: `Because the Moon has only one-sixth of Earth's surface [blank], astronauts can leap high while wearing heavy suits.`,
+        answer: `gravity`,
+        hint: `noun: physical force`
+      },
+      {
+        vocabId: 11,
+        sentence: `When an apple falls from a tree branch toward the soil, it demonstrates Isaac Newton's law of universal [blank].`,
+        answer: `gravity`,
+        hint: `noun: gravitational force`
+      },
+
+      // Word 12: spectacular
+      {
+        vocabId: 12,
+        sentence: `I really recommend this place because it is famous for its [blank] countryside.`,
+        answer: `spectacular`,
+        hint: `adjective: very exciting and magnificent to look at`
+      },
+      {
+        vocabId: 12,
+        sentence: `There was a [blank] sunset last night.`,
+        answer: `spectacular`,
+        hint: `adjective: visually stunning`
+      },
+      {
+        vocabId: 12,
+        sentence: `Thousands of tourists gathered on top of the mountain to admire the [blank] view of the golden sunrise.`,
+        answer: `spectacular`,
+        hint: `adjective: breathtaking to look at`
+      },
+      {
+        vocabId: 12,
+        sentence: `The acrobatic troupe thrilled the entire auditorium with a [blank] display of synchronized mid-air somersaults.`,
+        answer: `spectacular`,
+        hint: `adjective: thrilling and impressive`
+      },
+      {
+        vocabId: 12,
+        sentence: `Carved by ancient glaciers over millions of years, the valley presents a [blank] landscape of cascading waterfalls.`,
+        answer: `spectacular`,
+        hint: `adjective: magnificent to view`
+      },
+      {
+        vocabId: 12,
+        sentence: `The annual fireworks extravaganza above the harbor offered a [blank] light show that lit up the nighttime skyline.`,
+        answer: `spectacular`,
+        hint: `adjective: very exciting to behold`
+      },
+
+      // Word 13: solar panel / solar panels / Solar panels
+      {
+        vocabId: 13,
+        sentence: `It is a good idea to use [blank] to convert sunlight into electricity in order to conserve more energy.`,
+        answer: `solar panels`,
+        hint: `plural noun phrase: devices capturing solar energy`
+      },
+      {
+        vocabId: 13,
+        sentence: `[blank] are used to power satellites.`,
+        answer: `Solar panels`,
+        hint: `Capital 'S' & plural: First words of sentence`
+      },
+      {
+        vocabId: 13,
+        sentence: `The eco-friendly hotel installed dozens of [blank] on its roof to absorb sunlight and convert it into electricity.`,
+        answer: `solar panels`,
+        hint: `plural noun phrase after 'dozens of'`
+      },
+      {
+        vocabId: 13,
+        sentence: `Each individual photovoltaic [blank] on the remote station produces enough power to charge the battery units.`,
+        answer: `solar panel`,
+        hint: `singular noun phrase after 'Each individual photovoltaic'`
+      },
+      {
+        vocabId: 13,
+        sentence: `The technician replaced a damaged [blank] on the warehouse roof to maintain optimal electricity output.`,
+        answer: `solar panel`,
+        hint: `singular noun phrase following 'a damaged'`
+      },
+      {
+        vocabId: 13,
+        sentence: `Deploying thousands of high-tech [blank] across the desert allows energy companies to supply clean power to the grid.`,
+        answer: `solar panels`,
+        hint: `plural noun phrase`
+      },
+
+      // Word 14: generate
+      {
+        vocabId: 14,
+        sentence: `The wind farm in this village may be able to [blank] enough electricity or power for 2,000 homes.`,
+        answer: `generate`,
+        hint: `verb: produce energy in a particular form`
+      },
+      {
+        vocabId: 14,
+        sentence: `These huge wind turbines near the coast can [blank] enough clean power for thousands of homes every day.`,
+        answer: `generate`,
+        hint: `base verb following modal 'can'`
+      },
+      {
+        vocabId: 14,
+        sentence: `The wind farm may be able to [blank] enough electricity for 2,000 homes.`,
+        answer: `generate`,
+        hint: `base verb after 'able to'`
+      },
+      {
+        vocabId: 14,
+        sentence: `Hydroelectric dams harness the gravitational rush of river water to [blank] clean renewable electricity.`,
+        answer: `generate`,
+        hint: `verb after 'to': produce power`
+      },
+      {
+        vocabId: 14,
+        sentence: `The initial advertising campaign failed to [blank] sufficient customer interest in the newly launched product.`,
+        answer: `generate`,
+        hint: `verb after 'failed to': create or produce`
+      },
+      {
+        vocabId: 14,
+        sentence: `Modern geothermal energy facilities use deep underground steam to [blank] reliable power around the clock.`,
+        answer: `generate`,
+        hint: `verb after 'to': create or produce electricity`
+      },
+
+      // Word 15: dull
+      {
+        vocabId: 15,
+        sentence: `For years, my father has been doing the same [blank] routine job every day and he thinks it's really uninteresting.`,
+        answer: `dull`,
+        hint: `adjective: boring, not interesting or exciting`
+      },
+      {
+        vocabId: 15,
+        sentence: `He's pleasant enough, but rather [blank].`,
+        answer: `dull`,
+        hint: `adjective: lacking excitement or interest`
+      },
+      {
+        vocabId: 15,
+        sentence: `The two-hour speech consisted entirely of reading raw statistical tables, making the session exceptionally [blank].`,
+        answer: `dull`,
+        hint: `adjective: monotonous and unexciting`
+      },
+      {
+        vocabId: 15,
+        sentence: `Under the overcast winter skies, the empty concrete courtyards looked dreary and [blank].`,
+        answer: `dull`,
+        hint: `adjective: lacking color or liveliness`
+      },
+      {
+        vocabId: 15,
+        sentence: `Without lively demonstrations or interactive exercises, the grammar lesson felt rather [blank] to the energetic students.`,
+        answer: `dull`,
+        hint: `adjective: uninteresting`
+      },
+      {
+        vocabId: 15,
+        sentence: `The author's humorous anecdotes ensured that the historical biography was never [blank] or tedious.`,
+        answer: `dull`,
+        hint: `adjective: boring or tedious`
+      },
+
+      // Word 16: virtual
+      {
+        vocabId: 16,
+        sentence: `This website has been upgraded recently and it allows you to take a [blank] tour of the art gallery.`,
+        answer: `virtual`,
+        hint: `adjective: simulated on a computer`
+      },
+      {
+        vocabId: 16,
+        sentence: `Wearing a VR headset allows students to take a [blank] tour of ancient historical sites without leaving their classroom.`,
+        answer: `virtual`,
+        hint: `adjective: computer-generated experience`
+      },
+      {
+        vocabId: 16,
+        sentence: `This platform has continued to be developed into a more fully featured [blank] learning environment.`,
+        answer: `virtual`,
+        hint: `adjective: online/digital computer environment`
+      },
+      {
+        vocabId: 16,
+        sentence: `Because international flights were postponed, the medical society hosted an interactive [blank] conference online.`,
+        answer: `virtual`,
+        hint: `adjective: taking place over computers`
+      },
+      {
+        vocabId: 16,
+        sentence: `Flight cadets use a realistic [blank] cockpit simulator to practice landing safely in emergency storm scenarios.`,
+        answer: `virtual`,
+        hint: `adjective: computerized simulation`
+      },
+      {
+        vocabId: 16,
+        sentence: `The university opened a 24-hour [blank] library allowing remote students to browse digital archives seamlessly.`,
+        answer: `virtual`,
+        hint: `adjective: online/computer-based`
+      },
+
+      // Word 17: refreshed
+      {
+        vocabId: 17,
+        sentence: `I feel so [blank] and full of energy after drinking that cup of iced tea.`,
+        answer: `refreshed`,
+        hint: `adjective: made to feel less tired or less hot`
+      },
+      {
+        vocabId: 17,
+        sentence: `After a long shower and eight hours of restful sleep, I woke up feeling completely [blank] and energetic.`,
+        answer: `refreshed`,
+        hint: `adjective: invigorated, restored in energy`
+      },
+      {
+        vocabId: 17,
+        sentence: `He felt [blank] after his holiday.`,
+        answer: `refreshed`,
+        hint: `adjective: restored, less exhausted`
+      },
+      {
+        vocabId: 17,
+        sentence: `Stepping out of the humid classroom into the cool mountain breeze left the hikers feeling instantly [blank].`,
+        answer: `refreshed`,
+        hint: `adjective: cooler and less tired`
+      },
+      {
+        vocabId: 17,
+        sentence: `A twenty-minute afternoon nap helped the programmer feel [blank] and ready to tackle challenging lines of code.`,
+        answer: `refreshed`,
+        hint: `adjective: rested and alert`
+      },
+      {
+        vocabId: 17,
+        sentence: `After splashing cold water on his face following the long hike, David felt remarkably [blank].`,
+        answer: `refreshed`,
+        hint: `adjective: revitalized and cooler`
+      },
+
+      // Word 18: checkup / checkups
+      {
+        vocabId: 18,
+        sentence: `I need to go to my dentist for regular [blank] tomorrow morning; therefore, I won't be able to go to the shopping mall with you.`,
+        answer: `checkups`,
+        hint: `plural noun: regular health examinations`
+      },
+      {
+        vocabId: 18,
+        sentence: `It is important to visit your doctor at least once a year for a routine health [blank] to monitor your blood pressure and heart rate.`,
+        answer: `checkup`,
+        hint: `singular noun following 'a routine health'`
+      },
+      {
+        vocabId: 18,
+        sentence: `She goes to her doctor for regular [blank].`,
+        answer: `checkups`,
+        hint: `plural noun: periodic medical exams`
+      },
+      {
+        vocabId: 18,
+        sentence: `Before participating in the varsity tournament, every athlete was required to complete a thorough physical [blank].`,
+        answer: `checkup`,
+        hint: `singular noun following 'a thorough physical'`
+      },
+      {
+        vocabId: 18,
+        sentence: `Family doctors advise scheduling regular pediatric [blank] during a child's earliest developmental years.`,
+        answer: `checkups`,
+        hint: `plural noun: medical examinations`
+      },
+      {
+        vocabId: 18,
+        sentence: `Taking your domestic pet to the veterinary clinic for an annual [blank] helps identify hidden health issues early.`,
+        answer: `checkup`,
+        hint: `singular noun following 'an annual'`
+      },
+
+      // Word 19: sign up / signed up
+      {
+        vocabId: 19,
+        sentence: `I have already [blank] for online courses of this college and I hope that I can gain some knowledge in using AI.`,
+        answer: `signed up`,
+        hint: `past participle form following 'have already'`
+      },
+      {
+        vocabId: 19,
+        sentence: `She's [blank] for evening classes at the community college.`,
+        answer: `signed up`,
+        hint: `past participle following contraction 'She has'`
+      },
+      {
+        vocabId: 19,
+        sentence: `Hundreds of enthusiastic community members [blank] for the environmental coastal cleanup last Saturday.`,
+        answer: `signed up`,
+        hint: `simple past tense verb phrase`
+      },
+      {
+        vocabId: 19,
+        sentence: `If you wish to participate in the school debate tournament, please remember to [blank] on the sign-in sheet before Wednesday.`,
+        answer: `sign up`,
+        hint: `base infinitive phrasal verb after 'remember to'`
+      },
+      {
+        vocabId: 19,
+        sentence: `Students interested in joining the robotics competition must [blank] with their science teacher by Friday afternoon.`,
+        answer: `sign up`,
+        hint: `base phrasal verb following modal 'must'`
+      },
+      {
+        vocabId: 19,
+        sentence: `More than fifty eager participants [blank] for the interactive digital animation workshop within ten minutes.`,
+        answer: `signed up`,
+        hint: `simple past tense verb phrase`
+      },
+
+      // Word 20: eventually
+      {
+        vocabId: 20,
+        sentence: `It might take him ages to finish the big project but I believe he'll do it [blank].`,
+        answer: `eventually`,
+        hint: `adverb: in the end, after time or effort`
+      },
+      {
+        vocabId: 20,
+        sentence: `It might take him ages but he'll do it [blank].`,
+        answer: `eventually`,
+        hint: `adverb: in the end`
+      },
+      {
+        vocabId: 20,
+        sentence: `Although the innovative venture lost money during its first year, customer demand grew and it [blank] achieved substantial profitability.`,
+        answer: `eventually`,
+        hint: `adverb: ultimately after a long struggle`
+      },
+      {
+        vocabId: 20,
+        sentence: `Keep practicing your violin scales persistently, and your fingers will [blank] master the intricate bowing technique.`,
+        answer: `eventually`,
+        hint: `adverb: in due course / in the end`
+      },
+      {
+        vocabId: 20,
+        sentence: `After trekking through dense fog and slippery rock faces for seven grueling hours, the hikers [blank] stood upon the windy peak.`,
+        answer: `eventually`,
+        hint: `adverb: in the end after much effort`
+      },
+      {
+        vocabId: 20,
+        sentence: `Even when tackling challenging syntactic rules, diligent English students will [blank] gain full fluency and mastery.`,
+        answer: `eventually`,
+        hint: `adverb: in the end`
+      }
+    ];
+
+    // Randomized Positive English Praise Bank
+    const PRAISE_BANK = [
+      `Brilliant work! Spot on!`,
+      `Outstanding! You have mastered this concept!`,
+      `Excellent precision! Keep the momentum going!`,
+      `Superb! That was exactly right!`,
+      `Fantastic! Your vocabulary recall is shining!`,
+      `Splendid effort! Right on the mark!`,
+      `Awesome! Perfect accuracy!`,
+      `Terrific work! That is 100% correct!`,
+      `Bravo! Masterful execution!`,
+      `Great job! Keep up this brilliant pace!`,
+      `Impressive recall! You nailed it!`,
+      `Magnificent! Total mastery demonstrated!`,
+      `Spot-on answer! You are flying through this!`,
+      `Top-notch work! Flawlessly answered!`,
+      `Exceptional! Keep this sharpness up!`
+    ];
+
+    /* ==========================================================================
+       2. AUDIO ENGINE (Offline Web Audio API Synthesizer)
+       ========================================================================== */
+    let audioEnabled = true;
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx && typeof window.AudioContext !== `undefined`) {
+        audioCtx = new window.AudioContext();
+      } else if (!audioCtx && typeof window.webkitAudioContext !== `undefined`) {
+        audioCtx = new window.webkitAudioContext();
+      }
+      if (audioCtx && audioCtx.state === `suspended`) {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        if (type === `correct`) {
+          // Cheerful chime: two ascending tones
+          const now = ctx.currentTime;
+          const osc1 = ctx.createOscillator();
+          const gain1 = ctx.createGain();
+          osc1.type = `sine`;
+          osc1.frequency.setValueAtTime(587.33, now); // D5
+          osc1.frequency.exponentialRampToValueAtTime(880, now + 0.15); // A5
+          gain1.gain.setValueAtTime(0.2, now);
+          gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc1.connect(gain1);
+          gain1.connect(ctx.destination);
+          osc1.start(now);
+          osc1.stop(now + 0.35);
+        } else if (type === `wrong`) {
+          // Low gentle thud
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = `triangle`;
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.2);
+          gain.gain.setValueAtTime(0.25, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === `tick`) {
+          // Short tick for lottery roller
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = `sine`;
+          osc.frequency.setValueAtTime(440, now);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === `lotteryWin`) {
+          // Fanfare chime
+          const now = ctx.currentTime;
+          const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = `sine`;
+            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+            gain.gain.setValueAtTime(0.2, now + idx * 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.4);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + idx * 0.08);
+            osc.stop(now + idx * 0.08 + 0.4);
+          });
+        }
+      } catch (err) {
+        console.warn(`Audio playback error:`, err);
+      }
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      const label = document.getElementById(`audioLabel`);
+      const icon = document.getElementById(`audioIcon`);
+      if (label && icon) {
+        if (audioEnabled) {
+          label.textContent = `Sound ON`;
+          icon.textContent = `🔊`;
+        } else {
+          label.textContent = `Sound MUTED`;
+          icon.textContent = `🔇`;
+        }
+      }
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       3. UTILITIES & SHUFFLE
+       ========================================================================== */
+    function shuffleArray(array) {
+      const copy = array.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = temp;
+      }
+      return copy;
+    }
+
+    function getRandomPraise() {
+      const idx = Math.floor(Math.random() * PRAISE_BANK.length);
+      return PRAISE_BANK[idx];
+    }
+
+    function normalizeText(str) {
+      if (!str) return ``;
+      return str.trim().toLowerCase().replace(/\s+/g, ` `);
+    }
+
+    /* ==========================================================================
+       4. TOP-RIGHT STUDENT LOTTERY BOX
+       ========================================================================== */
+    let defaultStudents = [];
+    for (let i = 1; i <= 35; i++) {
+      defaultStudents.push(`No. ${i}`);
+    }
+
+    let studentRoster = defaultStudents.slice();
+    let drawnStudents = [];
+    let isDrawing = false;
+    let noRepeatMode = true;
+
+    function renderLotteryRosterCount() {
+      const remainingCount = noRepeatMode 
+        ? Math.max(0, studentRoster.length - drawnStudents.length)
+        : studentRoster.length;
+      const badge = document.getElementById(`lotteryRemainingBadge`);
+      if (badge) {
+        badge.textContent = `${remainingCount} Active`;
+      }
+    }
+
+    function renderLotteryHistory() {
+      const container = document.getElementById(`lotteryHistoryChips`);
+      const countEl = document.getElementById(`historyCountDisplay`);
+      if (!container || !countEl) return;
+
+      countEl.textContent = `${drawnStudents.length} drawn`;
+      if (drawnStudents.length === 0) {
+        container.innerHTML = `<span style="font-size: 0.75rem; color: var(--on-surface-variant); font-style: italic;">No students drawn yet</span>`;
+        return;
+      }
+
+      let html = ``;
+      for (let i = drawnStudents.length - 1; i >= 0; i--) {
+        const isLatest = (i === drawnStudents.length - 1);
+        html += `<span class="history-chip ${isLatest ? 'latest' : ''}">${escapeHtml(drawnStudents[i])}</span>`;
+      }
+      container.innerHTML = html;
+    }
+
+    function drawStudent() {
+      if (isDrawing) return;
+      if (studentRoster.length === 0) {
+        alert(`Student roster is empty! Please click 'Edit Roster' and add names.`);
+        return;
+      }
+
+      let candidatePool = studentRoster.slice();
+      if (noRepeatMode) {
+        candidatePool = candidatePool.filter(s => !drawnStudents.includes(s));
+        if (candidatePool.length === 0) {
+          alert(`All ${studentRoster.length} students have been drawn! Reset the pool or disable 'No repeats' to draw again.`);
+          return;
+        }
+      }
+
+      isDrawing = true;
+      const drawBtn = document.getElementById(`drawStudentBtn`);
+      const display = document.getElementById(`lotteryResultDisplay`);
+      const subtext = document.getElementById(`lotterySubtextDisplay`);
+      if (drawBtn) drawBtn.disabled = true;
+      if (display) display.classList.add(`rolling`);
+      if (subtext) subtext.textContent = `Rolling random selection...`;
+
+      // Roll animation: rapidly display random names
+      let counter = 0;
+      const totalTicks = 16;
+      const interval = setInterval(() => {
+        counter++;
+        const tempChoice = candidatePool[Math.floor(Math.random() * candidatePool.length)];
+        if (display) display.textContent = tempChoice;
+        playSound(`tick`);
+
+        if (counter >= totalTicks) {
+          clearInterval(interval);
+          const chosenStudent = candidatePool[Math.floor(Math.random() * candidatePool.length)];
+          if (display) {
+            display.textContent = chosenStudent;
+            display.classList.remove(`rolling`);
+          }
+          if (subtext) subtext.textContent = `Selected for Question!`;
+
+          drawnStudents.push(chosenStudent);
+          renderLotteryHistory();
+          renderLotteryRosterCount();
+          playSound(`lotteryWin`);
+          if (drawBtn) drawBtn.disabled = false;
+          isDrawing = false;
+          persistAppState();
+        }
+      }, 75);
+    }
+
+    function handleNoRepeatChange() {
+      const checkbox = document.getElementById(`noRepeatCheckbox`);
+      if (checkbox) {
+        noRepeatMode = checkbox.checked;
+        renderLotteryRosterCount();
+        persistAppState();
+      }
+    }
+
+    function resetLotterySession() {
+      if (confirm(`Reset drawn history for the student lottery?`)) {
+        drawnStudents = [];
+        const display = document.getElementById(`lotteryResultDisplay`);
+        const subtext = document.getElementById(`lotterySubtextDisplay`);
+        if (display) display.textContent = `READY`;
+        if (subtext) subtext.textContent = `Press Draw to Pick Student`;
+        renderLotteryHistory();
+        renderLotteryRosterCount();
+        persistAppState();
+      }
+    }
+
+    function toggleRosterEditor() {
+      const editor = document.getElementById(`rosterEditorBox`);
+      const textarea = document.getElementById(`rosterTextarea`);
+      if (!editor || !textarea) return;
+
+      const isHidden = (window.getComputedStyle(editor).display === `none`);
+      if (isHidden) {
+        textarea.value = studentRoster.join(`\n`);
+        editor.classList.add(`active`);
+      } else {
+        editor.classList.remove(`active`);
+      }
+    }
+
+    function saveCustomRoster() {
+      const textarea = document.getElementById(`rosterTextarea`);
+      if (!textarea) return;
+      const lines = textarea.value.split(`\n`).map(l => l.trim()).filter(l => l.length > 0);
+      if (lines.length === 0) {
+        alert(`Roster cannot be empty. Enter at least one student name or number.`);
+        return;
+      }
+      studentRoster = lines;
+      drawnStudents = [];
+      const editor = document.getElementById(`rosterEditorBox`);
+      if (editor) editor.classList.remove(`active`);
+      renderLotteryRosterCount();
+      renderLotteryHistory();
+      alert(`Student roster updated with ${studentRoster.length} students!`);
+      persistAppState();
+    }
+
+    function loadDefaultSeatRoster() {
+      studentRoster = defaultStudents.slice();
+      drawnStudents = [];
+      const textarea = document.getElementById(`rosterTextarea`);
+      if (textarea) textarea.value = studentRoster.join(`\n`);
+      const editor = document.getElementById(`rosterEditorBox`);
+      if (editor) editor.classList.remove(`active`);
+      renderLotteryRosterCount();
+      renderLotteryHistory();
+      alert(`Roster reset to default seat numbers: No. 1 to No. 35.`);
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       5. STAGE 1: VOCABULARY 1–10
+       ========================================================================== */
+    let stage1Questions = [];
+    let stage1CurrentIndex = 0;
+    let stage1Score = 0;
+    let stage1AnswerChecked = false;
+
+    function initStage1() {
+      const items = VOCABULARY_DATA.slice(0, 10);
+      stage1Questions = shuffleArray(items);
+      stage1CurrentIndex = 0;
+      stage1Score = 0;
+      stage1AnswerChecked = false;
+      renderStage1Question();
+    }
+
+    function restartStage1() {
+      const card = document.getElementById(`stage1-card`);
+      const completeCard = document.getElementById(`stage1-complete`);
+      if (card) card.style.display = `block`;
+      if (completeCard) completeCard.classList.remove(`active`);
+      initStage1();
+    }
+
+    function renderStage1Question() {
+      if (stage1CurrentIndex >= stage1Questions.length) {
+        showStage1Complete();
+        return;
+      }
+
+      const q = stage1Questions[stage1CurrentIndex];
+      const counterEl = document.getElementById(`stage1-counter`);
+      const scoreEl = document.getElementById(`stage1-score-display`);
+      const defEl = document.getElementById(`stage1-definition-text`);
+      const wordInput = document.getElementById(`stage1-word-input`);
+      const posInput = document.getElementById(`stage1-pos-input`);
+      const feedback = document.getElementById(`stage1-feedback`);
+      const submitBtn = document.getElementById(`stage1-submit-btn`);
+      const nextBtn = document.getElementById(`stage1-next-btn`);
+      const progressFill = document.getElementById(`stage1-progress-fill`);
+
+      if (counterEl) counterEl.textContent = `Question ${stage1CurrentIndex + 1} of ${stage1Questions.length}`;
+      if (scoreEl) scoreEl.textContent = `${stage1Score} / ${stage1Questions.length}`;
+      if (defEl) defEl.textContent = `"${q.definition}"`;
+
+      if (wordInput) {
+        wordInput.value = ``;
+        wordInput.disabled = false;
+        wordInput.focus();
+      }
+      if (posInput) {
+        posInput.value = ``;
+        posInput.disabled = false;
+      }
+
+      if (feedback) {
+        feedback.className = `feedback-box`;
+        feedback.style.display = `none`;
+      }
+      if (submitBtn) submitBtn.style.display = `inline-flex`;
+      if (nextBtn) nextBtn.style.display = `none`;
+
+      if (progressFill) {
+        const pct = (stage1CurrentIndex / stage1Questions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      stage1AnswerChecked = false;
+    }
+
+    function handleStage1Submit(event) {
+      if (event) event.preventDefault();
+      if (stage1AnswerChecked) return;
+
+      const q = stage1Questions[stage1CurrentIndex];
+      const wordInput = document.getElementById(`stage1-word-input`);
+      const posInput = document.getElementById(`stage1-pos-input`);
+      const feedback = document.getElementById(`stage1-feedback`);
+      const feedbackTitle = document.getElementById(`stage1-feedback-title`);
+      const feedbackPraise = document.getElementById(`stage1-feedback-praise`);
+      const feedbackDetails = document.getElementById(`stage1-feedback-details`);
+      const submitBtn = document.getElementById(`stage1-submit-btn`);
+      const nextBtn = document.getElementById(`stage1-next-btn`);
+
+      if (!wordInput || !posInput || !feedback) return;
+
+      const userWord = normalizeText(wordInput.value);
+      const userPos = normalizeText(posInput.value);
+      const correctWord = normalizeText(q.word);
+
+      const isWordMatch = (userWord === correctWord);
+      const isPosMatch = q.posAliases.some(alias => normalizeText(alias) === userPos);
+
+      stage1AnswerChecked = true;
+      wordInput.disabled = true;
+      posInput.disabled = true;
+      if (submitBtn) submitBtn.style.display = `none`;
+      if (nextBtn) nextBtn.style.display = `inline-flex`;
+      nextBtn.focus();
+
+      feedback.style.display = `block`;
+
+      if (isWordMatch && isPosMatch) {
+        stage1Score++;
+        const scoreEl = document.getElementById(`stage1-score-display`);
+        if (scoreEl) scoreEl.textContent = `${stage1Score} / ${stage1Questions.length}`;
+
+        feedback.className = `feedback-box active feedback-correct`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✓ Correct!`;
+        if (feedbackPraise) feedbackPraise.textContent = getRandomPraise();
+        if (feedbackDetails) {
+          feedbackDetails.innerHTML = `Target Word: <strong>${escapeHtml(q.word)}</strong> | Part of Speech: <em>${escapeHtml(q.pos)}</em>`;
+        }
+        playSound(`correct`);
+      } else {
+        feedback.className = `feedback-box active feedback-incorrect`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✕ Not quite right`;
+        if (feedbackPraise) feedbackPraise.textContent = `Review the correct target term:`;
+        let errDesc = ``;
+        if (!isWordMatch && isPosMatch) {
+          errDesc = `Part of speech was correct (<em>${escapeHtml(q.pos)}</em>), but the required word was <strong>${escapeHtml(q.word)}</strong>.`;
+        } else if (isWordMatch && !isPosMatch) {
+          errDesc = `Word was correct (<strong>${escapeHtml(q.word)}</strong>), but the part of speech is <em>${escapeHtml(q.pos)}</em>.`;
+        } else {
+          errDesc = `Expected Word: <strong>${escapeHtml(q.word)}</strong> | Part of Speech: <em>${escapeHtml(q.pos)}</em>.`;
+        }
+        if (feedbackDetails) feedbackDetails.innerHTML = errDesc;
+        playSound(`wrong`);
+      }
+
+      persistAppState();
+    }
+
+    function nextStage1Question() {
+      stage1CurrentIndex++;
+      renderStage1Question();
+    }
+
+    function showStage1Complete() {
+      const card = document.getElementById(`stage1-card`);
+      const completeCard = document.getElementById(`stage1-complete`);
+      const finalScoreEl = document.getElementById(`stage1-final-score`);
+      const finalRateEl = document.getElementById(`stage1-final-rate`);
+      const progressFill = document.getElementById(`stage1-progress-fill`);
+
+      if (card) card.style.display = `none`;
+      if (completeCard) completeCard.classList.add(`active`);
+      if (progressFill) progressFill.style.width = `100%`;
+
+      const pct = Math.round((stage1Score / stage1Questions.length) * 100);
+      if (finalScoreEl) finalScoreEl.textContent = `${stage1Score} / ${stage1Questions.length}`;
+      if (finalRateEl) finalRateEl.textContent = `${pct}%`;
+      playSound(`lotteryWin`);
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       6. STAGE 2: VOCABULARY 11–20
+       ========================================================================== */
+    let stage2Questions = [];
+    let stage2CurrentIndex = 0;
+    let stage2Score = 0;
+    let stage2AnswerChecked = false;
+
+    function initStage2() {
+      const items = VOCABULARY_DATA.slice(10, 20);
+      stage2Questions = shuffleArray(items);
+      stage2CurrentIndex = 0;
+      stage2Score = 0;
+      stage2AnswerChecked = false;
+      renderStage2Question();
+    }
+
+    function restartStage2() {
+      const card = document.getElementById(`stage2-card`);
+      const completeCard = document.getElementById(`stage2-complete`);
+      if (card) card.style.display = `block`;
+      if (completeCard) completeCard.classList.remove(`active`);
+      initStage2();
+    }
+
+    function renderStage2Question() {
+      if (stage2CurrentIndex >= stage2Questions.length) {
+        showStage2Complete();
+        return;
+      }
+
+      const q = stage2Questions[stage2CurrentIndex];
+      const counterEl = document.getElementById(`stage2-counter`);
+      const scoreEl = document.getElementById(`stage2-score-display`);
+      const defEl = document.getElementById(`stage2-definition-text`);
+      const wordInput = document.getElementById(`stage2-word-input`);
+      const posInput = document.getElementById(`stage2-pos-input`);
+      const feedback = document.getElementById(`stage2-feedback`);
+      const submitBtn = document.getElementById(`stage2-submit-btn`);
+      const nextBtn = document.getElementById(`stage2-next-btn`);
+      const progressFill = document.getElementById(`stage2-progress-fill`);
+
+      if (counterEl) counterEl.textContent = `Question ${stage2CurrentIndex + 1} of ${stage2Questions.length}`;
+      if (scoreEl) scoreEl.textContent = `${stage2Score} / ${stage2Questions.length}`;
+      if (defEl) defEl.textContent = `"${q.definition}"`;
+
+      if (wordInput) {
+        wordInput.value = ``;
+        wordInput.disabled = false;
+        wordInput.focus();
+      }
+      if (posInput) {
+        posInput.value = ``;
+        posInput.disabled = false;
+      }
+
+      if (feedback) {
+        feedback.className = `feedback-box`;
+        feedback.style.display = `none`;
+      }
+      if (submitBtn) submitBtn.style.display = `inline-flex`;
+      if (nextBtn) nextBtn.style.display = `none`;
+
+      if (progressFill) {
+        const pct = (stage2CurrentIndex / stage2Questions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      stage2AnswerChecked = false;
+    }
+
+    function handleStage2Submit(event) {
+      if (event) event.preventDefault();
+      if (stage2AnswerChecked) return;
+
+      const q = stage2Questions[stage2CurrentIndex];
+      const wordInput = document.getElementById(`stage2-word-input`);
+      const posInput = document.getElementById(`stage2-pos-input`);
+      const feedback = document.getElementById(`stage2-feedback`);
+      const feedbackTitle = document.getElementById(`stage2-feedback-title`);
+      const feedbackPraise = document.getElementById(`stage2-feedback-praise`);
+      const feedbackDetails = document.getElementById(`stage2-feedback-details`);
+      const submitBtn = document.getElementById(`stage2-submit-btn`);
+      const nextBtn = document.getElementById(`stage2-next-btn`);
+
+      if (!wordInput || !posInput || !feedback) return;
+
+      const userWord = normalizeText(wordInput.value);
+      const userPos = normalizeText(posInput.value);
+      const correctWord = normalizeText(q.word);
+
+      const isWordMatch = (userWord === correctWord);
+      const isPosMatch = q.posAliases.some(alias => normalizeText(alias) === userPos);
+
+      stage2AnswerChecked = true;
+      wordInput.disabled = true;
+      posInput.disabled = true;
+      if (submitBtn) submitBtn.style.display = `none`;
+      if (nextBtn) nextBtn.style.display = `inline-flex`;
+      nextBtn.focus();
+
+      feedback.style.display = `block`;
+
+      if (isWordMatch && isPosMatch) {
+        stage2Score++;
+        const scoreEl = document.getElementById(`stage2-score-display`);
+        if (scoreEl) scoreEl.textContent = `${stage2Score} / ${stage2Questions.length}`;
+
+        feedback.className = `feedback-box active feedback-correct`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✓ Correct!`;
+        if (feedbackPraise) feedbackPraise.textContent = getRandomPraise();
+        if (feedbackDetails) {
+          feedbackDetails.innerHTML = `Target Word: <strong>${escapeHtml(q.word)}</strong> | Part of Speech: <em>${escapeHtml(q.pos)}</em>`;
+        }
+        playSound(`correct`);
+      } else {
+        feedback.className = `feedback-box active feedback-incorrect`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✕ Not quite right`;
+        if (feedbackPraise) feedbackPraise.textContent = `Review the correct target term:`;
+        let errDesc = ``;
+        if (!isWordMatch && isPosMatch) {
+          errDesc = `Part of speech was correct (<em>${escapeHtml(q.pos)}</em>), but the required word was <strong>${escapeHtml(q.word)}</strong>.`;
+        } else if (isWordMatch && !isPosMatch) {
+          errDesc = `Word was correct (<strong>${escapeHtml(q.word)}</strong>), but the part of speech is <em>${escapeHtml(q.pos)}</em>.`;
+        } else {
+          errDesc = `Expected Word: <strong>${escapeHtml(q.word)}</strong> | Part of Speech: <em>${escapeHtml(q.pos)}</em>.`;
+        }
+        if (feedbackDetails) feedbackDetails.innerHTML = errDesc;
+        playSound(`wrong`);
+      }
+
+      persistAppState();
+    }
+
+    function nextStage2Question() {
+      stage2CurrentIndex++;
+      renderStage2Question();
+    }
+
+    function showStage2Complete() {
+      const card = document.getElementById(`stage2-card`);
+      const completeCard = document.getElementById(`stage2-complete`);
+      const finalScoreEl = document.getElementById(`stage2-final-score`);
+      const finalRateEl = document.getElementById(`stage2-final-rate`);
+      const progressFill = document.getElementById(`stage2-progress-fill`);
+
+      if (card) card.style.display = `none`;
+      if (completeCard) completeCard.classList.add(`active`);
+      if (progressFill) progressFill.style.width = `100%`;
+
+      const pct = Math.round((stage2Score / stage2Questions.length) * 100);
+      if (finalScoreEl) finalScoreEl.textContent = `${stage2Score} / ${stage2Questions.length}`;
+      if (finalRateEl) finalRateEl.textContent = `${pct}%`;
+      playSound(`lotteryWin`);
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       7. STAGE 3: COMPREHENSIVE MIXED REVIEW (VOCAB 1–20)
+       ========================================================================== */
+    let stage3Questions = [];
+    let stage3CurrentIndex = 0;
+    let stage3Score = 0;
+    let stage3AnswerChecked = false;
+
+    function initStage3() {
+      stage3Questions = shuffleArray(VOCABULARY_DATA);
+      stage3CurrentIndex = 0;
+      stage3Score = 0;
+      stage3AnswerChecked = false;
+      renderStage3Question();
+    }
+
+    function restartStage3() {
+      const card = document.getElementById(`stage3-card`);
+      const completeCard = document.getElementById(`stage3-complete`);
+      if (card) card.style.display = `block`;
+      if (completeCard) completeCard.classList.remove(`active`);
+      initStage3();
+    }
+
+    function renderStage3Question() {
+      if (stage3CurrentIndex >= stage3Questions.length) {
+        showStage3Complete();
+        return;
+      }
+
+      const q = stage3Questions[stage3CurrentIndex];
+      const counterEl = document.getElementById(`stage3-counter`);
+      const scoreEl = document.getElementById(`stage3-score-display`);
+      const defEl = document.getElementById(`stage3-definition-text`);
+      const wordInput = document.getElementById(`stage3-word-input`);
+      const posInput = document.getElementById(`stage3-pos-input`);
+      const feedback = document.getElementById(`stage3-feedback`);
+      const submitBtn = document.getElementById(`stage3-submit-btn`);
+      const nextBtn = document.getElementById(`stage3-next-btn`);
+      const progressFill = document.getElementById(`stage3-progress-fill`);
+
+      if (counterEl) counterEl.textContent = `Question ${stage3CurrentIndex + 1} of ${stage3Questions.length}`;
+      if (scoreEl) scoreEl.textContent = `${stage3Score} / ${stage3Questions.length}`;
+      if (defEl) defEl.textContent = `"${q.definition}"`;
+
+      if (wordInput) {
+        wordInput.value = ``;
+        wordInput.disabled = false;
+        wordInput.focus();
+      }
+      if (posInput) {
+        posInput.value = ``;
+        posInput.disabled = false;
+      }
+
+      if (feedback) {
+        feedback.className = `feedback-box`;
+        feedback.style.display = `none`;
+      }
+      if (submitBtn) submitBtn.style.display = `inline-flex`;
+      if (nextBtn) nextBtn.style.display = `none`;
+
+      if (progressFill) {
+        const pct = (stage3CurrentIndex / stage3Questions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      stage3AnswerChecked = false;
+    }
+
+    function handleStage3Submit(event) {
+      if (event) event.preventDefault();
+      if (stage3AnswerChecked) return;
+
+      const q = stage3Questions[stage3CurrentIndex];
+      const wordInput = document.getElementById(`stage3-word-input`);
+      const posInput = document.getElementById(`stage3-pos-input`);
+      const feedback = document.getElementById(`stage3-feedback`);
+      const feedbackTitle = document.getElementById(`stage3-feedback-title`);
+      const feedbackPraise = document.getElementById(`stage3-feedback-praise`);
+      const feedbackDetails = document.getElementById(`stage3-feedback-details`);
+      const submitBtn = document.getElementById(`stage3-submit-btn`);
+      const nextBtn = document.getElementById(`stage3-next-btn`);
+
+      if (!wordInput || !posInput || !feedback) return;
+
+      const userWord = normalizeText(wordInput.value);
+      const userPos = normalizeText(posInput.value);
+      const correctWord = normalizeText(q.word);
+
+      const isWordMatch = (userWord === correctWord);
+      const isPosMatch = q.posAliases.some(alias => normalizeText(alias) === userPos);
+
+      stage3AnswerChecked = true;
+      wordInput.disabled = true;
+      posInput.disabled = true;
+      if (submitBtn) submitBtn.style.display = `none`;
+      if (nextBtn) nextBtn.style.display = `inline-flex`;
+      nextBtn.focus();
+
+      feedback.style.display = `block`;
+
+      if (isWordMatch && isPosMatch) {
+        stage3Score++;
+        const scoreEl = document.getElementById(`stage3-score-display`);
+        if (scoreEl) scoreEl.textContent = `${stage3Score} / ${stage3Questions.length}`;
+
+        feedback.className = `feedback-box active feedback-correct`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✓ Correct!`;
+        if (feedbackPraise) feedbackPraise.textContent = getRandomPraise();
+        if (feedbackDetails) {
+          feedbackDetails.innerHTML = `Target Word: <strong>${escapeHtml(q.word)}</strong> | Part of Speech: <em>${escapeHtml(q.pos)}</em>`;
+        }
+        playSound(`correct`);
+      } else {
+        feedback.className = `feedback-box active feedback-incorrect`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✕ Review Needed`;
+        if (feedbackPraise) feedbackPraise.textContent = `Key vocabulary target:`;
+        let errDesc = ``;
+        if (!isWordMatch && isPosMatch) {
+          errDesc = `Part of speech matched (<em>${escapeHtml(q.pos)}</em>), but the required word was <strong>${escapeHtml(q.word)}</strong>.`;
+        } else if (isWordMatch && !isPosMatch) {
+          errDesc = `Word was correct (<strong>${escapeHtml(q.word)}</strong>), but part of speech is <em>${escapeHtml(q.pos)}</em>.`;
+        } else {
+          errDesc = `Expected: <strong>${escapeHtml(q.word)}</strong> (<em>${escapeHtml(q.pos)}</em>).`;
+        }
+        if (feedbackDetails) feedbackDetails.innerHTML = errDesc;
+        playSound(`wrong`);
+      }
+
+      persistAppState();
+    }
+
+    function nextStage3Question() {
+      stage3CurrentIndex++;
+      renderStage3Question();
+    }
+
+    function showStage3Complete() {
+      const card = document.getElementById(`stage3-card`);
+      const completeCard = document.getElementById(`stage3-complete`);
+      const finalScoreEl = document.getElementById(`stage3-final-score`);
+      const finalRateEl = document.getElementById(`stage3-final-rate`);
+      const progressFill = document.getElementById(`stage3-progress-fill`);
+
+      if (card) card.style.display = `none`;
+      if (completeCard) completeCard.classList.add(`active`);
+      if (progressFill) progressFill.style.width = `100%`;
+
+      const pct = Math.round((stage3Score / stage3Questions.length) * 100);
+      if (finalScoreEl) finalScoreEl.textContent = `${stage3Score} / ${stage3Questions.length}`;
+      if (finalRateEl) finalRateEl.textContent = `${pct}%`;
+      playSound(`lotteryWin`);
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       8. STAGE 4: SENTENCE APPLICATION (120-ITEM BANK, 20 PER ROUND)
+       ========================================================================== */
+    let stage4BatchNumber = 1;
+    let stage4RoundQuestions = [];
+    let stage4CurrentIndex = 0;
+    let stage4Score = 0;
+    let stage4AnswerChecked = false;
+
+    // Pick 20 questions ensuring all 20 vocabulary items are represented
+    function generateStage4Batch() {
+      const groupedByVocab = {};
+      for (let i = 1; i <= 20; i++) {
+        groupedByVocab[i] = [];
+      }
+      SENTENCE_BANK.forEach(item => {
+        if (groupedByVocab[item.vocabId]) {
+          groupedByVocab[item.vocabId].push(item);
+        }
+      });
+
+      const selected20 = [];
+      for (let i = 1; i <= 20; i++) {
+        const pool = groupedByVocab[i];
+        if (pool && pool.length > 0) {
+          const picked = pool[Math.floor(Math.random() * pool.length)];
+          selected20.push(picked);
+        }
+      }
+
+      return shuffleArray(selected20);
+    }
+
+    function initStage4() {
+      stage4RoundQuestions = generateStage4Batch();
+      stage4CurrentIndex = 0;
+      stage4Score = 0;
+      stage4AnswerChecked = false;
+      renderStage4Question();
+    }
+
+    function loadNextStage4Batch() {
+      stage4BatchNumber++;
+      const card = document.getElementById(`stage4-card`);
+      const completeCard = document.getElementById(`stage4-complete`);
+      if (card) card.style.display = `block`;
+      if (completeCard) completeCard.classList.remove(`active`);
+      initStage4();
+    }
+
+    function restartStage4Round() {
+      const card = document.getElementById(`stage4-card`);
+      const completeCard = document.getElementById(`stage4-complete`);
+      if (card) card.style.display = `block`;
+      if (completeCard) completeCard.classList.remove(`active`);
+      stage4CurrentIndex = 0;
+      stage4Score = 0;
+      stage4AnswerChecked = false;
+      renderStage4Question();
+    }
+
+    function renderStage4Question() {
+      if (stage4CurrentIndex >= stage4RoundQuestions.length) {
+        showStage4Complete();
+        return;
+      }
+
+      const q = stage4RoundQuestions[stage4CurrentIndex];
+      const counterEl = document.getElementById(`stage4-counter`);
+      const scoreEl = document.getElementById(`stage4-score-display`);
+      const sentenceEl = document.getElementById(`stage4-sentence-text`);
+      const wordInput = document.getElementById(`stage4-word-input`);
+      const feedback = document.getElementById(`stage4-feedback`);
+      const submitBtn = document.getElementById(`stage4-submit-btn`);
+      const nextBtn = document.getElementById(`stage4-next-btn`);
+      const progressFill = document.getElementById(`stage4-progress-fill`);
+
+      if (counterEl) {
+        counterEl.textContent = `Question ${stage4CurrentIndex + 1} of ${stage4RoundQuestions.length} (Batch ${stage4BatchNumber})`;
+      }
+      if (scoreEl) scoreEl.textContent = `${stage4Score} / ${stage4RoundQuestions.length}`;
+
+      if (sentenceEl) {
+        // Format sentence with stylized blank indicator
+        const formatted = q.sentence.replace(`[blank]`, `<span class="sentence-blank-indicator">________________</span>`);
+        sentenceEl.innerHTML = `"${formatted}"<br><span class="sentence-hint-tag">Grammatical Context Hint: ${escapeHtml(q.hint)}</span>`;
+      }
+
+      if (wordInput) {
+        wordInput.value = ``;
+        wordInput.disabled = false;
+        wordInput.focus();
+      }
+
+      if (feedback) {
+        feedback.className = `feedback-box`;
+        feedback.style.display = `none`;
+      }
+      if (submitBtn) submitBtn.style.display = `inline-flex`;
+      if (nextBtn) nextBtn.style.display = `none`;
+
+      if (progressFill) {
+        const pct = (stage4CurrentIndex / stage4RoundQuestions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      stage4AnswerChecked = false;
+    }
+
+    function handleStage4Submit(event) {
+      if (event) event.preventDefault();
+      if (stage4AnswerChecked) return;
+
+      const q = stage4RoundQuestions[stage4CurrentIndex];
+      const wordInput = document.getElementById(`stage4-word-input`);
+      const feedback = document.getElementById(`stage4-feedback`);
+      const feedbackTitle = document.getElementById(`stage4-feedback-title`);
+      const feedbackPraise = document.getElementById(`stage4-feedback-praise`);
+      const feedbackDetails = document.getElementById(`stage4-feedback-details`);
+      const submitBtn = document.getElementById(`stage4-submit-btn`);
+      const nextBtn = document.getElementById(`stage4-next-btn`);
+
+      if (!wordInput || !feedback) return;
+
+      const userRawAnswer = wordInput.value.trim();
+      const expectedAnswer = q.answer;
+
+      // STAGE 4 IS STRICTLY CASE-SENSITIVE
+      const isExactMatch = (userRawAnswer === expectedAnswer);
+      const isCaseMismatchOnly = (!isExactMatch && userRawAnswer.toLowerCase() === expectedAnswer.toLowerCase());
+
+      stage4AnswerChecked = true;
+      wordInput.disabled = true;
+      if (submitBtn) submitBtn.style.display = `none`;
+      if (nextBtn) nextBtn.style.display = `inline-flex`;
+      nextBtn.focus();
+
+      feedback.style.display = `block`;
+
+      if (isExactMatch) {
+        stage4Score++;
+        const scoreEl = document.getElementById(`stage4-score-display`);
+        if (scoreEl) scoreEl.textContent = `${stage4Score} / ${stage4RoundQuestions.length}`;
+
+        feedback.className = `feedback-box active feedback-correct`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✓ Brilliant! Precise Match!`;
+        if (feedbackPraise) feedbackPraise.textContent = getRandomPraise();
+        if (feedbackDetails) {
+          const completedSentence = q.sentence.replace(`[blank]`, `<strong>${escapeHtml(expectedAnswer)}</strong>`);
+          feedbackDetails.innerHTML = `Completed Sentence:<br><em>"${completedSentence}"</em>`;
+        }
+        playSound(`correct`);
+      } else {
+        feedback.className = `feedback-box active feedback-incorrect`;
+        if (feedbackTitle) feedbackTitle.innerHTML = `✕ Incorrect Answer`;
+
+        if (isCaseMismatchOnly) {
+          if (feedbackPraise) feedbackPraise.textContent = `Watch out for Capitalization! (Strict Case-Sensitive)`;
+          if (feedbackDetails) {
+            feedbackDetails.innerHTML = `You typed <code>${escapeHtml(userRawAnswer)}</code>, but the sentence requires exact casing: <strong>${escapeHtml(expectedAnswer)}</strong>.<br><em>Hint: Check if the word starts a sentence or requires a capital letter!</em>`;
+          }
+        } else {
+          if (feedbackPraise) feedbackPraise.textContent = `Correct target phrase for this sentence:`;
+          const completedSentence = q.sentence.replace(`[blank]`, `<strong>${escapeHtml(expectedAnswer)}</strong>`);
+          if (feedbackDetails) {
+            feedbackDetails.innerHTML = `Expected Answer: <strong>${escapeHtml(expectedAnswer)}</strong><br>Full Sentence: <em>"${completedSentence}"</em>`;
+          }
+        }
+        playSound(`wrong`);
+      }
+
+      persistAppState();
+    }
+
+    function nextStage4Question() {
+      stage4CurrentIndex++;
+      renderStage4Question();
+    }
+
+    function showStage4Complete() {
+      const card = document.getElementById(`stage4-card`);
+      const completeCard = document.getElementById(`stage4-complete`);
+      const finalScoreEl = document.getElementById(`stage4-final-score`);
+      const finalRateEl = document.getElementById(`stage4-final-rate`);
+      const progressFill = document.getElementById(`stage4-progress-fill`);
+
+      if (card) card.style.display = `none`;
+      if (completeCard) completeCard.classList.add(`active`);
+      if (progressFill) progressFill.style.width = `100%`;
+
+      const pct = Math.round((stage4Score / stage4RoundQuestions.length) * 100);
+      if (finalScoreEl) finalScoreEl.textContent = `${stage4Score} / ${stage4RoundQuestions.length}`;
+      if (finalRateEl) finalRateEl.textContent = `${pct}%`;
+      playSound(`lotteryWin`);
+      persistAppState();
+    }
+
+    /* ==========================================================================
+       9. NAVIGATION & MODALS
+       ========================================================================== */
+    function switchStage(stageNum) {
+      for (let i = 1; i <= 4; i++) {
+        const tab = document.getElementById(`tab-stage${i}`);
+        const panel = document.getElementById(`panel-stage${i}`);
+        if (tab) tab.classList.toggle(`active`, i === stageNum);
+        if (panel) panel.classList.toggle(`active`, i === stageNum);
+      }
+      persistAppState();
+    }
+
+    function openGuideModal() {
+      const modal = document.getElementById(`guideModal`);
+      if (modal) modal.classList.add(`active`);
+    }
+
+    function closeGuideModal(event) {
+      if (event && event.target && event.target.id !== `guideModal` && !event.target.classList.contains(`close-btn`) && event.target.tagName !== `BUTTON`) {
+        return;
+      }
+      const modal = document.getElementById(`guideModal`);
+      if (modal) modal.classList.remove(`active`);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return ``;
+      return String(text)
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`)
+        .replace(/'/g, `&#039;`);
+    }
+
+    let currentLang = `en`;
+
+    function toggleLanguage() {
+      currentLang = (currentLang === `en`) ? `zh` : `en`;
+      applyLanguage(currentLang);
+      persistAppState();
+    }
+
+    function applyLanguage(lang) {
+      const langLabel = document.getElementById(`langLabel`);
+      const guideBtnLabel = document.getElementById(`guideBtnLabel`);
+      const lotteryTitle = document.querySelector(`.lottery-title span:last-child`);
+      const drawStudentBtn = document.getElementById(`drawStudentBtn`);
+      const noRepeatSpan = document.querySelector(`.checkbox-label span`);
+      const gTitle = document.getElementById(`guideTitle`);
+      const gSec1 = document.getElementById(`guideSection1Title`);
+      const gSec2 = document.getElementById(`guideSection2Title`);
+      const gSec3 = document.getElementById(`guideSection3Title`);
+
+      if (lang === `zh`) {
+        if (langLabel) langLabel.textContent = `English UI`;
+        if (guideBtnLabel) guideBtnLabel.textContent = `課堂與教師指引`;
+        if (lotteryTitle) lotteryTitle.textContent = `學生抽籤箱`;
+        if (drawStudentBtn) drawStudentBtn.innerHTML = `<span>🎯</span><span>隨機抽取學生</span>`;
+        if (noRepeatSpan) noRepeatSpan.textContent = `本節課抽過者不重複`;
+        if (gTitle) gTitle.textContent = `課堂使用說明與教師指南`;
+        if (gSec1) gSec1.textContent = `課程單元與教學範疇`;
+        if (gSec2) gSec2.textContent = `四階段循序漸進評量說明`;
+        if (gSec3) gSec3.textContent = `右上角隨機抽籤箱功能`;
+      } else {
+        if (langLabel) langLabel.textContent = `繁體中文 UI`;
+        if (guideBtnLabel) guideBtnLabel.textContent = `Teacher & Student Guide`;
+        if (lotteryTitle) lotteryTitle.textContent = `Student Lottery Box`;
+        if (drawStudentBtn) drawStudentBtn.innerHTML = `<span>🎯</span><span>Draw Random Student</span>`;
+        if (noRepeatSpan) noRepeatSpan.textContent = `No repeats in current session`;
+        if (gTitle) gTitle.textContent = `Classroom Guide & Teacher Instructions`;
+        if (gSec1) gSec1.textContent = `Overview & Curriculum Scope`;
+        if (gSec2) gSec2.textContent = `Four-Stage Progressive Mastery Breakdown`;
+        if (gSec3) gSec3.textContent = `Top-Right Classroom Student Lottery Tool`;
+      }
+    }
+
+    /* ==========================================================================
+       10. STATE PERSISTENCE (window.notebookAppApi)
+       ========================================================================== */
+    async function persistAppState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+        try {
+          const state = {
+            currentLang: currentLang,
+            activeStage: getActiveStageNum(),
+            studentRoster: studentRoster,
+            drawnStudents: drawnStudents,
+            noRepeatMode: noRepeatMode,
+            audioEnabled: audioEnabled,
+            stage1Score: stage1Score,
+            stage2Score: stage2Score,
+            stage3Score: stage3Score,
+            stage4Score: stage4Score,
+            stage4BatchNumber: stage4BatchNumber
+          };
+          await window.notebookAppApi.setAppState(state);
+        } catch (err) {
+          console.warn(`Failed to persist notebook state:`, err);
+        }
+      }
+    }
+
+    function getActiveStageNum() {
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById(`panel-stage${i}`);
+        if (panel && panel.classList.contains(`active`)) {
+          return i;
+        }
+      }
+      return 1;
+    }
+
+    async function restoreAppState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+        try {
+          const state = await window.notebookAppApi.getAppState();
+          if (state) {
+            if (Array.isArray(state.studentRoster) && state.studentRoster.length > 0) {
+              studentRoster = state.studentRoster;
+            }
+            if (Array.isArray(state.drawnStudents)) {
+              drawnStudents = state.drawnStudents;
+            }
+            if (typeof state.noRepeatMode === `boolean`) {
+              noRepeatMode = state.noRepeatMode;
+              const chk = document.getElementById(`noRepeatCheckbox`);
+              if (chk) chk.checked = noRepeatMode;
+            }
+            if (typeof state.audioEnabled === `boolean`) {
+              audioEnabled = state.audioEnabled;
+              const label = document.getElementById(`audioLabel`);
+              const icon = document.getElementById(`audioIcon`);
+              if (label && icon) {
+                label.textContent = audioEnabled ? `Sound ON` : `Sound MUTED`;
+                icon.textContent = audioEnabled ? `🔊` : `🔇`;
+              }
+            }
+            if (state.stage4BatchNumber) {
+              stage4BatchNumber = state.stage4BatchNumber;
+            }
+            if (state.currentLang) {
+              currentLang = state.currentLang;
+              applyLanguage(currentLang);
+            }
+            if (state.activeStage && state.activeStage >= 1 && state.activeStage <= 4) {
+              switchStage(state.activeStage);
+            }
+          }
+        } catch (err) {
+          console.warn(`Failed to restore state:`, err);
+        }
+      }
+    }
+
+    /* ==========================================================================
+       11. INITIALIZATION ON PAGE LOAD
+       ========================================================================== */
+    window.addEventListener(`DOMContentLoaded`, async () => {
+      // Initialize Stages
+      initStage1();
+      initStage2();
+      initStage3();
+      initStage4();
+
+      // Initialize Lottery UI
+      renderLotteryRosterCount();
+      renderLotteryHistory();
+
+      // Restore saved state if present
+      await restoreAppState();
+      renderLotteryRosterCount();
+      renderLotteryHistory();
+
+      // Notify host environment that app is completely ready
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    });
+  </script>
+</body>
+</html>
